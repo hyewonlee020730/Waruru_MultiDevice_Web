@@ -1,0 +1,8 @@
+Generate a Git commit message.
+
+Steps:
+1. Check the differences against the previous commit using `git diff HEAD` or refer to the conversation context to summarize the changes.
+2. Write the summary of updates in Korean.
+3. Generate a Git commit message in Korean based on the changes.
+4. Show a preview of the generated commit message to the user.
+5. Ask for the user's confirmation before creating the commit or pushing to the remote repository.
