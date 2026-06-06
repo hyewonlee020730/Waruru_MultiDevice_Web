@@ -752,14 +752,14 @@ html {
   align-items: center;
   width: fit-content;
   margin-top: -2.23px;
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 500;
+  font-family: var(--body-m22-font-family);
+  font-weight: var(--body-m22-font-weight);
   color: var(--color-grayscale-black);
-  font-size: 1.375rem;
+  font-size: var(--body-m22-font-size);
   letter-spacing: var(--body-m22-letter-spacing);
   line-height: var(--body-m22-line-height);
   white-space: nowrap;
-  font-style: normal;
+  font-style: var(--body-m22-font-style);
 }
 
 .desktop .chip-2 {
