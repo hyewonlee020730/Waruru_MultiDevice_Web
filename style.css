@@ -18,9 +18,10 @@ html {
 .desktop > .frame-14,
 .desktop > .frame-19 {
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
   height: calc(100vh - 68px);
   overflow-y: hidden;
+  touch-action: pan-y;
 }
 
 .desktop > .container-2,
@@ -2237,6 +2238,17 @@ html {
   .desktop .chip-icon {
     width: clamp(13px, calc(2vw + 6px), 21px);
     height: clamp(13px, calc(2vw + 6px), 21px);
+  }
+
+  .desktop .frame-4,
+  .desktop .frame-5 {
+    width: clamp(13px, calc(2vw + 6px), 21px);
+    height: clamp(13px, calc(2vw + 6px), 21px);
+  }
+
+  .desktop .text-wrapper-15,
+  .desktop .text-wrapper-16 {
+    font-size: clamp(13px, calc(2vw + 6px), 21px);
   }
 
   /* 섹션 4 카드 썸네일: 140px(360px) → 180px(767px) */
