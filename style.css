@@ -1040,7 +1040,7 @@ html {
 }
 
 .desktop .card-flip.flipped .card-flip-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 .desktop .card-flip-front,
@@ -1052,7 +1052,7 @@ html {
 }
 
 .desktop .card-flip-back {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 .desktop .tooltip-kr {
