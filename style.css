@@ -2209,11 +2209,8 @@ html {
     font-size: clamp(14px, calc(2.46vw + 5.1px), 24px);
   }
 
-  /* 섹션 4 — 700px 이하: 줄바꿈 위치 변경 */
-  @media (max-width: 700px) {
-    .br-sec4-default { display: none; }
-    .br-sec4-small { display: inline; }
-  }
+  /* 섹션 4 — 모바일: 두 줄바꿈 모두 표시 */
+  .br-sec4-small { display: inline; }
 
   /* 섹션 5 본문: 데스크톱 숨기고 모바일 표시 */
   .sec5-desc-desktop { display: none; }
@@ -2431,6 +2428,7 @@ html {
   .desktop .chips {
     gap: 6px;
     width: 100%;
+    justify-content: center;
   }
 
   .desktop .chip,
