@@ -412,7 +412,7 @@ html {
 
 .desktop .image-area {
   position: absolute;
-  top: 299px;
+  top: 239px;
   left: calc(50.00% - 1011px);
   width: 2023px;
   height: 550px;
@@ -538,28 +538,28 @@ html {
 }
 
 .desktop .text-area {
-  width: 651px;
-  top: 99px;
-  left: 635px;
+  position: absolute;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  position: absolute;
 }
 
 .desktop .text-wrapper-10 {
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: var(--title-b32-font-family);
-  font-weight: var(--title-b32-font-weight);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
   color: var(--grayscalewhite);
-  font-size: var(--title-b32-font-size);
+  font-size: 2rem; /* 32px */
   text-align: center;
-  letter-spacing: var(--title-b32-letter-spacing);
-  line-height: var(--title-b32-line-height);
-  font-style: var(--title-b32-font-style);
+  letter-spacing: 0;
+  line-height: 140%;
+  font-style: normal;
 }
 
 .desktop .text-wrapper-11 {
