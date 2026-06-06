@@ -2204,8 +2204,8 @@ html {
     font-size: clamp(14px, calc(2.46vw + 5.1px), 24px);
   }
 
-  /* 섹션 4 — 408px 이하: 줄바꿈 위치 변경 */
-  @media (max-width: 408px) {
+  /* 섹션 4 — 700px 이하: 줄바꿈 위치 변경 */
+  @media (max-width: 700px) {
     .br-sec4-default { display: none; }
     .br-sec4-small { display: inline; }
   }
@@ -2449,4 +2449,10 @@ html {
   /* 데스크톱 답변 숨기고 모바일 답변 표시 */
   .qa-text-desktop { display: none; }
   .qa-text-mobile { display: block; }
+
+  /* 섹션 5 카드 — 767px 이하: 섹션 높이(100vh - 50px)의 58% */
+  .desktop .card-flip {
+    height: calc((100vh - 50px) * 0.58);
+    width: calc((100vh - 50px) * 0.58 * 0.753);
+  }
 }
