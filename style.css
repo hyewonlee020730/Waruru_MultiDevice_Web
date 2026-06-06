@@ -1975,3 +1975,24 @@ html {
   letter-spacing: 0;
   line-height: normal;
 }
+/* ============================================================
+   Section 2 — cardtextfield 등장 모션
+   초기: 아래에서 숨겨진 상태 / .ctf-visible 추가 시 등장
+   ============================================================ */
+.desktop .cardtextfield,
+.desktop .cardtextfield-2,
+.desktop .cardtextfield-3,
+.desktop .cardtextfield-4,
+.desktop .cardtextfield-5,
+.desktop .cardtextfield-6 {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desktop .cardtextfield.ctf-visible   { opacity: 1;   transform: translateY(0); }
+.desktop .cardtextfield-2.ctf-visible { opacity: 0.7; transform: translateY(0); }
+.desktop .cardtextfield-3.ctf-visible { opacity: 0.6; transform: translateY(0); }
+.desktop .cardtextfield-4.ctf-visible { opacity: 1;   transform: translateY(0); }
+.desktop .cardtextfield-5.ctf-visible { opacity: 1;   transform: translateY(0); }
+.desktop .cardtextfield-6.ctf-visible { opacity: 0.7; transform: translateY(0); }

@@ -765,6 +765,37 @@
     });
   </script>
 
+  <!-- Section 2 cardtextfield 등장 모션 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section2 = document.getElementById('experience');
+      if (!section2) return;
+
+      const selectors = [
+        '.cardtextfield',
+        '.cardtextfield-4',
+        '.cardtextfield-2',
+        '.cardtextfield-5',
+        '.cardtextfield-3',
+        '.cardtextfield-6',
+      ];
+
+      const fields = selectors.map(s => document.querySelector(s)).filter(Boolean);
+
+      let played = false;
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !played) {
+          played = true;
+          fields.forEach((el, i) => {
+            setTimeout(() => el.classList.add('ctf-visible'), i * 120);
+          });
+        }
+      }, { threshold: 0.5 });
+
+      observer.observe(section2);
+    });
+  </script>
+
   <!-- Section 4 Chip Interaction -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
