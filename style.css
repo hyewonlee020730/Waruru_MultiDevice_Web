@@ -1009,7 +1009,7 @@ html {
 
 .desktop .frame-6 {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 40px);
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -1021,6 +1021,15 @@ html {
   height: 497px;
   width: auto;
   display: block;
+}
+
+.desktop .tooltip-kr {
+  position: absolute;
+  top: calc(50% + 219px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 221px;
+  height: auto;
 }
 
 .desktop .poster {
