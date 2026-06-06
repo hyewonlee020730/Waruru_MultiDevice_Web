@@ -1008,12 +1008,19 @@ html {
 }
 
 .desktop .frame-6 {
-  display: inline-flex;
-  align-items: center;
-  gap: 9.46px;
   position: absolute;
-  top: calc(50.00% - 280px);
-  left: calc(50.00% - 378px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop .poster-kr {
+  height: 497px;
+  width: auto;
+  display: block;
 }
 
 .desktop .poster {
