@@ -20,8 +20,15 @@ html {
 .desktop > .frame-19 {
   scroll-snap-align: start;
   height: calc(100vh - 68px);
-  overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.desktop > .container-2,
+.desktop > .frame-2,
+.desktop > .frame-3,
+.desktop > .frame-14,
+.desktop > .frame-19 {
+  overflow-x: hidden;
 }
 
 /* KBLJump font — path relative to style.css (project root) */
@@ -214,6 +221,7 @@ html {
   position: relative;
   align-self: stretch;
   width: 100%;
+  max-width: 100%;
   background-color: #0e0e0e;
 }
 
@@ -288,9 +296,8 @@ html {
 
 .desktop .card-list {
   position: relative;
-  align-self: stretch;
-  width: 100%;
   flex: 0 0 auto;
+  width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -317,7 +324,7 @@ html {
 
 .desktop .card {
   flex: 0 0 auto;
-  width: 240px;
+  height: calc((100vh - 68px) * 0.38);
   aspect-ratio: 5 / 7;
   background-color: var(--grayscale-900);
   border-radius: 12px;
@@ -580,36 +587,39 @@ html {
   align-self: stretch;
   width: 100%;
   background-color: var(--color-grayscale-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop .section3-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .desktop .text-wrapper-12 {
-  position: absolute;
-  top: 342px;
-  left: 694px;
-  font-family: var(--title-b28-font-family);
-  font-weight: var(--title-b28-font-weight);
+  position: relative;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
   color: #ffffff;
-  font-size: var(--title-b28-font-size);
+  font-size: 1.75rem; /* 28px */
   text-align: center;
-  letter-spacing: var(--title-b28-letter-spacing);
-  line-height: var(--title-b28-line-height);
-  font-style: var(--title-b28-font-style);
+  letter-spacing: 0;
+  line-height: 140%;
+  font-style: normal;
 }
 
 .desktop .group {
-  position: absolute;
-  top: 500px;
-  left: 800px;
-  width: 319px;
-  height: 121px;
+  position: relative;
   display: flex;
-  gap: 16.2px;
-  aspect-ratio: 2.64;
+  justify-content: center;
 }
 
 .desktop .star-3 {
-  width: 121.41px;
-  height: 121.09px;
+  width: 310px;
+  height: auto;
 }
 
 .desktop .union-2 {

@@ -11,6 +11,49 @@
   right: 0;
   z-index: 100;
   background-color: var(--gray-scale-black);
+  transition: background-color 0.3s ease;
+}
+
+/* ---- Light Theme (섹션 4~7: gray-50 배경) ---- */
+.gnb--light,
+.gnb--white {
+  background-color: var(--gray-scale-50);
+}
+
+.gnb--white {
+  background-color: var(--gray-scale-white);
+}
+
+.gnb--light .gnb-logo img,
+.gnb--white .gnb-logo img {
+  filter: invert(1);
+}
+
+.gnb--light .nav-item,
+.gnb--white .nav-item {
+  color: var(--gray-scale-400);
+}
+
+.gnb--light .nav-item.active,
+.gnb--light .nav-item:hover,
+.gnb--white .nav-item.active,
+.gnb--white .nav-item:hover {
+  color: var(--gray-scale-black);
+}
+
+.gnb--light .lang-btn,
+.gnb--white .lang-btn {
+  color: var(--gray-scale-400);
+}
+
+.gnb--light .lang-btn.active,
+.gnb--white .lang-btn.active {
+  color: var(--gray-scale-black);
+}
+
+.gnb--light .burger-bar,
+.gnb--white .burger-bar {
+  background-color: var(--gray-scale-black);
 }
 
 /* ---- GNB Container ---- */
