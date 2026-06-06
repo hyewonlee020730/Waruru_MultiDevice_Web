@@ -438,7 +438,7 @@ html {
   align-items: flex-start;
   gap: 8px;
   position: absolute;
-  width: clamp(200px, 24.2%, 490px);
+  width: clamp(220px, 34vw, 490px);
   height: auto;
   min-height: 80px;
   padding: 24px;
