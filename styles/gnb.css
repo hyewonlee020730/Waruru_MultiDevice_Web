@@ -1,0 +1,224 @@
+/* ============================================================
+   GNB (Global Navigation Bar)
+   Design reference: Figma node 83:2267 — Desktop, 1920×68px
+   ============================================================ */
+
+/* ---- GNB Shell ---- */
+.gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--gray-scale-black);
+}
+
+/* ---- GNB Container ---- */
+/* Extends .container — overrides max-width to match Figma content area (1920 - 358×2 = 1204px) */
+.gnb-container {
+  display: flex;
+  align-items: center;
+  gap: 117px;         /* Figma: gap between logo and nav frame */
+  height: 68px;       /* Figma: GNB height */
+  max-width: 1204px;
+}
+
+/* ---- Logo ---- */
+.gnb-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.gnb-logo img {
+  width: 87px;
+  height: 33.01px;
+  display: block;
+}
+
+/* ---- Inner Frame: nav items + language selector ---- */
+/* Figma: flex-1, justify-content: space-between */
+.gnb-inner {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+/* ---- Navigation Menu ---- */
+/* Figma: btn_menu — flex, gap 22px */
+.gnb-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Figma: btn — padding 16px all sides, SemiBold 16px */
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-decoration: none;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 600;      /* SemiBold */
+  line-height: 1.4;
+  color: var(--gray-scale-500);   /* #85888A — inactive */
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  color: var(--gray-scale-white);
+}
+
+/* ---- Language Selector ---- */
+/* Figma: btn_language — flex, gap 22px */
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Figma: lang btn — height 54px, py 16px, Medium 14px */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;      /* Medium */
+  line-height: 1;
+  color: var(--gray-scale-500);   /* #85888A — inactive */
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.lang-btn.active {
+  color: var(--gray-scale-white);
+}
+
+/* ---- Mobile Hamburger Button ---- */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.burger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--gray-scale-white);
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hamburger → X transition */
+.mobile-menu-toggle.open .burger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-toggle.open .burger-bar:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.open .burger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   Mobile Overlay Drawer
+   ============================================================ */
+
+.gnb-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 98;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.gnb-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gnb-mobile-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100%;
+  background-color: var(--gray-scale-black);
+  z-index: 99;
+  padding: 88px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: right 0.3s ease;
+}
+
+.gnb-mobile-overlay.open {
+  right: 0;
+}
+
+.mobile-nav-item {
+  display: block;
+  padding: 16px 0;
+  text-decoration: none;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray-scale-white);
+}
+
+.mobile-lang-selector {
+  display: flex;
+  gap: 22px;
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+
+/* Tablet & Mobile: hide desktop nav, show hamburger */
+@media (max-width: 1279px) {
+  .gnb-container {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .gnb-inner {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .gnb-backdrop {
+    display: block;
+  }
+}

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waruru - 와르르</title>
+  <meta name="description" content="와르르(Waruru) 공식 랜딩 페이지입니다. 와르르 소개, 뉴스룸 및 Q&A를 만나보세요.">
+  <meta name="keywords" content="Waruru, 와르르, 랜딩페이지">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/color_styles.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/text_styles.css">
+  <link rel="stylesheet" href="styles/media_styles.css">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/gnb.css">
+</head>
+<body>
+
+  <!-- Global Navigation Bar (GNB) -->
+  <header class="gnb">
+    <div class="container gnb-container">
+
+      <a href="/" class="gnb-logo" id="gnbLogo">
+        <img src="assets/logo.svg" alt="와르르" />
+      </a>
+
+      <div class="gnb-inner" id="gnbInner">
+        <nav class="gnb-nav" id="gnbNav">
+          <a href="#about" class="nav-item active">와르르 소개</a>
+          <a href="#newsroom" class="nav-item">뉴스룸</a>
+          <a href="#qa" class="nav-item">Q&amp;A</a>
+        </nav>
+        <div class="lang-selector" id="langSelector">
+          <button class="lang-btn active" data-lang="kor">KOR</button>
+          <button class="lang-btn" data-lang="eng">ENG</button>
+        </div>
+      </div>
+
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay Menu -->
+  <div class="gnb-backdrop" id="gnbBackdrop"></div>
+  <div class="gnb-mobile-overlay" id="mobileOverlay">
+    <a href="#about" class="mobile-nav-item">와르르 소개</a>
+    <a href="#newsroom" class="mobile-nav-item">뉴스룸</a>
+    <a href="#qa" class="mobile-nav-item">Q&A</a>
+    <div class="mobile-lang-selector">
+      <button class="lang-btn active" data-lang="kor">KOR</button>
+      <button class="lang-btn" data-lang="eng">ENG</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Main Content (Figma design structure)
+       ============================================================ -->
+  <div class="desktop">
+
+    <!-- Section 1: Hero -->
+    <div class="container" id="about">
+      <div class="text">
+        <p class="p">콘텐츠 감상이<br/>혼자만의 경험으로 끝나지 않도록</p>
+        <p class="text-wrapper-4">좋아하는 것들을 함께 보고 난 뒤의 이야기가 기록되고, 공유되고, 오래 남을 수 있도록.<br/>흩어지던 감상이 한곳에 모이고, 혼자 쓰던 후기가 함께 채워지는 경험을 만듭니다.</p>
+      </div>
+      <div class="icons">
+        <div class="vector-wrapper"><img class="vector" src="img/vector.svg" /></div>
+        <div class="vector-wrapper"><img class="vector-2" src="img/vector-2.svg" /></div>
+      </div>
+      <div class="card-list">
+        <div class="card">
+          <img class="image" src="img/image-194-2.png" />
+          <div class="text-wrapper-5">콘서트</div>
+        </div>
+        <div class="card-2">
+          <img class="image" src="img/image-194-5.png" />
+          <img class="star" src="img/star-32.svg" />
+          <div class="text-wrapper-6">콘서트</div>
+        </div>
+        <div class="card-2">
+          <img class="image-2" src="img/image-194-4.png" />
+          <img class="star-2" src="img/star-31.svg" />
+          <div class="text-wrapper-7">애니메이션</div>
+        </div>
+        <div class="card-2">
+          <img class="image" src="img/image-194.png" />
+          <div class="text-wrapper-8">영화</div>
+          <img class="vector-3" src="img/vector-1407.svg" />
+        </div>
+        <div class="card-2">
+          <img class="image" src="img/image.png" />
+          <img class="union" src="img/union-2.svg" />
+          <div class="text-wrapper-6">시리즈</div>
+        </div>
+        <div class="card">
+          <img class="image" src="img/image-194-3.png" />
+          <div class="text-wrapper-5">시리즈</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: 이런 경험 -->
+    <div class="container-2">
+      <div class="image-area">
+        <div class="cardtextfield">
+          <p class="text-wrapper-9">관람이 끝나는 순간이 아니라, 감상을 나누는 시간까지하나의 콘텐츠 경험이라고 생각해요.</p>
+        </div>
+        <div class="cardtextfield-2">
+          <p class="text-wrapper-9">공연 끝나고는 진짜 할 말이 많은데, 며칠만 지나도 어떤 장면이 좋았는지 잘 기억이 안 나요.</p>
+        </div>
+        <div class="cardtextfield-3">
+          <p class="text-wrapper-9">같이 본 친구들의 후기를 한곳에서 모아보면 <br/>그날의 기억이 더 오래 남을 것 같아요.</p>
+        </div>
+        <div class="cardtextfield-4">
+          <p class="text-wrapper-9">후기를 남기고 싶긴 한데 <br/>막상 쓰려고 하면 뭘 써야 할지 모르겠어요.</p>
+        </div>
+        <div class="cardtextfield-5">
+          <p class="text-wrapper-9">친구들이랑 감상 얘기를 엄청 나누는데 <br/>단톡방에 묻혀서 나중에는 다시 찾기가 힘들어요.</p>
+        </div>
+        <div class="cardtextfield-6">
+          <p class="text-wrapper-9">같은 작품을 봐도 사람마다 해석이 달라서 재밌는데, <br/>다른 사람들은 어떻게 봤는지 궁금해요.</p>
+        </div>
+      </div>
+      <div class="text-area">
+        <p class="text-wrapper-10">이런 경험, 한 번쯤 있지 않나요?</p>
+        <p class="text-wrapper-11">공연을 보고 나왔을 때는 분명 할 말이 많았는데, 며칠만 지나도 어떤 장면이 좋았는지 기억이 흐려져요.<br/>친구들과 감상을 나누며 즐거운 시간을 보냈지만, 대화는 단톡방 속으로 사라지고 추억도 점점 희미해져요.</p>
+      </div>
+    </div>
+
+    <!-- Section 3: 기록 공간 -->
+    <div class="frame-2">
+      <p class="text-wrapper-12">흩어지는 감상과 추억을 한곳에 모아<br/>오래도록 꺼내볼 수 있는 기록 공간을 만들었어요.</p>
+      <div class="group">
+        <img class="star-3" src="img/star-44.svg" />
+        <img class="union-2" src="img/union.svg" />
+      </div>
+    </div>
+
+    <!-- Section 4: 콘텐츠별로 기록 -->
+    <div class="frame-3">
+      <div class="text-area-2">
+        <div class="text-wrapper-13">콘텐츠별로, 더 알맞게 기록하세요</div>
+        <p class="div-2">
+          <span class="span">콘서트, 애니메이션, 영화, 시리즈</span>
+          <span class="text-wrapper-14">까지. 콘텐츠의 특성에 맞는 공간에서 우리의 감상을 더욱 자연스럽게 기록할 수 있어요.</span>
+        </p>
+      </div>
+      <div class="content-2">
+        <div class="chips">
+          <div class="chip">
+            <img class="frame-4" src="img/frame.svg" />
+            <div class="text-wrapper-15">콘서트</div>
+          </div>
+          <div class="chip-2">
+            <img class="frame-5" src="img/frame-5.svg" />
+            <div class="text-wrapper-16">애니메이션</div>
+          </div>
+          <div class="chip-2">
+            <img class="frame-5" src="img/frame-3.svg" />
+            <div class="text-wrapper-16">영화</div>
+          </div>
+          <div class="chip-2">
+            <img class="frame-5" src="img/frame-4.svg" />
+            <div class="text-wrapper-16">시리즈</div>
+          </div>
+        </div>
+        <div class="card-list-2">
+          <div class="card-thumbnail">
+            <img class="image-3" src="img/image-5.svg" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">DMZ 피스트레...</div>
+              <div class="text-wrapper-18">콘서트</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="img/image-2.svg" />
+            <div class="text-area-3">
+              <div class="text-wrapper-19">PEAK FESTIV...</div>
+              <div class="text-wrapper-18">콘서트</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="img/image-6.svg" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">2026 HA HYUNSANG ...</div>
+              <div class="text-wrapper-18">콘서트</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="img/image-3.svg" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">2026 HA HY...</div>
+              <div class="text-wrapper-18">콘서트</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="img/image-8.svg" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">2026 HA HYUNSANG ...</div>
+              <div class="text-wrapper-18">콘서트</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: 함께 본 순간 -->
+    <div class="frame-3">
+      <div class="text-area-4">
+        <p class="text-wrapper-13">함께 본 순간을 함께 남겨보세요</p>
+        <p class="div-2">
+          <span class="text-wrapper-20">초대장</span>
+          <span class="text-wrapper-21">을 주고받아 친구와 </span>
+          <span class="text-wrapper-20">같은 기록장을 공유</span>
+          <span class="text-wrapper-21">하고, 하나의 작품을 각자의 시선으로 기록할 수 있어요. 서로의 감상을 읽고 이야기를 이어가며 함께했던 순간을 더욱 풍성한 추억으로 남겨보세요.</span>
+        </p>
+      </div>
+      <div class="group-2">
+        <div class="tooltip">
+          <img class="polygon" src="img/polygon-6.svg" />
+          <div class="chip-3">
+            <p class="text-wrapper-22">작성 중인 친구 2명이 있어요</p>
+          </div>
+        </div>
+        <div class="frame-6">
+          <div class="poster">
+            <img class="image-4" src="img/image-9361-2.png" />
+          </div>
+          <div class="poster">
+            <img class="image-4" src="img/image-9361.png" />
+            <div class="rectangle"></div>
+            <div class="frame-wrapper">
+              <div class="frame-7">
+                <p class="text-wrapper-23">2026 HA HYUN SANG Archive Live 〈New Boat〉</p>
+                <div class="caption">
+                  <img class="frame-8" src="img/frame-2.svg" />
+                  <div class="text-wrapper-24">콘서트</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-text">
+              <div class="text-wrapper-25">참여자</div>
+              <div class="frame-9">
+                <div class="content-3">
+                  <div class="frame-10">
+                    <img class="profile-img" src="img/profile-img-6.svg" />
+                    <div class="profile">
+                      <div class="text-wrapper-26">NickName</div>
+                      <div class="text-wrapper-27">@ID</div>
+                    </div>
+                  </div>
+                  <div class="frame-11"><div class="text-wrapper-28">작성중</div></div>
+                </div>
+                <div class="content-3">
+                  <div class="frame-10">
+                    <img class="profile-img" src="img/profile-img-4.svg" />
+                    <div class="profile">
+                      <div class="text-wrapper-26">NickName</div>
+                      <div class="text-wrapper-27">@ID</div>
+                    </div>
+                  </div>
+                  <div class="frame-11"><div class="text-wrapper-28">작성중</div></div>
+                </div>
+                <div class="content-3">
+                  <div class="frame-10">
+                    <img class="profile-img" src="img/profile-img-3.svg" />
+                    <div class="profile">
+                      <div class="text-wrapper-26">NickName</div>
+                      <div class="text-wrapper-27">@ID</div>
+                    </div>
+                  </div>
+                  <div class="frame-12"><div class="text-wrapper-28">수락 대기중</div></div>
+                </div>
+                <div class="content-3">
+                  <div class="frame-10">
+                    <img class="profile-img" src="img/profile-img-5.svg" />
+                    <div class="profile">
+                      <div class="text-wrapper-26">NickName</div>
+                      <div class="text-wrapper-27">@ID</div>
+                    </div>
+                  </div>
+                  <div class="frame-13"><div class="text-wrapper-28">작성 완료</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: 감상을 떠올리는 작은 단서들 -->
+    <div class="frame-3">
+      <div class="text-area-5">
+        <div class="text-wrapper-29">감상을 떠올리는 작은 단서들</div>
+        <p class="OST">
+          <span class="text-wrapper-30">명대사, OST, 장르별 질문 등을 제공하는 </span>
+          <span class="text-wrapper-31">작성 키트</span>
+          <span class="text-wrapper-30">가 작품 속 기억을 자연스럽게 떠올릴 수 있도록 도와줘요. 감상이 막히는 순간에도 생각의 흐름을 이어가며 더 풍부한 후기를 작성할 수 있어요.</span>
+        </p>
+      </div>
+      <div class="iphone-pro-front">
+        <img class="main" src="img/main.png" />
+        <img class="iphone-pro-front-2" src="img/iphone-15-pro-front-label-2.png" />
+        <div class="rectangle-2"></div>
+      </div>
+      <div class="iphone-pro-front-3">
+        <img class="main" src="img/main-2.png" />
+        <img class="iphone-pro-front-2" src="img/iphone-15-pro-front-label.png" />
+        <div class="rectangle-2"></div>
+      </div>
+      <div class="group-3">
+        <div class="list-m">
+          <div class="text-2">
+            <img class="image-5" src="img/image-10.svg" />
+            <p class="text-wrapper-32">사람은 누군가가 살아가도 된다고 말해주지 <br/>않으면 살아갈 수 없어.</p>
+            <img class="image-5" src="img/image.svg" />
+          </div>
+        </div>
+        <div class="list-m-2">
+          <div class="text-2">
+            <img class="image-5" src="img/image-9.svg" />
+            <p class="text-wrapper-32">동료가 궁지에 몰렸을 땐 도와준다.<br/>이 세상에 이것보다 상식적인 일이 있나?</p>
+            <img class="image-5" src="img/image-4.svg" />
+          </div>
+        </div>
+        <div class="list-m-3">
+          <div class="text-2">
+            <img class="image-5" src="img/image-7.svg" />
+            <p class="text-wrapper-32">사람의 죽음은 숫자가 아닙니다.<br/>한 명, 한 명의 생에는 분명 의미가 있습니다.<br/>단순히 죽었다는 한마디에서 느낄 수 없는 <br/>그들의 숨결입니다.</p>
+            <img class="image-5" src="img/image-11.svg" />
+          </div>
+        </div>
+        <div class="list-row">
+          <img class="profile-img-2" src="img/profile-img.svg" />
+          <div class="text-3">
+            <div class="div-wrapper-2"><div class="text-wrapper-33">Title</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-34">Body</div></div>
+          </div>
+          <div class="icon"></div>
+        </div>
+        <div class="list-row-2">
+          <img class="profile-img-2" src="img/profile-img-2.svg" />
+          <div class="text-3">
+            <div class="div-wrapper-2"><div class="text-wrapper-33">Title</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-34">Body</div></div>
+          </div>
+          <div class="icon"></div>
+        </div>
+        <div class="list-row-3">
+          <img class="profile-img-2" src="img/profile-img-7.svg" />
+          <div class="text-3">
+            <div class="div-wrapper-2"><div class="text-wrapper-33">Title</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-34">Body</div></div>
+          </div>
+          <div class="icon"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: 뭐라고쓰지 -->
+    <div class="frame-3">
+      <div class="text-wrapper-35">뭐라고쓰지..?</div>
+      <p class="text-wrapper-36">각자의 후기가 모여 함께 쌓인 추억으로</p>
+    </div>
+
+    <!-- Section 8: 뉴스룸 -->
+    <div class="frame-14" id="newsroom">
+      <div class="text-wrapper-13">뉴스룸</div>
+      <div class="frame-15">
+        <div class="frame-16">
+          <div class="list">
+            <div class="dribbble-shot"></div>
+            <div class="frame-17">
+              <p class="text-wrapper-37">제목 예시 텍스트 제목 예시 텍스트 제목 예시 텍스트 제목 예시 텍스트제목 예시 텍스트 제목 예시 텍스트</p>
+              <div class="text-wrapper-38">2026. 07. 28</div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="dribbble-shot"></div>
+            <div class="frame-17">
+              <p class="text-wrapper-37">제목 예시 텍스트 제목 예시 텍스트 제목 예시 텍스트 제목 예시 텍스트제목 예시 텍스트 제목 예시 텍스트</p>
+              <div class="text-wrapper-38">2026. 07. 28</div>
+            </div>
+          </div>
+          <div class="list">
+            <div class="dribbble-shot"></div>
+            <div class="frame-17">
+              <p class="text-wrapper-37">제목 예시 텍스트 제목 예시 텍스트 제목 예시 텍스트 제목 예시 텍스트제목 예시 텍스트 제목 예시 텍스트</p>
+              <div class="text-wrapper-38">2026. 07. 28</div>
+            </div>
+          </div>
+        </div>
+        <div class="pagenation-wrapper">
+          <div class="pagenation">
+            <img class="icon-arrow" src="img/icon-arrow.svg" />
+            <div class="frame-18">
+              <button class="button"><div class="text-wrapper-39">1</div></button>
+              <button class="button"><div class="text-wrapper-40">2</div></button>
+              <button class="button"><div class="text-wrapper-40">3</div></button>
+              <button class="button"><div class="text-wrapper-40">4</div></button>
+              <button class="button"><div class="text-wrapper-40">5</div></button>
+            </div>
+            <img class="icon-arrow" src="img/icon-arrow-4.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 9: Q&A -->
+    <div class="frame-19" id="qa">
+      <div class="text-wrapper-13">Q&amp;A</div>
+      <div class="frame-20">
+        <div class="frame-20">
+          <div class="frame-21">
+            <div class="frame-22">
+              <div class="frame-23">
+                <img class="q" src="img/q-5.svg" />
+                <p class="text-wrapper-41">자주 묻는 질문 예시 텍스트 자주 묻는 질문 예시 텍스트</p>
+              </div>
+              <img class="icon-arrow-2" src="img/icon-arrow-3.svg" />
+            </div>
+          </div>
+          <div class="frame-21">
+            <div class="frame-22">
+              <div class="frame-24">
+                <img class="q" src="img/q-4.svg" />
+                <p class="text-wrapper-42">자주 묻는 질문 예시 텍스트 자주 묻는 질문 예시 텍스트</p>
+              </div>
+              <img class="icon-arrow-3" src="img/icon-arrow-2.svg" />
+            </div>
+            <div class="frame-25">
+              <p class="text-wrapper-43">답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트답변 예시 텍스트 답변 예시 텍스트 답변 예시 텍스트</p>
+            </div>
+          </div>
+          <div class="frame-21">
+            <div class="frame-22">
+              <div class="frame-23">
+                <img class="q" src="img/q-2.svg" />
+                <p class="text-wrapper-41">자주 묻는 질문 예시 텍스트 자주 묻는 질문 예시 텍스트</p>
+              </div>
+              <img class="icon-arrow-2" src="img/icon-arrow-3.svg" />
+            </div>
+          </div>
+          <div class="frame-21">
+            <div class="frame-22">
+              <div class="frame-23">
+                <img class="q" src="img/q.svg" />
+                <p class="text-wrapper-41">자주 묻는 질문 예시 텍스트 자주 묻는 질문 예시 텍스트</p>
+              </div>
+              <img class="icon-arrow-2" src="img/icon-arrow-3.svg" />
+            </div>
+          </div>
+          <div class="frame-21">
+            <div class="frame-22">
+              <div class="frame-23">
+                <img class="q" src="img/q-3.svg" />
+                <p class="text-wrapper-41">자주 묻는 질문 예시 텍스트 자주 묻는 질문 예시 텍스트</p>
+              </div>
+              <img class="icon-arrow-2" src="img/icon-arrow-3.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="frame-26">
+          <div class="pagenation">
+            <img class="icon-arrow" src="img/icon-arrow.svg" />
+            <div class="frame-18">
+              <button class="button"><div class="text-wrapper-39">1</div></button>
+              <button class="button"><div class="text-wrapper-40">2</div></button>
+              <button class="button"><div class="text-wrapper-40">3</div></button>
+              <button class="button"><div class="text-wrapper-40">4</div></button>
+              <button class="button"><div class="text-wrapper-40">5</div></button>
+            </div>
+            <img class="icon-arrow" src="img/icon-arrow-4.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="frame-27">
+        <div class="text-wrapper-44">개인정보처리방침&nbsp;&nbsp;&nbsp;&nbsp;이용약관&nbsp;&nbsp;&nbsp;&nbsp;보안</div>
+        <p class="copyright-all">Copyright ⓒ HI5. All Rights Reserved<br/>E-mail: waruru@gmail.com</p>
+      </div>
+    </footer>
+
+  </div><!-- /.desktop -->
+
+  <!-- Navigation JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const gnbBackdrop = document.getElementById('gnbBackdrop');
+      const langBtns = document.querySelectorAll('.lang-btn');
+      const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+      function toggleMenu() {
+        const isOpen = mobileOverlay.classList.contains('open');
+        if (isOpen) {
+          mobileOverlay.classList.remove('open');
+          gnbBackdrop.classList.remove('open');
+          menuToggle.classList.remove('open');
+          document.body.style.overflow = '';
+        } else {
+          mobileOverlay.classList.add('open');
+          gnbBackdrop.classList.add('open');
+          menuToggle.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      menuToggle.addEventListener('click', toggleMenu);
+      gnbBackdrop.addEventListener('click', toggleMenu);
+
+      mobileNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+          mobileOverlay.classList.remove('open');
+          gnbBackdrop.classList.remove('open');
+          menuToggle.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selectedLang = btn.getAttribute('data-lang');
+          langBtns.forEach(b => {
+            if (b.getAttribute('data-lang') === selectedLang) {
+              b.classList.add('active');
+            } else {
+              b.classList.remove('active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

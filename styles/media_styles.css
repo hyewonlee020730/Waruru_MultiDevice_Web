@@ -1,27 +1,51 @@
-/* Mobile Devices (up to 767px) */
+/* Root breakpoint configuration variables */
+:root {
+  --breakpoint-mobile-min: 360px;
+  --breakpoint-mobile-max: 767px;
+  --breakpoint-tablet-min: 768px;
+  --breakpoint-tablet-max: 1279px;
+  --breakpoint-desktop-min: 1280px;
+  --breakpoint-desktop-safety: 1440px;
+  --breakpoint-desktop-max: 1920px;
+}
+
+/* Mobile Devices (360px ~ 767px) */
 @media (max-width: 767px) {
   :root {
     --breakpoint-device: 'mobile';
+    --container-max-width: 100%;
+    --content-padding: 16px;
   }
 }
 
-/* Tablet Devices (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet Devices (768px ~ 1279px) */
+@media (min-width: 768px) and (max-width: 1279px) {
   :root {
     --breakpoint-device: 'tablet';
+    --container-max-width: 100%;
+    --content-padding: 24px;
   }
 }
 
-/* Desktop Devices (1024px to 1439px) */
-@media (min-width: 1024px) {
+/* Desktop Devices (1280px ~ 1920px and above)
+   * Content is constrained within the safety area (1440px)
+   * Main design viewport target: 1920px
+*/
+@media (min-width: 1280px) {
   :root {
     --breakpoint-device: 'desktop';
+    --container-max-width: 1440px; /* Safety Area */
+    --content-padding: 40px;
   }
 }
 
-/* Large Desktop Devices (1440px and up) */
-@media (min-width: 1440px) {
-  :root {
-    --breakpoint-device: 'large-desktop';
-  }
+/* Responsive Container Helper Class */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+  box-sizing: border-box;
 }

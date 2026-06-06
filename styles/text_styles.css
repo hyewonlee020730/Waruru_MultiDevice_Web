@@ -1,0 +1,112 @@
+:root {
+    /* Title Styles */
+    --title---b32: 32px;
+    --title---b28: 28px;
+    --title---b22: 22px;
+
+    /* Body Styles */
+    --body---s-b24: 24px;
+    --body---m22: 22px;
+    --body---r20: 20px;
+    --body---l20: 20px;
+    --body---b18: 18px;
+    --body---s-b16: 16px;
+    --body---b16: 16px;
+    --body---r16: 16px;
+    --body---m14: 14px;
+    --body---r14: 14px;
+    --body---l13: 13px;
+    --body---r12: 12px;
+}
+
+/* Title Classes */
+.title-b32,
+.title---b32 {
+    font-size: var(--title---b32);
+    font-weight: 700;
+}
+
+.title-b28,
+.title---b28 {
+    font-size: var(--title---b28);
+    font-weight: 700;
+}
+
+.title-b22,
+.title---b22 {
+    font-size: var(--title---b22);
+    font-weight: 700;
+}
+
+/* Body Classes */
+.body-s-b24,
+.body---s-b24 {
+    font-size: var(--body---s-b24);
+    font-weight: 600;
+}
+
+.body-m22,
+.body---m22 {
+    font-size: var(--body---m22);
+    font-weight: 500;
+}
+
+.body-r20,
+.body---r20 {
+    font-size: var(--body---r20);
+    font-weight: 400;
+}
+
+.body-l20,
+.body---l20 {
+    font-size: var(--body---l20);
+    font-weight: 300;
+}
+
+.body-b18,
+.body---b18 {
+    font-size: var(--body---b18);
+    font-weight: 700;
+}
+
+.body-s-b16,
+.body---s-b16 {
+    font-size: var(--body---s-b16);
+    font-weight: 600;
+}
+
+.body-b16,
+.body---b16 {
+    font-size: var(--body---b16);
+    font-weight: 700;
+}
+
+.body-r16,
+.body---r16 {
+    font-size: var(--body---r16);
+    font-weight: 400;
+}
+
+.body-m14,
+.body---m14 {
+    font-size: var(--body---m14);
+    font-weight: 500;
+}
+
+.body-r14,
+.body---r14 {
+    font-size: var(--body---r14);
+    font-weight: 400;
+}
+
+.body-l13,
+.body---l13 {
+    font-size: var(--body---l13);
+    font-weight: 300;
+}
+
+.body-r12,
+.body---r12 {
+    font-size: var(--body---r12);
+    font-weight: 400;
+}

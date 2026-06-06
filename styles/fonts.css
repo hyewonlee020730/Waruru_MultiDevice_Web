@@ -1,0 +1,109 @@
+/* KBL Jump Web Fonts loading */
+@font-face {
+  font-family: 'KBLJump';
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fontFiles/kblJump/KBLJump_B.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'KBLJump';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fontFiles/kblJump/KBLJump_R.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'KBLJump';
+  font-weight: 800;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url('../assets/fontFiles/kblJump/KBLJump_EB_Condensed.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'KBLJump';
+  font-weight: 800;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url('../assets/fontFiles/kblJump/KBLJump_EB_Extended.woff2') format('woff2');
+}
+
+/* Pretendard Web Fonts loading */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 900;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  font-display: swap;
+  src: url('../assets/fontFiles/pretendardStatic/Pretendard-Thin.woff2') format('woff2');
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

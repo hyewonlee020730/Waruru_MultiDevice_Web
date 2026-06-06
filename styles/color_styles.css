@@ -1,0 +1,75 @@
+:root {
+  /* Brand Colors */
+  --brand-blue: #388ff8;
+  --brand-green: #23cf7f;
+  --brand-purple: #a65dff;
+  --brand-red: #ff5842;
+  --brand-yellow: #ffc300;
+
+  /* Gray Scale Colors */
+  --gray-scale-50: #f9f9f9;
+  --gray-scale-100: #e8e8e8;
+  --gray-scale-200: #d3d4d4;
+  --gray-scale-300: #b9baba;
+  --gray-scale-400: #9ea0a2;
+  --gray-scale-500: #85888a;
+  --gray-scale-600: #696b6c;
+  --gray-scale-700: #535454;
+  --gray-scale-800: #393a3a;
+  --gray-scale-900: #252627;
+  --gray-scale-black: #0e0e0e;
+  --gray-scale-white: #ffffff;
+
+  /* Layout and GNB Specific Variables (Mapped to Palette) */
+  --bg-primary: var(--gray-scale-black);
+  --bg-secondary: var(--gray-scale-900);
+  --text-primary: var(--gray-scale-white);
+  --text-secondary: var(--gray-scale-500);
+  --text-muted: var(--gray-scale-600);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: var(--brand-blue);
+}
+
+/* ==========================================================================
+   Text Color Classes
+   ========================================================================== */
+.text-brand-blue { color: var(--brand-blue); }
+.text-brand-green { color: var(--brand-green); }
+.text-brand-purple { color: var(--brand-purple); }
+.text-brand-red { color: var(--brand-red); }
+.text-brand-yellow { color: var(--brand-yellow); }
+
+.text-gray-scale-50, .text-gray-50 { color: var(--gray-scale-50); }
+.text-gray-scale-100, .text-gray-100 { color: var(--gray-scale-100); }
+.text-gray-scale-200, .text-gray-200 { color: var(--gray-scale-200); }
+.text-gray-scale-300, .text-gray-300 { color: var(--gray-scale-300); }
+.text-gray-scale-400, .text-gray-400 { color: var(--gray-scale-400); }
+.text-gray-scale-500, .text-gray-500 { color: var(--gray-scale-500); }
+.text-gray-scale-600, .text-gray-600 { color: var(--gray-scale-600); }
+.text-gray-scale-700, .text-gray-700 { color: var(--gray-scale-700); }
+.text-gray-scale-800, .text-gray-800 { color: var(--gray-scale-800); }
+.text-gray-scale-900, .text-gray-900 { color: var(--gray-scale-900); }
+.text-gray-scale-black, .text-gray-black { color: var(--gray-scale-black); }
+.text-gray-scale-white, .text-gray-white { color: var(--gray-scale-white); }
+
+/* ==========================================================================
+   Background Color Classes
+   ========================================================================== */
+.bg-brand-blue { background-color: var(--brand-blue); }
+.bg-brand-green { background-color: var(--brand-green); }
+.bg-brand-purple { background-color: var(--brand-purple); }
+.bg-brand-red { background-color: var(--brand-red); }
+.bg-brand-yellow { background-color: var(--brand-yellow); }
+
+.bg-gray-scale-50, .bg-gray-50 { background-color: var(--gray-scale-50); }
+.bg-gray-scale-100, .bg-gray-100 { background-color: var(--gray-scale-100); }
+.bg-gray-scale-200, .bg-gray-200 { background-color: var(--gray-scale-200); }
+.bg-gray-scale-300, .bg-gray-300 { background-color: var(--gray-scale-300); }
+.bg-gray-scale-400, .bg-gray-400 { background-color: var(--gray-scale-400); }
+.bg-gray-scale-500, .bg-gray-500 { background-color: var(--gray-scale-500); }
+.bg-gray-scale-600, .bg-gray-600 { background-color: var(--gray-scale-600); }
+.bg-gray-scale-700, .bg-gray-700 { background-color: var(--gray-scale-700); }
+.bg-gray-scale-800, .bg-gray-800 { background-color: var(--gray-scale-800); }
+.bg-gray-scale-900, .bg-gray-900 { background-color: var(--gray-scale-900); }
+.bg-gray-scale-black, .bg-gray-black { background-color: var(--gray-scale-black); }
+.bg-gray-scale-white, .bg-gray-white { background-color: var(--gray-scale-white); }
