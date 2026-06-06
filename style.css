@@ -1664,6 +1664,17 @@ html {
   aspect-ratio: 1.33;
 }
 
+/* 모바일 전용 뉴스룸 항목 — 데스크탑/태블릿에서 숨김 */
+.desktop .list--mobile-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .list--mobile-only {
+    display: flex;
+  }
+}
+
 .desktop .newsroom-thumb {
   width: 160px;
   height: 120px;
