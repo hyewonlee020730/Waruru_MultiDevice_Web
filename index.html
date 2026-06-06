@@ -151,55 +151,55 @@
         </p>
       </div>
       <div class="content-2">
-        <div class="chips">
-          <div class="chip">
-            <img class="frame-4" src="img/frame.svg" />
+        <div class="chips" id="genreChips">
+          <div class="chip" data-selected-icon="assets/svg/Concert_Selected.svg" data-disabled-icon="assets/svg/Concert_Disabled.svg">
+            <img class="chip-icon" src="assets/svg/Concert_Selected.svg" />
             <div class="text-wrapper-15">콘서트</div>
           </div>
-          <div class="chip-2">
-            <img class="frame-5" src="img/frame-5.svg" />
+          <div class="chip-2" data-selected-icon="assets/svg/Animation_Selected.svg" data-disabled-icon="assets/svg/Animation_Disabled.svg">
+            <img class="chip-icon" src="assets/svg/Animation_Disabled.svg" />
             <div class="text-wrapper-16">애니메이션</div>
           </div>
-          <div class="chip-2">
-            <img class="frame-5" src="img/frame-3.svg" />
+          <div class="chip-2" data-selected-icon="assets/svg/Movie_Selected.svg" data-disabled-icon="assets/svg/Movie_Disabled.svg">
+            <img class="chip-icon" src="assets/svg/Movie_Disabled.svg" />
             <div class="text-wrapper-16">영화</div>
           </div>
-          <div class="chip-2">
-            <img class="frame-5" src="img/frame-4.svg" />
+          <div class="chip-2" data-selected-icon="assets/svg/Series_Selected.svg" data-disabled-icon="assets/svg/Series_Disabled.svg">
+            <img class="chip-icon" src="assets/svg/Series_Disabled.svg" />
             <div class="text-wrapper-16">시리즈</div>
           </div>
         </div>
         <div class="card-list-2">
           <div class="card-thumbnail">
-            <img class="image-3" src="img/image-5.svg" />
+            <img class="image-3" src="assets/Img/C_thumbnail_1.png" />
             <div class="text-area-3">
               <div class="text-wrapper-17">DMZ 피스트레...</div>
               <div class="text-wrapper-18">콘서트</div>
             </div>
           </div>
           <div class="card-thumbnail">
-            <img class="image-3" src="img/image-2.svg" />
+            <img class="image-3" src="assets/Img/C_thumbnail_2.png" />
             <div class="text-area-3">
               <div class="text-wrapper-19">PEAK FESTIV...</div>
               <div class="text-wrapper-18">콘서트</div>
             </div>
           </div>
           <div class="card-thumbnail">
-            <img class="image-3" src="img/image-6.svg" />
+            <img class="image-3" src="assets/Img/C_thumbnail_3.png" />
             <div class="text-area-3">
               <div class="text-wrapper-17">2026 HA HYUNSANG ...</div>
               <div class="text-wrapper-18">콘서트</div>
             </div>
           </div>
           <div class="card-thumbnail">
-            <img class="image-3" src="img/image-3.svg" />
+            <img class="image-3" src="assets/Img/C_thumbnail_4.png" />
             <div class="text-area-3">
               <div class="text-wrapper-17">2026 HA HY...</div>
               <div class="text-wrapper-18">콘서트</div>
             </div>
           </div>
           <div class="card-thumbnail">
-            <img class="image-3" src="img/image-8.svg" />
+            <img class="image-3" src="assets/Img/C_thumbnail_5.png" />
             <div class="text-area-3">
               <div class="text-wrapper-17">2026 HA HYUNSANG ...</div>
               <div class="text-wrapper-18">콘서트</div>
@@ -640,6 +640,34 @@
         e.preventDefault();
         const targetY = target.getBoundingClientRect().top + window.scrollY - 68;
         smoothScrollTo(targetY, 800);
+      });
+    });
+  </script>
+
+  <!-- Section 4 Chip Interaction -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const chipsContainer = document.getElementById('genreChips');
+      if (!chipsContainer) return;
+
+      chipsContainer.querySelectorAll('.chip, .chip-2').forEach(chip => {
+        chip.addEventListener('click', () => {
+          // 모든 칩 비활성화
+          chipsContainer.querySelectorAll('.chip, .chip-2').forEach(c => {
+            const icon = c.querySelector('.chip-icon');
+            const label = c.querySelector('.text-wrapper-15, .text-wrapper-16');
+            icon.src = c.dataset.disabledIcon;
+            c.className = 'chip-2';
+            if (label) label.className = 'text-wrapper-16';
+          });
+
+          // 클릭한 칩 활성화
+          const icon = chip.querySelector('.chip-icon');
+          const label = chip.querySelector('.text-wrapper-16');
+          icon.src = chip.dataset.selectedIcon;
+          chip.className = 'chip';
+          if (label) label.className = 'text-wrapper-15';
+        });
       });
     });
   </script>
