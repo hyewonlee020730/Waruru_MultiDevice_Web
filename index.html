@@ -152,24 +152,26 @@
       </div>
       <div class="content-2">
         <div class="chips" id="genreChips">
-          <div class="chip" data-selected-icon="assets/svg/Concert_Selected.svg" data-disabled-icon="assets/svg/Concert_Disabled.svg">
+          <div class="chip" data-selected-icon="assets/svg/Concert_Selected.svg" data-disabled-icon="assets/svg/Concert_Disabled.svg" data-list="cardList-concert">
             <img class="chip-icon" src="assets/svg/Concert_Selected.svg" />
             <div class="text-wrapper-15">콘서트</div>
           </div>
-          <div class="chip-2" data-selected-icon="assets/svg/Animation_Selected.svg" data-disabled-icon="assets/svg/Animation_Disabled.svg">
+          <div class="chip-2" data-selected-icon="assets/svg/Animation_Selected.svg" data-disabled-icon="assets/svg/Animation_Disabled.svg" data-list="cardList-animation">
             <img class="chip-icon" src="assets/svg/Animation_Disabled.svg" />
             <div class="text-wrapper-16">애니메이션</div>
           </div>
-          <div class="chip-2" data-selected-icon="assets/svg/Movie_Selected.svg" data-disabled-icon="assets/svg/Movie_Disabled.svg">
+          <div class="chip-2" data-selected-icon="assets/svg/Movie_Selected.svg" data-disabled-icon="assets/svg/Movie_Disabled.svg" data-list="cardList-movie">
             <img class="chip-icon" src="assets/svg/Movie_Disabled.svg" />
             <div class="text-wrapper-16">영화</div>
           </div>
-          <div class="chip-2" data-selected-icon="assets/svg/Series_Selected.svg" data-disabled-icon="assets/svg/Series_Disabled.svg">
+          <div class="chip-2" data-selected-icon="assets/svg/Series_Selected.svg" data-disabled-icon="assets/svg/Series_Disabled.svg" data-list="cardList-series">
             <img class="chip-icon" src="assets/svg/Series_Disabled.svg" />
             <div class="text-wrapper-16">시리즈</div>
           </div>
         </div>
-        <div class="card-list-2">
+
+        <!-- 콘서트 -->
+        <div class="card-list-2" id="cardList-concert">
           <div class="card-thumbnail">
             <img class="image-3" src="assets/Img/C_thumbnail_1.png" />
             <div class="text-area-3">
@@ -203,6 +205,123 @@
             <div class="text-area-3">
               <div class="text-wrapper-17">2026 HA HYUNSANG ...</div>
               <div class="text-wrapper-18">콘서트</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 애니메이션 -->
+        <div class="card-list-2" id="cardList-animation" style="display:none">
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/A_thumbnail_1.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">애니메이션</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/A_thumbnail_2.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">애니메이션</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/A_thumbnail_3.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">애니메이션</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/A_thumbnail_4.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">애니메이션</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/A_thumbnail_5.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">애니메이션</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 영화 -->
+        <div class="card-list-2" id="cardList-movie" style="display:none">
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/M_thumbnail_1.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">영화</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/M_thumbnail_2.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">영화</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/M_thumbnail_3.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">영화</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/M_thumbnail_4.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">영화</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/M_thumbnail_5.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">영화</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 시리즈 -->
+        <div class="card-list-2" id="cardList-series" style="display:none">
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/S_thumbnail_1.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">시리즈</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/S_thumbnail_2.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">시리즈</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/S_thumbnail_3.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">시리즈</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/S_thumbnail_4.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">시리즈</div>
+            </div>
+          </div>
+          <div class="card-thumbnail">
+            <img class="image-3" src="assets/Img/S_thumbnail_5.png" />
+            <div class="text-area-3">
+              <div class="text-wrapper-17">작품 제목</div>
+              <div class="text-wrapper-18">시리즈</div>
             </div>
           </div>
         </div>
@@ -650,6 +769,8 @@
       const chipsContainer = document.getElementById('genreChips');
       if (!chipsContainer) return;
 
+      const allLists = document.querySelectorAll('.card-list-2');
+
       chipsContainer.querySelectorAll('.chip, .chip-2').forEach(chip => {
         chip.addEventListener('click', () => {
           // 모든 칩 비활성화
@@ -661,12 +782,22 @@
             if (label) label.className = 'text-wrapper-16';
           });
 
+          // 모든 카드 리스트 숨기기
+          allLists.forEach(list => { list.style.display = 'none'; });
+
           // 클릭한 칩 활성화
           const icon = chip.querySelector('.chip-icon');
           const label = chip.querySelector('.text-wrapper-16');
           icon.src = chip.dataset.selectedIcon;
           chip.className = 'chip';
           if (label) label.className = 'text-wrapper-15';
+
+          // 해당 카드 리스트 표시
+          const targetList = document.getElementById(chip.dataset.list);
+          if (targetList) {
+            targetList.style.display = 'flex';
+            targetList.scrollLeft = 0;
+          }
         });
       });
     });
@@ -675,37 +806,38 @@
   <!-- Section 4 Card List: wheel + drag scroll -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const cardList = document.querySelector('.card-list-2');
-      if (!cardList) return;
-
-      // 마우스 휠 → 좌우 스크롤 (오버플로우일 때만 동작)
-      cardList.addEventListener('wheel', e => {
-        if (cardList.scrollWidth <= cardList.clientWidth) return;
-        e.preventDefault();
-        cardList.scrollLeft += e.deltaY + e.deltaX;
-      }, { passive: false });
-
-      // 드래그 스크롤
+      // 모든 카드 리스트에 휠 + 드래그 스크롤 적용
       let isDragging = false;
+      let dragTarget = null;
       let startX = 0;
       let startScrollLeft = 0;
 
-      cardList.addEventListener('mousedown', e => {
-        if (cardList.scrollWidth <= cardList.clientWidth) return;
-        isDragging = true;
-        startX = e.pageX;
-        startScrollLeft = cardList.scrollLeft;
-        cardList.classList.add('dragging');
+      document.querySelectorAll('.card-list-2').forEach(cardList => {
+        cardList.addEventListener('wheel', e => {
+          if (cardList.scrollWidth <= cardList.clientWidth) return;
+          e.preventDefault();
+          cardList.scrollLeft += e.deltaY + e.deltaX;
+        }, { passive: false });
+
+        cardList.addEventListener('mousedown', e => {
+          if (cardList.scrollWidth <= cardList.clientWidth) return;
+          isDragging = true;
+          dragTarget = cardList;
+          startX = e.pageX;
+          startScrollLeft = cardList.scrollLeft;
+          cardList.classList.add('dragging');
+        });
       });
 
       document.addEventListener('mousemove', e => {
-        if (!isDragging) return;
-        cardList.scrollLeft = startScrollLeft - (e.pageX - startX);
+        if (!isDragging || !dragTarget) return;
+        dragTarget.scrollLeft = startScrollLeft - (e.pageX - startX);
       });
 
       document.addEventListener('mouseup', () => {
+        if (dragTarget) dragTarget.classList.remove('dragging');
         isDragging = false;
-        cardList.classList.remove('dragging');
+        dragTarget = null;
       });
     });
   </script>
