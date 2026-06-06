@@ -1,112 +1,231 @@
+/* ============================================================
+   text_styles.css — Typography Design Tokens
+   Source: Figma design system type styles
+   ============================================================ */
+
 :root {
-    /* Title Styles */
-    --title---b32: 32px;
-    --title---b28: 28px;
-    --title---b22: 22px;
+  /* ---- Main Display (Hero Heading) — KBL Jump Bold ---- */
+  --main-font-family: 'KBLJump', 'Pretendard', sans-serif;
+  --main-font-weight: 700;
+  --main-font-size: 52px;
+  --main-line-height: 1.3;
+  --main-letter-spacing: 0px;
+  --main-font-style: normal;
 
-    /* Body Styles */
-    --body---s-b24: 24px;
-    --body---m22: 22px;
-    --body---r20: 20px;
-    --body---l20: 20px;
-    --body---b18: 18px;
-    --body---s-b16: 16px;
-    --body---b16: 16px;
-    --body---r16: 16px;
-    --body---m14: 14px;
-    --body---r14: 14px;
-    --body---l13: 13px;
-    --body---r12: 12px;
+  /* ---- Title Bold 32 ---- */
+  --title-b32-font-family: 'KBLJump', 'Pretendard', sans-serif;
+  --title-b32-font-weight: 700;
+  --title-b32-font-size: 32px;
+  --title-b32-line-height: 140%;
+  --title-b32-letter-spacing: 0px;
+  --title-b32-font-style: normal;
+
+  /* ---- Title Bold 28 ---- */
+  --title-b28-font-family: 'KBLJump', 'Pretendard', sans-serif;
+  --title-b28-font-weight: 700;
+  --title-b28-font-size: 28px;
+  --title-b28-line-height: 140%;
+  --title-b28-letter-spacing: 0px;
+  --title-b28-font-style: normal;
+
+  /* ---- Body SemiBold 24 ---- */
+  --body-sb24-font-family: 'Pretendard', sans-serif;
+  --body-sb24-font-weight: 600;
+  --body-sb24-font-size: 24px;
+  --body-sb24-line-height: 140%;
+  --body-sb24-letter-spacing: 0px;
+  --body-sb24-font-style: normal;
+
+  /* ---- Body Medium 22 ---- */
+  --body-m22-font-family: 'Pretendard', sans-serif;
+  --body-m22-font-weight: 500;
+  --body-m22-font-size: 22px;
+  --body-m22-line-height: 140%;
+  --body-m22-letter-spacing: 0px;
+  --body-m22-font-style: normal;
+
+  /* ---- Body Regular 20 ---- */
+  --body-r20-font-family: 'Pretendard', sans-serif;
+  --body-r20-font-weight: 400;
+  --body-r20-font-size: 20px;
+  --body-r20-line-height: 140%;
+  --body-r20-letter-spacing: 0px;
+  --body-r20-font-style: normal;
+
+  /* ---- Body Light 20 ---- */
+  --body-l20-font-family: 'Pretendard', sans-serif;
+  --body-l20-font-weight: 300;
+  --body-l20-font-size: 20px;
+  --body-l20-line-height: 140%;
+  --body-l20-letter-spacing: 0px;
+  --body-l20-font-style: normal;
+
+  /* ---- Body SemiBold 16 ---- */
+  --body-sb16-font-family: 'Pretendard', sans-serif;
+  --body-sb16-font-weight: 600;
+  --body-sb16-font-size: 16px;
+  --body-sb16-line-height: 140%;
+  --body-sb16-letter-spacing: 0px;
+  --body-sb16-font-style: normal;
+
+  /* ---- Body Bold 16 ---- */
+  --body-b16-font-family: 'Pretendard', sans-serif;
+  --body-b16-font-weight: 700;
+  --body-b16-font-size: 16px;
+  --body-b16-line-height: 140%;
+  --body-b16-letter-spacing: 0px;
+  --body-b16-font-style: normal;
+
+  /* ---- Body Regular 16 ---- */
+  --body-r16-font-family: 'Pretendard', sans-serif;
+  --body-r16-font-weight: 400;
+  --body-r16-font-size: 16px;
+  --body-r16-line-height: 150%;
+  --body-r16-letter-spacing: 0px;
+  --body-r16-font-style: normal;
+
+  /* ---- Body Medium 14 ---- */
+  --body-m14-font-family: 'Pretendard', sans-serif;
+  --body-m14-font-weight: 500;
+  --body-m14-font-size: 14px;
+  --body-m14-line-height: 140%;
+  --body-m14-letter-spacing: 0px;
+  --body-m14-font-style: normal;
+
+  /* ---- Body Regular 14 ---- */
+  --body-r14-font-family: 'Pretendard', sans-serif;
+  --body-r14-font-weight: 400;
+  --body-r14-font-size: 14px;
+  --body-r14-line-height: 140%;
+  --body-r14-letter-spacing: 0px;
+  --body-r14-font-style: normal;
+
+  /* ---- Body White Medium 14 ---- */
+  --body-w-m14-font-family: 'Pretendard', sans-serif;
+  --body-w-m14-font-weight: 500;
+  --body-w-m14-font-size: 14px;
+  --body-w-m14-line-height: 140%;
+  --body-w-m14-letter-spacing: 0px;
+  --body-w-m14-font-style: normal;
 }
 
-/* Title Classes */
-.title-b32,
-.title---b32 {
-    font-size: var(--title---b32);
-    font-weight: 700;
+/* ============================================================
+   Utility Classes
+   ============================================================ */
+
+.main-text {
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  letter-spacing: var(--main-letter-spacing);
+  font-style: var(--main-font-style);
 }
 
-.title-b28,
-.title---b28 {
-    font-size: var(--title---b28);
-    font-weight: 700;
+.title-b32 {
+  font-family: var(--title-b32-font-family);
+  font-weight: var(--title-b32-font-weight);
+  font-size: var(--title-b32-font-size);
+  line-height: var(--title-b32-line-height);
+  letter-spacing: var(--title-b32-letter-spacing);
+  font-style: var(--title-b32-font-style);
 }
 
-.title-b22,
-.title---b22 {
-    font-size: var(--title---b22);
-    font-weight: 700;
+.title-b28 {
+  font-family: var(--title-b28-font-family);
+  font-weight: var(--title-b28-font-weight);
+  font-size: var(--title-b28-font-size);
+  line-height: var(--title-b28-line-height);
+  letter-spacing: var(--title-b28-letter-spacing);
+  font-style: var(--title-b28-font-style);
 }
 
-/* Body Classes */
-.body-s-b24,
-.body---s-b24 {
-    font-size: var(--body---s-b24);
-    font-weight: 600;
+.body-sb24 {
+  font-family: var(--body-sb24-font-family);
+  font-weight: var(--body-sb24-font-weight);
+  font-size: var(--body-sb24-font-size);
+  line-height: var(--body-sb24-line-height);
+  letter-spacing: var(--body-sb24-letter-spacing);
+  font-style: var(--body-sb24-font-style);
 }
 
-.body-m22,
-.body---m22 {
-    font-size: var(--body---m22);
-    font-weight: 500;
+.body-m22 {
+  font-family: var(--body-m22-font-family);
+  font-weight: var(--body-m22-font-weight);
+  font-size: var(--body-m22-font-size);
+  line-height: var(--body-m22-line-height);
+  letter-spacing: var(--body-m22-letter-spacing);
+  font-style: var(--body-m22-font-style);
 }
 
-.body-r20,
-.body---r20 {
-    font-size: var(--body---r20);
-    font-weight: 400;
+.body-r20 {
+  font-family: var(--body-r20-font-family);
+  font-weight: var(--body-r20-font-weight);
+  font-size: var(--body-r20-font-size);
+  line-height: var(--body-r20-line-height);
+  letter-spacing: var(--body-r20-letter-spacing);
+  font-style: var(--body-r20-font-style);
 }
 
-.body-l20,
-.body---l20 {
-    font-size: var(--body---l20);
-    font-weight: 300;
+.body-l20 {
+  font-family: var(--body-l20-font-family);
+  font-weight: var(--body-l20-font-weight);
+  font-size: var(--body-l20-font-size);
+  line-height: var(--body-l20-line-height);
+  letter-spacing: var(--body-l20-letter-spacing);
+  font-style: var(--body-l20-font-style);
 }
 
-.body-b18,
-.body---b18 {
-    font-size: var(--body---b18);
-    font-weight: 700;
+.body-sb16 {
+  font-family: var(--body-sb16-font-family);
+  font-weight: var(--body-sb16-font-weight);
+  font-size: var(--body-sb16-font-size);
+  line-height: var(--body-sb16-line-height);
+  letter-spacing: var(--body-sb16-letter-spacing);
+  font-style: var(--body-sb16-font-style);
 }
 
-.body-s-b16,
-.body---s-b16 {
-    font-size: var(--body---s-b16);
-    font-weight: 600;
+.body-b16 {
+  font-family: var(--body-b16-font-family);
+  font-weight: var(--body-b16-font-weight);
+  font-size: var(--body-b16-font-size);
+  line-height: var(--body-b16-line-height);
+  letter-spacing: var(--body-b16-letter-spacing);
+  font-style: var(--body-b16-font-style);
 }
 
-.body-b16,
-.body---b16 {
-    font-size: var(--body---b16);
-    font-weight: 700;
+.body-r16 {
+  font-family: var(--body-r16-font-family);
+  font-weight: var(--body-r16-font-weight);
+  font-size: var(--body-r16-font-size);
+  line-height: var(--body-r16-line-height);
+  letter-spacing: var(--body-r16-letter-spacing);
+  font-style: var(--body-r16-font-style);
 }
 
-.body-r16,
-.body---r16 {
-    font-size: var(--body---r16);
-    font-weight: 400;
+.body-m14 {
+  font-family: var(--body-m14-font-family);
+  font-weight: var(--body-m14-font-weight);
+  font-size: var(--body-m14-font-size);
+  line-height: var(--body-m14-line-height);
+  letter-spacing: var(--body-m14-letter-spacing);
+  font-style: var(--body-m14-font-style);
 }
 
-.body-m14,
-.body---m14 {
-    font-size: var(--body---m14);
-    font-weight: 500;
+.body-r14 {
+  font-family: var(--body-r14-font-family);
+  font-weight: var(--body-r14-font-weight);
+  font-size: var(--body-r14-font-size);
+  line-height: var(--body-r14-line-height);
+  letter-spacing: var(--body-r14-letter-spacing);
+  font-style: var(--body-r14-font-style);
 }
 
-.body-r14,
-.body---r14 {
-    font-size: var(--body---r14);
-    font-weight: 400;
-}
-
-.body-l13,
-.body---l13 {
-    font-size: var(--body---l13);
-    font-weight: 300;
-}
-
-.body-r12,
-.body---r12 {
-    font-size: var(--body---r12);
-    font-weight: 400;
+.body-w-m14 {
+  font-family: var(--body-w-m14-font-family);
+  font-weight: var(--body-w-m14-font-weight);
+  font-size: var(--body-w-m14-font-size);
+  line-height: var(--body-w-m14-line-height);
+  letter-spacing: var(--body-w-m14-letter-spacing);
+  font-style: var(--body-w-m14-font-style);
 }
