@@ -765,6 +765,44 @@
     });
   </script>
 
+  <!-- 마우스 휠 섹션 네비게이션 -->
+  <!-- 트랙패드(작은 delta)는 네이티브 snap에 맡기고,
+       마우스 휠(큰 delta)일 때만 섹션 단위로 이동 -->
+  <script>
+    (function () {
+      const SELECTOR = '.desktop > .container, .desktop > .container-2, .desktop > .frame-2, .desktop > .frame-3, .desktop > .frame-14, .desktop > .frame-19';
+      let locked = false;
+
+      window.addEventListener('wheel', (e) => {
+        // 카드 리스트 위에서 카드가 오버플로우 중이면 카드 리스트가 처리
+        if (e.target.closest('.card-list-2')) {
+          const list = e.target.closest('.card-list-2');
+          if (list.scrollWidth > list.clientWidth) return;
+        }
+
+        // 트랙패드(작은 pixel delta)는 네이티브 snap에 위임
+        if (Math.abs(e.deltaY) < 30) return;
+
+        // 마우스 휠 → 직접 섹션 이동
+        e.preventDefault();
+        if (locked) return;
+
+        const sections = [...document.querySelectorAll(SELECTOR)];
+        const currentIdx = sections.reduce((best, s, i) => {
+          const dist = Math.abs(s.getBoundingClientRect().top);
+          return dist < best.dist ? { dist, i } : best;
+        }, { dist: Infinity, i: 0 }).i;
+
+        const nextIdx = currentIdx + (e.deltaY > 0 ? 1 : -1);
+        if (nextIdx < 0 || nextIdx >= sections.length) return;
+
+        locked = true;
+        sections[nextIdx].scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => { locked = false; }, 900);
+      }, { passive: false });
+    })();
+  </script>
+
   <!-- Section 2 cardtextfield 등장 모션 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
