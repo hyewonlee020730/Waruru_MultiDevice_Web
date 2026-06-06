@@ -932,6 +932,7 @@ html {
   box-sizing: border-box;
   margin-left: calc(-40px - max(0px, (100vw - 1204px) / 2));
   padding-left: calc(40px + max(0px, (100vw - 1204px) / 2));
+  padding-right: calc(40px + max(0px, (100vw - 1204px) / 2));
   background-color: transparent;
 }
 
