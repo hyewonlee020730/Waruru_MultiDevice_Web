@@ -583,20 +583,27 @@ html {
   align-self: stretch;
   width: 100%;
   background-color: var(--color-grayscale-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 76px;
+  box-sizing: border-box;
+  gap: clamp(80px, calc(4.76vw + 43.4px), 112px);
 }
 
 .desktop .text-area-2 {
   width: min(100%, 1204px);
   padding: 0 40px;
   box-sizing: border-box;
-  top: 76px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  position: absolute;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
 }
 
 .desktop .text-wrapper-13 {
@@ -652,12 +659,11 @@ html {
   padding-right: 40px;
   box-sizing: border-box;
   align-items: flex-start;
-  justify-content: center;
   gap: 26px;
-  position: absolute;
-  top: calc(50.00% - 180px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
 }
 
 .desktop .chips {
@@ -2357,6 +2363,15 @@ html {
 
   .desktop .card-overlay-label {
     font-size: clamp(14px, calc(2.9vw + 4px), 26px);
+  }
+
+  /* 섹션 4 — 텍스트와 칩/카드 간격 */
+  .desktop .frame-3 {
+    gap: clamp(74px, calc(1.47vw + 68.7px), 80px);
+  }
+
+  .desktop .chips {
+    gap: 6px;
   }
 
   /* 섹션 8 뉴스룸 — 모바일 레이아웃 */
