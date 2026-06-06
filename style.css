@@ -617,6 +617,12 @@ html {
   justify-content: center;
 }
 
+.desktop .app-icon {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
 .desktop .star-3 {
   width: 310px;
   height: auto;
