@@ -2128,8 +2128,8 @@ html {
 
   /* 섹션 2 — 카드 스택 레이아웃 */
   .desktop .container-2 {
-    height: auto;
-    overflow-y: visible;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     padding: 24px 16px 40px;
