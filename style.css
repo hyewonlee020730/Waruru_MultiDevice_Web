@@ -537,6 +537,10 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  max-width: 1204px;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .desktop .text-wrapper-12 {
@@ -582,7 +586,9 @@ html {
 }
 
 .desktop .text-area-2 {
-  width: 501px;
+  width: min(100%, 1204px);
+  padding: 0 40px;
+  box-sizing: border-box;
   top: 76px;
   left: 50%;
   transform: translateX(-50%);
@@ -844,7 +850,9 @@ html {
 }
 
 .desktop .text-area-4 {
-  width: 623px;
+  width: min(100%, 1204px);
+  padding: 0 40px;
+  box-sizing: border-box;
   top: 76px;
   left: 50%;
   transform: translateX(-50%);
@@ -900,10 +908,13 @@ html {
 
 .desktop .group-2 {
   position: absolute;
-  top: calc(50.00% - 191px);
-  left: calc(50.00% - 378px);
-  width: 756px;
-  height: 559px;
+  top: calc(50% + 88.5px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .desktop .tooltip {
@@ -954,27 +965,28 @@ html {
 }
 
 .desktop .frame-6 {
-  position: absolute;
-  top: calc(50% - 40px);
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .desktop .poster-kr {
-  height: 497px;
-  width: auto;
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 /* ---- Card Flip ---- */
+/* 360px(mobile) → 1200px(desktop) 선형 스케일, 1200px+ max 고정
+   width : 316px → 374px  (slope ≈ 6.9vw + 291px)
+   height: 420px → 497px  (slope ≈ 9.2vw + 387px, 3:4 비율 유지) */
 .desktop .card-flip {
   perspective: 1000px;
   cursor: pointer;
-  width: 374px;
-  height: 497px;
+  width: clamp(316px, calc(6.9vw + 291px), 374px);
+  height: clamp(420px, calc(9.2vw + 387px), 497px);
 }
 
 .desktop .card-flip-inner {
@@ -1001,12 +1013,9 @@ html {
   transform: rotateY(-180deg);
 }
 
+/* 360px → 1440px: 190px → 221px (변화 최소화) */
 .desktop .tooltip-kr {
-  position: absolute;
-  top: calc(50% + 219px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 221px;
+  width: clamp(190px, calc(2.9vw + 180px), 221px);
   height: auto;
 }
 
@@ -1269,7 +1278,9 @@ html {
 }
 
 .desktop .text-area-5 {
-  width: 623px;
+  width: min(100%, 1204px);
+  padding: 0 40px;
+  box-sizing: border-box;
   top: 76px;
   left: 50%;
   transform: translateX(-50%);
@@ -2058,3 +2069,224 @@ html {
 .desktop .cardtextfield-4.ctf-visible { opacity: 1;   transform: translateY(0); }
 .desktop .cardtextfield-5.ctf-visible { opacity: 1;   transform: translateY(0); }
 .desktop .cardtextfield-6.ctf-visible { opacity: 0.7; transform: translateY(0); }
+
+/* ============================================================
+   Mobile (max 767px) — 섹션별 커스텀 스타일
+   ============================================================ */
+
+/* 섹션 1 */
+.sec1-desc-mobile { display: none; }
+
+/* 섹션 2 */
+.sec2-desc-mobile { display: none; }
+
+/* 섹션 4 줄바꿈 — 기본: 까지. 다음 / 408px 이하: 공간에서 다음 */
+.br-sec4-small { display: none; }
+
+/* 섹션 5 본문 */
+.sec5-desc-mobile { display: none; }
+.br-sec5-small { display: none; }
+
+/* 섹션 5 툴팁 */
+.tooltip-kr--mobile { display: none; }
+
+/* 섹션 6 본문 */
+.sec6-desc-mobile { display: none; }
+
+
+@media (max-width: 767px) {
+  /* 섹션 1 제목: 24px(360px) → 32px(767px) */
+  .desktop .p {
+    font-size: clamp(24px, calc(1.96vw + 17px), 32px);
+  }
+
+  /* 섹션 2 제목: 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-10 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 2 본문: 12px(360px) → 18px(767px) */
+  .sec2-desc-desktop { display: none; }
+  .sec2-desc-mobile {
+    display: block;
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+  }
+
+  /* 섹션 2 — 카드 스택 레이아웃 */
+  .desktop .container-2 {
+    height: auto;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px 40px;
+    box-sizing: border-box;
+  }
+
+  .desktop .text-area {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    order: 1;
+    margin-bottom: 24px;
+  }
+
+  .desktop .image-area {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    order: 2;
+  }
+
+  /* 카드 공통: 절대위치 해제, 너비 82% */
+  .desktop .cardtextfield,
+  .desktop .cardtextfield-2,
+  .desktop .cardtextfield-3,
+  .desktop .cardtextfield-4,
+  .desktop .cardtextfield-5,
+  .desktop .cardtextfield-6 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 82%;
+    height: auto;
+    min-height: auto;
+  }
+
+  /* 좌측 정렬 (4, 5, 6) */
+  .desktop .cardtextfield-4,
+  .desktop .cardtextfield-5,
+  .desktop .cardtextfield-6 {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  /* 우측 정렬 (1, 2, 3) */
+  .desktop .cardtextfield,
+  .desktop .cardtextfield-2,
+  .desktop .cardtextfield-3 {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  /* 순서: 4 → 1 → 5 → 2 → 6 → 3 */
+  .desktop .cardtextfield-4 { order: 1; }
+  .desktop .cardtextfield   { order: 2; }
+  .desktop .cardtextfield-5 { order: 3; }
+  .desktop .cardtextfield-2 { order: 4; }
+  .desktop .cardtextfield-6 { order: 5; }
+  .desktop .cardtextfield-3 { order: 6; }
+
+  /* 섹션 3 제목: 14px(360px) → 24px(767px) */
+  .desktop .text-wrapper-12 {
+    font-size: clamp(14px, calc(2.46vw + 5.1px), 24px);
+  }
+
+  /* 섹션 4 — 408px 이하: 줄바꿈 위치 변경 */
+  @media (max-width: 408px) {
+    .br-sec4-default { display: none; }
+    .br-sec4-small { display: inline; }
+  }
+
+  /* 섹션 5 본문: 데스크톱 숨기고 모바일 표시 */
+  .sec5-desc-desktop { display: none; }
+  .sec5-desc-mobile { display: block; }
+
+  /* 섹션 5 툴팁: 모바일 전환 */
+  .tooltip-kr--desktop { display: none; }
+  .tooltip-kr--mobile { display: block; }
+
+  /* 섹션 6 본문: 데스크톱 숨기고 모바일 표시 */
+  .sec6-desc-desktop { display: none; }
+  .sec6-desc-mobile { display: block; }
+
+  /* 섹션 5 — 767px 이하: 공유하고, 다음 줄바꿈 */
+  .br-sec5-small { display: inline; }
+
+  /* 섹션 4·5·7·8 제목 (.text-wrapper-13): 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-13,
+  #genre .text-wrapper-13,
+  .text-area-4 .text-wrapper-13 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 4·5 본문 (.div-2): 12px(360px) → 18px(767px) */
+  .desktop .div-2 {
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+  }
+
+  /* 섹션 6 제목 (.text-wrapper-29): 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-29 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 6 본문 (.OST): 12px(360px) → 18px(767px) */
+  .desktop .OST {
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+  }
+
+  /* 섹션 8 Q&A 질문·답변: 12px(360px) → 18px(767px) */
+  .desktop .text-wrapper-41,
+  .desktop .text-wrapper-43 {
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+  }
+
+  /* 섹션 3 배경 이미지 */
+  .desktop .frame-2 {
+    background-image: url('assets/Img/Background.png');
+    background-size: 767px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  /* 섹션 3 앱 아이콘: 100px(360px) → 140px(767px) */
+  .desktop .app-icon {
+    width: clamp(100px, calc(9.8vw + 65px), 140px);
+    height: clamp(100px, calc(9.8vw + 65px), 140px);
+    margin-top: 22px;
+  }
+
+  /* 섹션 3 로고: 26px(360px) → 32px(767px) */
+  .desktop .star-3 {
+    height: clamp(26px, calc(1.47vw + 20.7px), 32px);
+  }
+
+  /* 본문: 데스크톱용 숨기고 모바일용 표시 */
+  .sec1-desc-desktop { display: none; }
+  .sec1-desc-mobile {
+    display: block;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* 카드 리스트: 170px(360px뷰포트) → 312px(767px뷰포트) */
+  .desktop .card {
+    height: clamp(170px, calc(34.9vw + 44px), 312px);
+    border-radius: 6px;
+  }
+
+  .desktop .card-track {
+    gap: clamp(8px, calc(1.5vw + 2.6px), 14px);
+  }
+
+  .desktop .card-overlay-icon {
+    width: clamp(60px, calc(11.8vw + 18px), 108px);
+    height: clamp(60px, calc(11.8vw + 18px), 108px);
+  }
+
+  .desktop .card-overlay-label {
+    font-size: clamp(14px, calc(2.9vw + 4px), 26px);
+  }
+}
