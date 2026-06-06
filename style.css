@@ -924,8 +924,14 @@ html {
   overflow-y: hidden;
 }
 
-/* 카드 리스트 — 배경 투명 처리 (스크롤 컨테이너 기본 white 배경 제거) */
+/* 카드 리스트 — 100vw 스크롤 컨테이너 + 좌측 padding으로 칩스 정렬 유지
+   - 시작: 첫 카드가 칩스와 동일한 좌측 위치에서 출발
+   - 스크롤: 카드가 화면 왼쪽 끝까지 넘어가며 잘리지 않음 */
 .desktop #genre .card-list-2 {
+  width: 100vw;
+  box-sizing: border-box;
+  margin-left: calc(-40px - max(0px, (100vw - 1204px) / 2));
+  padding-left: calc(40px + max(0px, (100vw - 1204px) / 2));
   background-color: transparent;
 }
 
