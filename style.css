@@ -924,10 +924,9 @@ html {
   overflow-y: hidden;
 }
 
-/* 카드 리스트 — 부모 padding·max-width 제약을 벗어나 화면 전체 너비로 표시 */
+/* 카드 리스트 — 배경 투명 처리 (스크롤 컨테이너 기본 white 배경 제거) */
 .desktop #genre .card-list-2 {
-  width: 100vw;
-  margin-left: calc(-40px - max(0px, (100vw - 1204px) / 2));
+  background-color: transparent;
 }
 
 #genre .text-wrapper-13,
