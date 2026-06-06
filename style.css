@@ -216,7 +216,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
+  justify-content: space-between;
   padding: 76px 0px;
   position: relative;
   align-self: stretch;
