@@ -945,11 +945,21 @@
       gnbBackdrop.addEventListener('click', toggleMenu);
 
       mobileNavItems.forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const targetId = item.getAttribute('href');
+          const target = document.querySelector(targetId);
+
           mobileOverlay.classList.remove('open');
           gnbBackdrop.classList.remove('open');
           menuToggle.classList.remove('open');
           document.body.style.overflow = '';
+
+          if (!target) return;
+          requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          });
         });
       });
 
