@@ -342,7 +342,16 @@
       <div class="group-2">
         <img class="tooltip-kr" src="assets/svg/tooltip_kr.svg" alt="말풍선" />
         <div class="frame-6">
-          <img class="poster-kr" src="assets/svg/poster_kr_1.svg" alt="와르르 포스터 카드" />
+          <div class="card-flip" id="sec5Card">
+            <div class="card-flip-inner">
+              <div class="card-flip-front">
+                <img class="poster-kr" src="assets/svg/poster_kr_1.svg" alt="와르르 포스터 앞면" />
+              </div>
+              <div class="card-flip-back">
+                <img class="poster-kr" src="assets/svg/poster_kr_2.svg" alt="와르르 포스터 뒷면" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -939,6 +948,13 @@
           });
         });
       });
+    });
+  </script>
+
+  <script>
+    // 섹션5 카드 플립
+    document.getElementById('sec5Card').addEventListener('click', function () {
+      this.classList.toggle('flipped');
     });
   </script>
 
