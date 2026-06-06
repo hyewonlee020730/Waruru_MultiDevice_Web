@@ -899,7 +899,7 @@ html {
 
 .desktop .text-area-4 {
   width: 623px;
-  top: 128px;
+  top: 76px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -907,6 +907,13 @@ html {
   align-items: center;
   gap: 14px;
   position: absolute;
+}
+
+/* 섹션 5 전용 */
+.text-area-4 .text-wrapper-13 {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 /* 섹션 4 전용 */
@@ -917,7 +924,9 @@ html {
   overflow-y: hidden;
 }
 
-#genre .text-wrapper-13 {
+#genre .text-wrapper-13,
+#newsroom .text-wrapper-13,
+#qa .text-wrapper-13 {
   font-family: 'Pretendard', sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -1254,9 +1263,10 @@ html {
 }
 
 .desktop .text-area-5 {
-  width: 670px;
-  top: 128px;
-  left: 625px;
+  width: 623px;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1268,10 +1278,10 @@ html {
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: var(--title-b32-font-family);
-  font-weight: var(--title-b32-font-weight);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
   color: var(--color-grayscale-black);
-  font-size: var(--title-b32-font-size);
+  font-size: 2rem;
   text-align: center;
   letter-spacing: 0;
   line-height: 44.8px;
@@ -1283,7 +1293,7 @@ html {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
   letter-spacing: 0;
   line-height: 24px;
@@ -1292,8 +1302,8 @@ html {
 .desktop .text-wrapper-30 {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
-  color: #393a3a;
-  font-size: 16px;
+  color: var(--color-grayscale-800);
+  font-size: 1rem;
   letter-spacing: 0;
   line-height: 24px;
 }
@@ -1558,32 +1568,40 @@ html {
   border-color: var(--color-grayscale-100);
 }
 
-.desktop .text-wrapper-35 {
+.desktop .text-area-7 {
+  width: 623px;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
   position: absolute;
-  top: calc(50.00% - 320px);
-  left: calc(50.00% - 43px);
-  font-family: var(--body-r16-font-family);
-  font-weight: var(--body-r16-font-weight);
+}
+
+.desktop .text-wrapper-35 {
+  position: relative;
+  align-self: stretch;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: var(--body-r16-font-size);
+  font-size: 1rem;
   text-align: center;
-  letter-spacing: var(--body-r16-letter-spacing);
-  line-height: var(--body-r16-line-height);
-  white-space: nowrap;
-  font-style: var(--body-r16-font-style);
+  letter-spacing: 0;
+  line-height: 24px;
 }
 
 .desktop .text-wrapper-36 {
-  position: absolute;
-  top: calc(50.00% - 379px);
-  left: calc(50.00% - 241px);
-  font-family: var(--title-b32-font-family);
-  font-weight: var(--title-b32-font-weight);
+  position: relative;
+  align-self: stretch;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
   color: var(--color-grayscale-black);
-  font-size: var(--title-b32-font-size);
+  font-size: 2rem;
   text-align: center;
-  letter-spacing: var(--title-b32-letter-spacing);
-  line-height: var(--title-b32-line-height);
+  letter-spacing: 0;
+  line-height: 44.8px;
   white-space: nowrap;
   font-style: var(--title-b32-font-style);
 }
@@ -1593,7 +1611,7 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  padding: 110px 100px;
+  padding: 76px 100px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -1768,7 +1786,7 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  padding: 110px 211px;
+  padding: 76px 211px;
   position: relative;
   align-self: stretch;
   width: 100%;
