@@ -2129,7 +2129,7 @@ html {
   /* 섹션 2 — 카드 스택 레이아웃 */
   .desktop .container-2 {
     height: calc(100vh - 50px);
-    overflow-y: auto;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     padding: 24px 16px 40px;
@@ -2152,15 +2152,16 @@ html {
     top: auto;
     left: auto;
     width: 100%;
-    height: auto;
-    overflow: visible;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 12px;
     order: 2;
+    flex: 1;
+    min-height: 0;
   }
 
-  /* 카드 공통: 절대위치 해제, 너비 82% */
+  /* 카드 공통: 절대위치 해제, 너비 82%, 높이 비율 분배 */
   .desktop .cardtextfield,
   .desktop .cardtextfield-2,
   .desktop .cardtextfield-3,
@@ -2171,8 +2172,11 @@ html {
     top: auto;
     left: auto;
     width: 82%;
-    height: auto;
-    min-height: auto;
+    flex: 1;
+    min-height: 0;
+    padding: 12px 16px;
+    overflow: hidden;
+    justify-content: center;
   }
 
   /* 좌측 정렬 (4, 5, 6) */
