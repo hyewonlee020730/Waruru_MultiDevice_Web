@@ -1664,6 +1664,14 @@ html {
   aspect-ratio: 1.33;
 }
 
+.desktop .newsroom-thumb {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
 .desktop .frame-17 {
   display: flex;
   flex-direction: column;
@@ -1685,6 +1693,10 @@ html {
   line-height: 22.4px;
   position: relative;
   letter-spacing: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .desktop .text-wrapper-38 {
@@ -1726,6 +1738,14 @@ html {
   height: 18px;
   position: relative;
   aspect-ratio: 1;
+}
+
+/* 왼쪽 화살표 — 첫 페이지에서 비활성(gray-200) */
+.desktop .icon-arrow-l {
+  /* #252627 → #d3d4d4 변환 filter */
+  filter: brightness(0) saturate(100%) invert(87%) sepia(2%) saturate(145%) hue-rotate(131deg) brightness(97%) contrast(88%);
+  cursor: default;
+  pointer-events: none;
 }
 
 .desktop .frame-18 {
