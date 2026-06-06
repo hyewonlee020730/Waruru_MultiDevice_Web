@@ -586,9 +586,6 @@ html {
   position: relative;
   align-self: stretch;
   width: 100%;
-  height: 100vh;
-  padding-top: 68px;
-  box-sizing: border-box;
   background-color: var(--color-grayscale-black);
   display: flex;
   align-items: center;
