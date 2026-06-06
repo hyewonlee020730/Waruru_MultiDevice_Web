@@ -324,7 +324,6 @@ html {
   overflow: hidden;
   border: 1px solid var(--grayscale-700);
   position: relative;
-  opacity: 0.6;
 }
 
 .desktop .card-img {
@@ -334,6 +333,53 @@ html {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.desktop .card:hover .card-img {
+  opacity: 1;
+}
+
+.desktop .card:hover .card-overlay,
+.desktop .card:hover .card-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop .card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 14, 14, 0.52);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.desktop .card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  z-index: 2;
+  padding-top: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.desktop .card-overlay-icon {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.desktop .card-overlay-label {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; /* 28px */
+  color: var(--gray-scale-white);
+  white-space: nowrap;
 }
 
 .desktop .card-label {
