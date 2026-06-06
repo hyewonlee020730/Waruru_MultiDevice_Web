@@ -251,6 +251,7 @@
   .gnb-container {
     gap: 0;
     justify-content: space-between;
+    height: 50px;
   }
 
   .gnb-inner {
