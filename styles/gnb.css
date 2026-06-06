@@ -203,8 +203,8 @@
    Responsive Breakpoints
    ============================================================ */
 
-/* Tablet & Mobile: hide desktop nav, show hamburger */
-@media (max-width: 1279px) {
+/* Mobile only: hide desktop nav, show hamburger */
+@media (max-width: 767px) {
   .gnb-container {
     gap: 0;
     justify-content: space-between;
