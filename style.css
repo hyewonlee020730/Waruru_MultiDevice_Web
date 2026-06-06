@@ -633,18 +633,26 @@ html {
   align-self: stretch;
   width: 100%;
   background-color: var(--color-grayscale-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop .section4-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 4vh, 60px);
+  width: 100%;
 }
 
 .desktop .text-area-2 {
   width: 501px;
-  top: 76px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  position: absolute;
 }
 
 .desktop .text-wrapper-13 {
@@ -702,10 +710,6 @@ html {
   align-items: flex-start;
   justify-content: center;
   gap: 26px;
-  position: absolute;
-  top: calc(50.00% - 180px);
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .desktop .chips {
@@ -919,7 +923,7 @@ html {
 /* 섹션 4 전용 */
 #genre {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 68px);
   overflow-x: clip;
   overflow-y: hidden;
 }
