@@ -638,7 +638,8 @@ html {
 .desktop .text-area-2 {
   width: 501px;
   top: 148px;
-  left: 710px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -666,19 +667,19 @@ html {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
   letter-spacing: 0;
   line-height: 24px;
 }
 
 .desktop .span {
-  font-weight: var(--body-b16-font-weight);
-  font-family: var(--body-b16-font-family);
-  font-style: var(--body-b16-font-style);
-  letter-spacing: var(--body-b16-letter-spacing);
-  line-height: var(--body-b16-line-height);
-  font-size: var(--body-b16-font-size);
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 140%;
+  font-size: 1rem;
 }
 
 .desktop .text-wrapper-14 {
@@ -693,14 +694,18 @@ html {
 .desktop .content-2 {
   display: flex;
   flex-direction: column;
-  max-width: 1226px;
-  width: 1226px;
+  width: 100%;
+  max-width: 1204px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
   align-items: flex-start;
   justify-content: center;
   gap: 26px;
   position: absolute;
   top: calc(50.00% - 142px);
-  left: calc(50.00% - 613px);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .desktop .chips {
@@ -789,13 +794,25 @@ html {
 
 .desktop .card-list-2 {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
-  gap: 18.44px 18.44px;
+  gap: 18px;
   position: relative;
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.desktop .card-list-2::-webkit-scrollbar {
+  display: none;
+}
+
+.desktop .card-list-2.dragging {
+  cursor: grabbing;
 }
 
 .desktop .card-thumbnail {
@@ -809,9 +826,9 @@ html {
 
 .desktop .image-3 {
   position: relative;
-  width: 230px;
-  height: 307px;
-  aspect-ratio: 0.75;
+  width: 210px;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
   object-fit: cover;
 }
 
@@ -821,18 +838,19 @@ html {
   align-items: flex-start;
   gap: 4.61px;
   position: relative;
-  align-self: stretch;
-  width: 100%;
+  width: 210px;
   flex: 0 0 auto;
+  overflow: hidden;
 }
 
 .desktop .text-wrapper-17 {
   position: relative;
-  display: flex;
-  align-items: center;
   align-self: stretch;
   margin-top: -2.3px;
   font-family: var(--body-sb24-font-family);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: var(--body-sb24-font-weight);
   color: var(--color-grayscale-900);
   font-size: var(--body-sb24-font-size);
@@ -857,11 +875,12 @@ html {
 
 .desktop .text-wrapper-19 {
   position: relative;
-  display: flex;
-  align-items: center;
   align-self: stretch;
   margin-top: -2.3px;
   font-family: 'Pretendard', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 600;
   color: var(--color-grayscale-900);
   font-size: 24px;
@@ -872,12 +891,27 @@ html {
 .desktop .text-area-4 {
   width: 623px;
   top: 128px;
-  left: 648px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
   position: absolute;
+}
+
+/* 섹션 4 전용 */
+#genre {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: clip;
+  overflow-y: hidden;
+}
+
+#genre .text-wrapper-13 {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .desktop .text-wrapper-20 {

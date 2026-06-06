@@ -644,6 +644,44 @@
     });
   </script>
 
+  <!-- Section 4 Card List: wheel + drag scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cardList = document.querySelector('.card-list-2');
+      if (!cardList) return;
+
+      // 마우스 휠 → 좌우 스크롤 (오버플로우일 때만 동작)
+      cardList.addEventListener('wheel', e => {
+        if (cardList.scrollWidth <= cardList.clientWidth) return;
+        e.preventDefault();
+        cardList.scrollLeft += e.deltaY + e.deltaX;
+      }, { passive: false });
+
+      // 드래그 스크롤
+      let isDragging = false;
+      let startX = 0;
+      let startScrollLeft = 0;
+
+      cardList.addEventListener('mousedown', e => {
+        if (cardList.scrollWidth <= cardList.clientWidth) return;
+        isDragging = true;
+        startX = e.pageX;
+        startScrollLeft = cardList.scrollLeft;
+        cardList.classList.add('dragging');
+      });
+
+      document.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        cardList.scrollLeft = startScrollLeft - (e.pageX - startX);
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        cardList.classList.remove('dragging');
+      });
+    });
+  </script>
+
   <!-- Navigation JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
