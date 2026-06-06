@@ -924,6 +924,12 @@ html {
   overflow-y: hidden;
 }
 
+/* 카드 리스트 — 부모 padding·max-width 제약을 벗어나 화면 전체 너비로 표시 */
+.desktop #genre .card-list-2 {
+  width: 100vw;
+  margin-left: calc(-40px - max(0px, (100vw - 1204px) / 2));
+}
+
 #genre .text-wrapper-13,
 #newsroom .text-wrapper-13,
 #qa .text-wrapper-13 {
