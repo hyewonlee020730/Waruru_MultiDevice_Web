@@ -1691,7 +1691,7 @@ html {
 }
 
 @media (max-width: 767px) {
-  .list--mobile-only {
+  .desktop .list--mobile-only {
     display: flex;
   }
 }
@@ -2003,11 +2003,12 @@ html {
 
 .desktop .footer {
   display: flex;
+  justify-content: center;
   width: 100%;
   height: 140px;
   align-items: center;
   gap: 10px;
-  padding: 33px 118px;
+  padding: 33px 0;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2021,6 +2022,10 @@ html {
   gap: 10px;
   position: relative;
   flex: 0 0 auto;
+  width: 100%;
+  max-width: 1204px;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .desktop .text-wrapper-44 {
@@ -2092,6 +2097,9 @@ html {
 
 /* 섹션 6 본문 */
 .sec6-desc-mobile { display: none; }
+
+/* Q&A 답변 */
+.qa-text-mobile { display: none; }
 
 
 @media (max-width: 767px) {
@@ -2208,14 +2216,75 @@ html {
   .sec6-desc-desktop { display: none; }
   .sec6-desc-mobile { display: block; }
 
+  /* 섹션 4 칩: 30px(360px) → 48px(767px) */
+  .desktop .chip,
+  .desktop .chip-2 {
+    height: clamp(30px, calc(4.4vw + 14px), 48px);
+    padding: clamp(6px, calc(0.74vw + 3.3px), 9px) clamp(11px, calc(1.72vw + 4.8px), 18px);
+    gap: clamp(4px, calc(0.49vw + 2.2px), 6px);
+  }
+
+  .desktop .chip-icon {
+    width: clamp(13px, calc(2vw + 6px), 21px);
+    height: clamp(13px, calc(2vw + 6px), 21px);
+  }
+
+  /* 섹션 4 카드 썸네일: 140px(360px) → 180px(767px) */
+  .desktop .image-3 {
+    width: clamp(140px, calc(9.8vw + 105px), 180px);
+    border-radius: clamp(12px, calc(0.74vw + 9.3px), 15px);
+  }
+
+  .desktop .text-area-3 {
+    width: clamp(140px, calc(9.8vw + 105px), 180px);
+  }
+
+  .desktop .text-wrapper-17,
+  .desktop .text-wrapper-19 {
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+    line-height: 1.4;
+  }
+
+  .desktop .text-wrapper-18 {
+    font-size: clamp(10px, calc(1.1vw + 6px), 14px);
+    line-height: 1.4;
+  }
+
+  .desktop .card-thumbnail {
+    gap: clamp(12px, calc(0.74vw + 9.3px), 15px);
+  }
+
+  .desktop .card-list-2 {
+    gap: 8px;
+  }
+
   /* 섹션 5 — 767px 이하: 공유하고, 다음 줄바꿈 */
   .br-sec5-small { display: inline; }
 
-  /* 섹션 4·5·7·8 제목 (.text-wrapper-13): 18px(360px) → 28px(767px) */
+  /* 볼드/인라인 span — 부모 clamp 상속 */
+  .desktop .span,
+  .desktop .text-wrapper-14,
+  .desktop .text-wrapper-20,
+  .desktop .text-wrapper-21,
+  .desktop .text-wrapper-30,
+  .desktop .text-wrapper-31 {
+    font-size: inherit;
+  }
+
+  /* 섹션 4·5·8·9 제목 (.text-wrapper-13): 18px(360px) → 28px(767px) */
   .desktop .text-wrapper-13,
   #genre .text-wrapper-13,
-  .text-area-4 .text-wrapper-13 {
+  .text-area-4 .text-wrapper-13,
+  #newsroom .text-wrapper-13,
+  #qa .text-wrapper-13 {
     font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 7 제목 (.text-wrapper-36): 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-36 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+    line-height: 1.4;
+    white-space: normal;
   }
 
   /* 섹션 4·5 본문 (.div-2): 12px(360px) → 18px(767px) */
@@ -2289,4 +2358,31 @@ html {
   .desktop .card-overlay-label {
     font-size: clamp(14px, calc(2.9vw + 4px), 26px);
   }
+
+  /* 섹션 8 뉴스룸 — 모바일 레이아웃 */
+  .desktop .list {
+    border-bottom: none;
+    padding: 16px 0;
+  }
+
+  .desktop .newsroom-thumb {
+    height: clamp(64px, calc(5.9vw + 42.8px), 88px);
+    width: clamp(85px, calc(7.9vw + 56.6px), 117px);
+  }
+
+  /* 섹션 9 Q&A — 모바일 레이아웃 */
+  /* 라인(border) 제거, 콘텐츠가 전체 너비 차지 */
+  .desktop .frame-21 {
+    border-bottom: none;
+    padding: 16px 0;
+  }
+
+  /* 답변 영역 좌측 패딩 제거 */
+  .desktop .frame-25 {
+    padding: 0;
+  }
+
+  /* 데스크톱 답변 숨기고 모바일 답변 표시 */
+  .qa-text-desktop { display: none; }
+  .qa-text-mobile { display: block; }
 }
