@@ -2205,6 +2205,11 @@ html {
   .desktop .cardtextfield-6 { order: 5; }
   .desktop .cardtextfield-3 { order: 6; }
 
+  /* 카드 내부 텍스트: 화면 높이 기준으로 스케일 (iPhone 13 mini 오버플로 방지) */
+  .desktop .text-wrapper-9 {
+    font-size: clamp(10px, 1.5dvh, 14px);
+  }
+
   /* 섹션 3 제목: 14px(360px) → 24px(767px) */
   .desktop .text-wrapper-12 {
     font-size: clamp(14px, calc(2.46vw + 5.1px), 24px);
