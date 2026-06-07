@@ -218,7 +218,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 76px 0px;
+  padding: 100px 0px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -484,7 +484,7 @@ html {
 
 .desktop .text-area {
   position: absolute;
-  top: 76px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   width: min(100%, 1204px);
@@ -588,7 +588,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 76px;
+  padding-top: 100px;
   box-sizing: border-box;
   gap: clamp(96px, calc(4.76vw + 43.4px), 112px);
 }
@@ -860,7 +860,7 @@ html {
   width: min(100%, 1204px);
   padding: 0 40px;
   box-sizing: border-box;
-  top: 76px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1288,7 +1288,7 @@ html {
   width: min(100%, 1204px);
   padding: 0 40px;
   box-sizing: border-box;
-  top: 76px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1594,7 +1594,7 @@ html {
 
 .desktop .text-area-7 {
   width: 623px;
-  top: 76px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1635,7 +1635,7 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  padding: 76px 0;
+  padding: 100px 0;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -1844,7 +1844,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 76px 0;
+  padding: 100px 0;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -2144,6 +2144,7 @@ html {
     transform: none;
     width: 100%;
     padding: 0;
+    padding-top: 90px;
     order: 1;
     margin-bottom: 24px;
   }
@@ -2249,24 +2250,24 @@ html {
     margin-top: 0;
   }
 
-  /* 섹션 4 카드 썸네일: 160px(360px) → 200px(767px) */
+  /* 섹션 4 카드 썸네일: 화면 높이 기준 */
   .desktop .image-3 {
-    width: clamp(160px, calc(9.8vw + 125px), 200px);
+    width: clamp(170px, 23dvh, 290px);
     border-radius: clamp(12px, calc(0.74vw + 9.3px), 15px);
   }
 
   .desktop .text-area-3 {
-    width: clamp(160px, calc(9.8vw + 125px), 200px);
+    width: clamp(170px, 23dvh, 290px);
   }
 
   .desktop .text-wrapper-17,
   .desktop .text-wrapper-19 {
-    font-size: clamp(14px, calc(1.47vw + 8.7px), 20px);
+    font-size: clamp(17px, 2dvh, 28px);
     line-height: 1.4;
   }
 
   .desktop .text-wrapper-18 {
-    font-size: clamp(11px, calc(1.23vw + 6.6px), 16px);
+    font-size: clamp(14px, 1.7dvh, 23px);
     line-height: 1.4;
   }
 
@@ -2397,13 +2398,28 @@ html {
     height: 100dvh;
   }
 
-  /* 섹션 4 — 텍스트와 칩/카드 간격: 섹션 높이(100dvh) 비례 */
-  .desktop .frame-3 {
-    gap: clamp(40px, 6dvh, 96px);
+  /* 전체 섹션 제목 상단 여백 — GNB(50px) + 40px */
+  .desktop .container,
+  .desktop .frame-3,
+  .desktop .frame-14,
+  .desktop .frame-19 {
+    padding-top: 90px;
   }
 
-  /* 칩 ↔ 카드리스트 간격: 섹션 높이 비례 */
+  .desktop .text-area-4,
+  .desktop .text-area-5,
+  .desktop .text-area-7 {
+    top: 90px;
+  }
+
+  /* 섹션 4 — 텍스트↔칩/카드 간격 제거 (content-2 margin-top으로 대체) */
+  .desktop .frame-3 {
+    gap: 0;
+  }
+
+  /* 칩/카드 위치: 화면 높이 기준 직접 지정 */
   .desktop .content-2 {
+    margin-top: clamp(48px, 12dvh, 100px);
     gap: clamp(22px, 3dvh, 36px);
   }
 
