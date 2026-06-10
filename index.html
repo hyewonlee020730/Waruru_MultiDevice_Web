@@ -886,7 +886,7 @@
         if (nextIdx < 0 || nextIdx >= sections.length) return;
 
         locked = true;
-        sections[nextIdx].scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo({ top: sections[nextIdx].offsetTop, behavior: 'smooth' });
         setTimeout(() => { locked = false; }, 900);
       }, { passive: false });
     })();
