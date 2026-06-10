@@ -492,10 +492,39 @@
       </div>
     </div>
 
-    <!-- Section 7: 뭐라고쓰지 -->
+    <!-- Section 7: 각자의 후기가 모여 -->
     <div class="frame-3">
       <div class="text-area-7">
         <p class="text-wrapper-36">각자의 후기가 모여<br>더욱 풍성한 이야기가 돼요</p>
+      </div>
+
+      <!-- Sparkle decorations -->
+      <svg class="sec7-sparkle sec7-sparkle-1" viewBox="0 0 60 60" fill="none" aria-hidden="true"><path d="M30 0L33.5 26.5L60 30L33.5 33.5L30 60L26.5 33.5L0 30L26.5 26.5Z" fill="#D0D0D0"/></svg>
+      <svg class="sec7-sparkle sec7-sparkle-2" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 0L20 16L36 18L20 20L18 36L16 20L0 18L16 16Z" fill="#D0D0D0"/></svg>
+      <svg class="sec7-sparkle sec7-sparkle-3" viewBox="0 0 68 68" fill="none" aria-hidden="true"><path d="M34 0L38 30L68 34L38 38L34 68L30 38L0 34L30 30Z" fill="#D0D0D0"/></svg>
+      <svg class="sec7-sparkle sec7-sparkle-4" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 0L24.5 19.5L44 22L24.5 24.5L22 44L19.5 24.5L0 22L19.5 19.5Z" fill="#D0D0D0"/></svg>
+
+      <!-- Phone mockup scene -->
+      <div class="sec7-scene">
+        <!-- Phone -->
+        <div class="sec7-phone-container">
+          <div class="sec7-phone-outer">
+            <div class="sec7-side-btn sec7-vol"></div>
+            <div class="sec7-side-btn sec7-pwr"></div>
+            <div class="sec7-screen">
+              <img class="sec7-system-bar" src="assets/svg/System bar.png" alt="" aria-hidden="true" />
+              <div class="sec7-scroll-area" id="sec7ScrollArea">
+                <img class="sec7-mockup-img" src="assets/Img/Mockup_in.png" alt="앱 화면 목업" />
+              </div>
+              <img class="sec7-gesture-bar" src="assets/svg/Gesture bar.png" alt="" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+        <!-- Scroll hint -->
+        <div class="sec7-scroll-hint">
+          <svg class="sec7-arrow-up" viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M12 0L24 14H0L12 0Z" fill="#FF5842"/></svg>
+          <button class="sec7-scroll-btn" id="sec7ScrollBtn">위아래로 스크롤해보세요</button>
+        </div>
       </div>
     </div>
 
@@ -932,6 +961,78 @@
         });
       });
     });
+  </script>
+
+  <!-- Section 7 — 폰 목업 자동 스크롤 -->
+  <script>
+    (function () {
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollArea = document.getElementById('sec7ScrollArea');
+        const btn = document.getElementById('sec7ScrollBtn');
+        if (!scrollArea || !btn) return;
+
+        // 폰 위에서 마우스 휠 시 페이지 스냅 이동 방지 (내부 스크롤 허용)
+        scrollArea.addEventListener('wheel', (e) => {
+          if (scrollArea.scrollHeight > scrollArea.clientHeight) {
+            e.stopPropagation();
+          }
+        }, { passive: true });
+
+        let rafId = null;
+        let isAnimating = false;
+
+        function ease(t) {
+          return t < 0.5 ? 4 * t ** 3 : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function animateTo(target, duration, onDone) {
+          const from = scrollArea.scrollTop;
+          const diff = target - from;
+          let t0 = null;
+          function step(ts) {
+            if (!t0) t0 = ts;
+            const p = Math.min((ts - t0) / duration, 1);
+            scrollArea.scrollTop = from + diff * ease(p);
+            if (p < 1) { rafId = requestAnimationFrame(step); }
+            else if (onDone) { onDone(); }
+          }
+          rafId = requestAnimationFrame(step);
+        }
+
+        function runDemo() {
+          if (isAnimating) return;
+          isAnimating = true;
+          scrollArea.scrollTop = 0;
+          const maxScroll = scrollArea.scrollHeight - scrollArea.clientHeight;
+          setTimeout(() => {
+            animateTo(maxScroll, 3500, () => {
+              setTimeout(() => {
+                animateTo(0, 3000, () => { isAnimating = false; });
+              }, 700);
+            });
+          }, 200);
+        }
+
+        btn.addEventListener('click', () => {
+          if (rafId) cancelAnimationFrame(rafId);
+          isAnimating = false;
+          runDemo();
+        });
+
+        // 섹션이 처음 보일 때 자동 실행
+        let autoTriggered = false;
+        const sec7 = btn.closest('.frame-3');
+        if (sec7) {
+          const obs = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !autoTriggered) {
+              autoTriggered = true;
+              setTimeout(runDemo, 700);
+            }
+          }, { threshold: 0.6 });
+          obs.observe(sec7);
+        }
+      });
+    })();
   </script>
 
   <!-- Q&A 아코디언 -->
