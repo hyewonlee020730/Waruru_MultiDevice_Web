@@ -325,8 +325,12 @@ html {
 
 .desktop .card {
   flex: 0 0 auto;
-  height: calc(100dvh * 0.38);
   aspect-ratio: 5 / 7;
+  /* 다른 요소(텍스트 230px + 아이콘 30px + 패딩 200px + gap 60px = 520px) 제외한 나머지 */
+  height: min(
+    calc(100dvh * 0.38),
+    calc(100dvh - 520px)
+  );
   background-color: var(--grayscale-900);
   border-radius: 12px;
   overflow: hidden;
@@ -2263,9 +2267,9 @@ html {
     line-height: 1.6;
   }
 
-  /* 카드 리스트: 170px(360px뷰포트) → 312px(767px뷰포트) */
+  /* 카드 리스트: 190px(360px뷰포트) → 312px(767px뷰포트) */
   .desktop .card {
-    height: clamp(170px, calc(34.9vw + 44px), 312px);
+    height: clamp(190px, calc(30vw + 82px), 312px);
     border-radius: 6px;
   }
 
