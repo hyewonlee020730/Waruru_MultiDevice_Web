@@ -447,7 +447,9 @@
       <div class="text-area-4">
         <p class="text-wrapper-13">함께 본 순간을 함께 남겨보세요</p>
         <p class="div-2 sec5-desc-desktop">
-          <span class="text-wrapper-20">초대장</span><span class="text-wrapper-21">을 주고받아 친구와 </span><span class="text-wrapper-20">같은 기록장을 공유</span><span class="text-wrapper-21">하고, 하나의 작품을 각자의 시선으로 기록할 수 있어요.</span><br>
+          <span class="text-wrapper-20">초대장</span><span class="text-wrapper-21">을 주고받아 친구와 </span><span
+            class="text-wrapper-20">같은 기록장을 공유</span><span class="text-wrapper-21">하고, 하나의 작품을 각자의 시선으로 기록할 수
+            있어요.</span><br>
           <span class="text-wrapper-21">서로의 감상을 읽고 이야기를 이어가며 함께했던 순간을 더욱 풍성한 추억으로 남겨보세요.</span>
         </p>
         <p class="div-2 sec5-desc-mobile"><span class="text-wrapper-20">초대장</span>을 주고받아 친구와 <span
@@ -476,7 +478,9 @@
       <div class="text-area-5">
         <div class="text-wrapper-29">감상을 떠올리는 작은 단서들</div>
         <p class="OST sec6-desc-desktop">
-          <span class="text-wrapper-30">명대사, OST, 장르별 질문 등을 제공하는 </span><span class="text-wrapper-31">작성 키트</span><span class="text-wrapper-30">가 작품 속 기억을 자연스럽게 떠올릴 수 있도록 도와줘요.<br>감상이 막히는 순간에도 생각의 흐름을 이어가며 더 풍부한 후기를 작성할 수 있어요.</span>
+          <span class="text-wrapper-30">명대사, OST, 장르별 질문 등을 제공하는 </span><span class="text-wrapper-31">작성 키트</span><span
+            class="text-wrapper-30">가 작품 속 기억을 자연스럽게 떠올릴 수 있도록 도와줘요.<br>감상이 막히는 순간에도 생각의 흐름을 이어가며 더 풍부한 후기를 작성할 수
+            있어요.</span>
         </p>
         <p class="OST sec6-desc-mobile"><span class="text-wrapper-30">명대사, OST, 장르별 질문 등을 제공하는 </span><span
             class="text-wrapper-31">작성 키트로</span><br>더 풍부한 후기를 작성할 수 있어요.</p>
@@ -788,20 +792,20 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const SELECTOR = '.desktop > .container, .desktop > .container-2, .desktop > .frame-2, .desktop > .frame-3, .desktop > .frame-14, .desktop > .frame-19';
-      const desktop  = document.querySelector('.desktop');
-      const gnb      = document.querySelector('.gnb');
+      const desktop = document.querySelector('.desktop');
+      const gnb = document.querySelector('.gnb');
       const navItems = document.querySelectorAll('#gnbNav .nav-item');
 
       // 섹션 인덱스별 GNB 테마 / nav active id
-      const GNB_THEME  = ['dark','dark','dark','light','light','light','light','white','white'];
-      const NAV_ACTIVE = ['about','about','about','about','about','about','about','newsroom','qa'];
+      const GNB_THEME = ['dark', 'dark', 'dark', 'light', 'light', 'light', 'light', 'white', 'white'];
+      const NAV_ACTIVE = ['about', 'about', 'about', 'about', 'about', 'about', 'about', 'newsroom', 'qa'];
 
-      let currentIndex   = 0;
-      let isAnimating    = false;
-      let wheelLocked    = false;  // 관성 이벤트 차단용 (1500ms)
+      let currentIndex = 0;
+      let isAnimating = false;
+      let wheelLocked = false;  // 관성 이벤트 차단용 (1500ms)
       let wheelLockTimer = null;
-      let wheelAccum     = 0;
-      let wheelEndTimer  = null;
+      let wheelAccum = 0;
+      let wheelEndTimer = null;
 
       const getSections = () => [...document.querySelectorAll(SELECTOR)];
 
@@ -826,11 +830,11 @@
         isAnimating = true;
         // 휠 전용 잠금: 관성이 완전히 가라앉을 때까지 차단
         wheelLocked = true;
-        wheelAccum  = 0;
+        wheelAccum = 0;
         clearTimeout(wheelLockTimer);
         wheelLockTimer = setTimeout(() => {
           wheelLocked = false;
-          wheelAccum  = 0;
+          wheelAccum = 0;
         }, 1500);
         updateGnb(currentIndex);
         updateNav(currentIndex);
@@ -874,20 +878,20 @@
 
       window.addEventListener('touchmove', (e) => {
         if (e.target.closest('#sec7ScrollArea')) return;
-        if (e.target.closest('.card-list-2'))    return;
+        if (e.target.closest('.card-list-2')) return;
         e.preventDefault();
         if (isAnimating) return;
         const delta = touchStartY - e.touches[0].clientY;
         if (Math.abs(delta) < 14) return;
         if (delta < 0) goTo(currentIndex - 1);
-        else            goTo(currentIndex + 1);
+        else goTo(currentIndex + 1);
         touchStartY = e.touches[0].clientY;
       }, { passive: false });
 
       // ── Resize — 인덱스 유지하며 위치 재계산 ──
       window.addEventListener('resize', () => {
         desktop.style.transition = 'none';
-        desktop.style.transform  = `translateY(${-currentIndex * window.innerHeight}px)`;
+        desktop.style.transform = `translateY(${-currentIndex * window.innerHeight}px)`;
         requestAnimationFrame(() => { desktop.style.transition = ''; });
       });
 

@@ -409,6 +409,11 @@ body {
   align-self: stretch;
   width: 100%;
   background-color: var(--color-grayscale-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  box-sizing: border-box;
 }
 
 .desktop .image-area {
@@ -476,10 +481,7 @@ body {
 }
 
 .desktop .text-area {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: min(100%, 1204px);
   padding: 0 40px;
   box-sizing: border-box;
@@ -1996,20 +1998,12 @@ body {
   .desktop .container-2 {
     height: 100dvh;
     overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    padding: 24px 16px 40px;
-    box-sizing: border-box;
+    padding: 90px 16px 40px;
   }
 
   .desktop .text-area {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
     width: 100%;
     padding: 0;
-    padding-top: 90px;
     order: 1;
     margin-bottom: 24px;
   }
@@ -2095,26 +2089,75 @@ body {
   .sec6-desc-desktop { display: none; }
   .sec6-desc-mobile { display: block; }
 
-  /* 섹션 6 씬: 모바일 — float 숨기고 목업 2개만 나란히 */
+  /* 섹션 6 씬: 모바일 — 전체 요소 absolute 배치 */
   .desktop .sec6-scene {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    width: calc(100% - 32px);
-    height: auto;
-    top: clamp(170px, calc(20dvh + 30px), 210px);
+    width: 500px;
+    height: clamp(450px, calc(22.1vw + 370px), 540px);
+    top: 240px;
     transform: translateX(-50%);
   }
 
   .desktop .sec6-list-m,
   .desktop .sec6-row {
-    display: none;
+    display: block;
   }
 
+  /* 목업: 142px(360px) → 184px(767px) */
   .desktop .sec6-mockup {
-    position: static;
-    width: clamp(128px, calc(44vw - 6px), 152px);
+    width: clamp(142px, calc(10.3vw + 105px), 184px);
     height: auto;
+  }
+
+  /* mockup-1 left = 243 - width, 센터 정렬 유지 */
+  .desktop .sec6-mockup-1 {
+    left: clamp(59px, calc(138px - 10.3vw), 101px);
+    top: 0;
+  }
+
+  /* mockup-2 left = 257px 고정 (gap 14px 유지) */
+  .desktop .sec6-mockup-2 {
+    left: 257px;
+    top: 40px;
+  }
+
+  /* list-m: 125px(360px) → 160px(767px) */
+  .desktop .sec6-list-m {
+    width: clamp(125px, calc(8.6vw + 94px), 160px);
+  }
+
+  .desktop .sec6-list-m-1 {
+    left: -5px;
+    top: 28px;
+  }
+
+  .desktop .sec6-list-m-2 {
+    left: 75px;
+    top: 145px;
+  }
+
+  .desktop .sec6-list-m-3 {
+    left: 0;
+    top: 265px;
+  }
+
+  /* row: 142px(360px) → 180px(767px) */
+  .desktop .sec6-row {
+    width: clamp(142px, calc(9.3vw + 108px), 180px);
+  }
+
+  .desktop .sec6-row-1 {
+    left: 370px;
+    top: 50px;
+  }
+
+  .desktop .sec6-row-2 {
+    left: 410px;
+    top: 155px;
+  }
+
+  .desktop .sec6-row-3 {
+    left: 365px;
+    top: 260px;
   }
 
   /* 섹션 4 칩: 30px(360px) → 48px(767px) */
@@ -2363,6 +2406,68 @@ body {
       clamp(220px, calc(100vw - 120px), 360px),
       calc((100dvh - 280px) * 374 / 497)
     );
+  }
+}
+
+/* 섹션 6 — 680px 이상 모바일: 목업 크게, list-m 좌측 / row 우측 배치 */
+@media (min-width: 680px) and (max-width: 767px) {
+  .desktop .sec6-scene {
+    width: 650px;
+    height: 570px;
+    top: 240px;
+  }
+
+  .desktop .sec6-mockup {
+    width: 210px;
+  }
+
+  /* combined 436px → 가로 중앙 정렬 (scene 650px) */
+  .desktop .sec6-mockup-1 {
+    left: 107px;
+    top: 0;
+  }
+
+  .desktop .sec6-mockup-2 {
+    left: 333px;
+    top: 65px;
+  }
+
+  .desktop .sec6-list-m {
+    width: 158px;
+  }
+
+  .desktop .sec6-list-m-1 {
+    left: -15px;
+    top: 22px;
+  }
+
+  .desktop .sec6-list-m-2 {
+    left: 58px;
+    top: 195px;
+  }
+
+  .desktop .sec6-list-m-3 {
+    left: -10px;
+    top: 360px;
+  }
+
+  .desktop .sec6-row {
+    width: 172px;
+  }
+
+  .desktop .sec6-row-1 {
+    left: 523px;
+    top: 45px;
+  }
+
+  .desktop .sec6-row-2 {
+    left: 563px;
+    top: 210px;
+  }
+
+  .desktop .sec6-row-3 {
+    left: 518px;
+    top: 370px;
   }
 }
 
