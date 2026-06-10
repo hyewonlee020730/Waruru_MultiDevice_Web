@@ -554,6 +554,7 @@ html {
   letter-spacing: 0;
   line-height: 140%;
   font-style: normal;
+  margin-bottom: 50px;
 }
 
 .desktop .group {
@@ -562,9 +563,20 @@ html {
   justify-content: center;
 }
 
+.desktop .app-icon-wrapper {
+  display: inline-flex;
+  border-radius: 50px;
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+  transition: box-shadow 1.2s ease;
+}
+
+.desktop .app-icon-wrapper.glow-visible {
+  box-shadow: 0 0 55px rgba(255, 255, 255, 0.65);
+}
+
 .desktop .app-icon {
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   display: block;
 }
 
@@ -1879,6 +1891,23 @@ html {
   line-height: normal;
 }
 /* ============================================================
+   Section 6 — sec6-row / sec6-list-m 등장 모션
+   초기: 위에서 숨겨진 상태 / .s6-visible 추가 시 등장
+   ============================================================ */
+.desktop .sec6-row,
+.desktop .sec6-list-m {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desktop .sec6-row.s6-visible,
+.desktop .sec6-list-m.s6-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
    Section 2 — cardtextfield 등장 모션
    초기: 아래에서 숨겨진 상태 / .ctf-visible 추가 시 등장
    ============================================================ */
@@ -2204,10 +2233,13 @@ html {
   }
 
   /* 섹션 3 앱 아이콘: 100px(360px) → 140px(767px) */
+  .desktop .app-icon-wrapper {
+    margin-top: 22px;
+  }
+
   .desktop .app-icon {
     width: clamp(100px, calc(9.8vw + 65px), 140px);
     height: clamp(100px, calc(9.8vw + 65px), 140px);
-    margin-top: 22px;
   }
 
   /* 섹션 3 로고: 26px(360px) → 32px(767px) */

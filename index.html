@@ -239,7 +239,9 @@
     <div class="frame-2" id="archive">
       <div class="section3-content">
         <p class="text-wrapper-12">흩어지는 감상과 추억을 한곳에 모아<br />오래도록 꺼내볼 수 있는 기록 공간을 소개합니다.</p>
-        <img class="app-icon" src="assets/Img/app_icon.png" alt="와르르 앱 아이콘" />
+        <div class="app-icon-wrapper">
+          <img class="app-icon" src="assets/Img/app_icon.png" alt="와르르 앱 아이콘" />
+        </div>
         <div class="group">
           <img class="star-3" src="assets/svg/logo_kr_T.svg" />
         </div>
@@ -470,7 +472,7 @@
     </div>
 
     <!-- Section 6: 감상을 떠올리는 작은 단서들 -->
-    <div class="frame-3">
+    <div class="frame-3" id="writing-kit">
       <div class="text-area-5">
         <div class="text-wrapper-29">감상을 떠올리는 작은 단서들</div>
         <p class="OST sec6-desc-desktop">
@@ -908,17 +910,75 @@
 
       const fields = selectors.map(s => document.querySelector(s)).filter(Boolean);
 
-      let played = false;
+      let timers = [];
       const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !played) {
-          played = true;
-          fields.forEach((el, i) => {
-            setTimeout(() => el.classList.add('ctf-visible'), i * 120);
-          });
+        if (entries[0].isIntersecting) {
+          timers.forEach(clearTimeout);
+          timers = fields.map((el, i) =>
+            setTimeout(() => el.classList.add('ctf-visible'), i * 120)
+          );
+        } else {
+          timers.forEach(clearTimeout);
+          timers = [];
+          fields.forEach(el => el.classList.remove('ctf-visible'));
         }
       }, { threshold: 0.15 });
 
       observer.observe(section2);
+    });
+  </script>
+
+  <!-- Section 3 앱 아이콘 글로우 모션 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section3 = document.getElementById('archive');
+      const iconWrapper = document.querySelector('.app-icon-wrapper');
+      if (!section3 || !iconWrapper) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          iconWrapper.classList.add('glow-visible');
+        } else {
+          iconWrapper.classList.remove('glow-visible');
+        }
+      }, { threshold: 0.15 });
+
+      observer.observe(section3);
+    });
+  </script>
+
+  <!-- Section 6 row / list-m 등장 모션 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section6 = document.getElementById('writing-kit');
+      if (!section6) return;
+
+      const selectors = [
+        '.sec6-list-m-1',
+        '.sec6-row-1',
+        '.sec6-list-m-2',
+        '.sec6-row-2',
+        '.sec6-list-m-3',
+        '.sec6-row-3',
+      ];
+
+      const items = selectors.map(s => document.querySelector(s)).filter(Boolean);
+
+      let timers = [];
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          timers.forEach(clearTimeout);
+          timers = items.map((el, i) =>
+            setTimeout(() => el.classList.add('s6-visible'), i * 120)
+          );
+        } else {
+          timers.forEach(clearTimeout);
+          timers = [];
+          items.forEach(el => el.classList.remove('s6-visible'));
+        }
+      }, { threshold: 0.15 });
+
+      observer.observe(section6);
     });
   </script>
 
