@@ -358,7 +358,7 @@ html {
 .desktop .card-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(14, 14, 14, 0.52);
+  background-color: rgba(14, 14, 14, 0);
   z-index: 1;
   transition: opacity 0.3s ease;
 }
