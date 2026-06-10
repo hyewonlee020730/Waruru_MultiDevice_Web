@@ -1,15 +1,11 @@
 /* ============================================================
-   Scroll Snap — Full Page
+   풀페이지 스크롤 — JS translateY 방식
    ============================================================ */
 html,
 body {
   background-color: #0e0e0e;
-  overflow-x: hidden;
-}
-
-html {
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 0;
+  overflow: hidden;
+  height: 100%;
 }
 
 .desktop > .container,
@@ -18,20 +14,9 @@ html {
 .desktop > .frame-3,
 .desktop > .frame-14,
 .desktop > .frame-19 {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
   height: 100dvh;
   overflow-x: hidden;
   overflow-y: hidden;
-  touch-action: pan-y;
-}
-
-.desktop > .container-2,
-.desktop > .frame-2,
-.desktop > .frame-3,
-.desktop > .frame-14,
-.desktop > .frame-19 {
-  overflow-x: hidden;
 }
 
 /* KBLJump font — path relative to style.css (project root) */
@@ -56,6 +41,8 @@ html {
   position: relative;
   background-color: var(--gray-scale-black);
   padding-top: 0; /* GNB는 fixed로 섹션에 겹침 — 섹션이 y=0부터 시작 */
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .desktop .GNB {
