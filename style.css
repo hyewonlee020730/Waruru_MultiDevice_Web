@@ -244,7 +244,7 @@ body {
   font-family: var(--body-r16-font-family);
   font-weight: var(--body-r16-font-weight);
   color: var(--grayscale-200);
-  font-size: 1.125rem; /* 18px */
+  font-size: clamp(0.9375rem, 0.26vw + 0.81rem, 1.125rem);
   text-align: center;
   line-height: var(--body-r16-line-height);
   position: relative;
@@ -506,7 +506,7 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   color: var(--grayscalewhite);
-  font-size: 2rem; /* 32px */
+  font-size: clamp(1.375rem, 1.3vw + 1.08rem, 2.25rem);
   text-align: center;
   letter-spacing: 0;
   line-height: 140%;
@@ -519,7 +519,7 @@ body {
   font-family: var(--body-r16-font-family);
   font-weight: var(--body-r16-font-weight);
   color: var(--grayscale-200);
-  font-size: 1.125rem; /* 18px */
+  font-size: clamp(0.9375rem, 0.26vw + 0.81rem, 1.125rem);
   text-align: center;
   letter-spacing: var(--body-r16-letter-spacing);
   line-height: var(--body-r16-line-height);
@@ -645,7 +645,7 @@ body {
   font-size: 1.125rem; /* 18px */
   text-align: center;
   letter-spacing: 0;
-  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
+  line-height: 150%;
 }
 
 .desktop .span {
@@ -1339,7 +1339,7 @@ body {
   font-size: 1.125rem; /* 18px */
   text-align: center;
   letter-spacing: 0;
-  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
+  line-height: 150%;
 }
 
 .desktop .text-wrapper-30 {
@@ -2100,8 +2100,8 @@ body {
   /* 섹션 6 씬: 모바일 — 전체 요소 absolute 배치 */
   .desktop .sec6-scene {
     width: 500px;
-    height: clamp(450px, calc(22.1vw + 370px), 540px);
-    top: 240px;
+    height: clamp(540px, calc(22.1vw + 460px), 640px);
+    top: 230px;
     transform: translateX(-50%);
   }
 
@@ -2116,16 +2116,16 @@ body {
     height: auto;
   }
 
-  /* mockup-1 left = 243 - width, 센터 정렬 유지 */
+  /* mockup-1: 좌측, 살짝 뷰포트 왼쪽 클립 */
   .desktop .sec6-mockup-1 {
-    left: clamp(59px, calc(138px - 10.3vw), 101px);
-    top: 0;
+    left: 55px;
+    top: 20px;
   }
 
-  /* mockup-2 left = 257px 고정 (gap 14px 유지) */
+  /* mockup-2: 우측 + 아래 오프셋 */
   .desktop .sec6-mockup-2 {
-    left: 257px;
-    top: 40px;
+    left: 240px;
+    top: 180px;
   }
 
   /* list-m: 125px(360px) → 160px(767px) */
@@ -2133,19 +2133,20 @@ body {
     width: clamp(125px, calc(8.6vw + 94px), 160px);
   }
 
+  /* list-m: mockup-1 우측으로 이동 */
   .desktop .sec6-list-m-1 {
-    left: -5px;
-    top: 28px;
+    left: 255px;
+    top: 10px;
   }
 
   .desktop .sec6-list-m-2 {
-    left: 75px;
-    top: 145px;
+    left: 260px;
+    top: 100px;
   }
 
   .desktop .sec6-list-m-3 {
-    left: 0;
-    top: 265px;
+    left: 45px;
+    top: 390px;
   }
 
   /* row: 142px(360px) → 180px(767px) */
@@ -2153,19 +2154,20 @@ body {
     width: clamp(142px, calc(9.3vw + 108px), 180px);
   }
 
+  /* row: mockup-2 우측 + 하단 배치 */
   .desktop .sec6-row-1 {
-    left: 370px;
-    top: 50px;
+    left: 90px;
+    top: 430px;
   }
 
   .desktop .sec6-row-2 {
-    left: 410px;
-    top: 155px;
+    left: 340px;
+    top: 330px;
   }
 
   .desktop .sec6-row-3 {
-    left: 365px;
-    top: 260px;
+    left: 270px;
+    top: 470px;
   }
 
   /* 섹션 4 칩: 30px(360px) → 48px(767px) */
@@ -2251,9 +2253,14 @@ body {
     white-space: normal;
   }
 
-  /* 섹션 4·5 본문 (.div-2): 12px(360px) → 18px(767px) */
+  /* 섹션 2 본문 (.text-wrapper-11): 0.75rem(360px) → 1.125rem(767px) */
+  .desktop .text-wrapper-11 {
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
+  }
+
+  /* 섹션 4·5 본문 (.div-2): 0.75rem(360px) → 1.125rem(767px) */
   .desktop .div-2 {
-    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
   }
 
   /* 섹션 6 제목 (.text-wrapper-29): 18px(360px) → 28px(767px) */
@@ -2261,15 +2268,15 @@ body {
     font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
   }
 
-  /* 섹션 6 본문 (.OST): 12px(360px) → 18px(767px) */
+  /* 섹션 6 본문 (.OST): 0.75rem(360px) → 1.125rem(767px) */
   .desktop .OST {
-    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
   }
 
-  /* 섹션 8 Q&A 질문·답변: 12px(360px) → 18px(767px) */
+  /* 섹션 9 Q&A 질문·답변: 0.75rem(360px) → 1.125rem(767px) */
   .desktop .text-wrapper-41,
   .desktop .text-wrapper-43 {
-    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
   }
 
   /* 섹션 3 배경 이미지 */
@@ -2301,10 +2308,10 @@ body {
     display: block;
     font-family: 'Pretendard', sans-serif;
     font-weight: 400;
-    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
     color: #ffffff;
     text-align: center;
-    line-height: 1.6;
+    line-height: 150%;
   }
 
   /* 카드 리스트: 190px(360px뷰포트) → 312px(767px뷰포트) */
@@ -2384,12 +2391,17 @@ body {
   /* 섹션 8 뉴스룸 — 모바일 레이아웃 */
   .desktop .list {
     border-bottom: none;
-    padding: 16px 0;
+    padding: clamp(8px, 2dvh, 16px) 0;
   }
 
   .desktop .newsroom-thumb {
-    height: clamp(64px, calc(5.9vw + 42.8px), 88px);
-    width: clamp(85px, calc(7.9vw + 56.6px), 117px);
+    height: clamp(52px, 8dvh, 88px);
+    width: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .desktop .pagenation-wrapper {
+    padding: clamp(12px, 2.5dvh, 40px) 0;
   }
 
   /* 섹션 9 Q&A — 모바일 레이아웃 */
@@ -2647,23 +2659,6 @@ body {
 }
 .sec7-scroll-area::-webkit-scrollbar { display: none; }
 
-.sec7-system-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 360px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.sec7-gesture-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 360px;
-  z-index: 2;
-  pointer-events: none;
-}
 
 .sec7-mockup-img {
   width: 360px;
