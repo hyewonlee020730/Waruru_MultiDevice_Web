@@ -244,7 +244,7 @@ body {
   font-family: var(--body-r16-font-family);
   font-weight: var(--body-r16-font-weight);
   color: var(--grayscale-200);
-  font-size: var(--body-r16-font-size);
+  font-size: 1.125rem; /* 18px */
   text-align: center;
   line-height: var(--body-r16-line-height);
   position: relative;
@@ -437,10 +437,10 @@ body {
   align-items: flex-start;
   gap: 8px;
   position: absolute;
-  width: clamp(260px, 40vw, 490px);
+  width: clamp(220px, 32vw, 400px);
   height: auto;
   min-height: 80px;
-  padding: 24px;
+  padding: 18px;
   background-color: var(--grayscale-900);
   border: 1.49px solid;
   border-color: var(--grayscale-700);
@@ -460,12 +460,12 @@ body {
   border-radius: 11.95px 11.95px 11.95px 0px;
 }
 
-.desktop .cardtextfield   { top: 141px; left: 57.4%; }
-.desktop .cardtextfield-2 { top: 352px; left: 75.8%; opacity: 0.7; }
-.desktop .cardtextfield-3 { top: 444px; left: 47.3%; opacity: 0.6; }
-.desktop .cardtextfield-4 { top: 0;     left: 22.1%; }
-.desktop .cardtextfield-5 { top: 222px; left: 28.1%; }
-.desktop .cardtextfield-6 { top: 294px; left: 0%;    opacity: 0.7; }
+.desktop .cardtextfield   { top: 175px; left: 62%; }
+.desktop .cardtextfield-2 { top: 365px; left: 76%;   opacity: 0.7; }
+.desktop .cardtextfield-3 { top: 450px; left: 44%;   opacity: 0.6; }
+.desktop .cardtextfield-4 { top: 65px;  left: 25%; }
+.desktop .cardtextfield-5 { top: 250px; left: 31%; }
+.desktop .cardtextfield-6 { top: 315px; left: -2%;   opacity: 0.7; }
 
 .desktop .text-wrapper-9 {
   align-self: stretch;
@@ -511,7 +511,7 @@ body {
   font-family: var(--body-r16-font-family);
   font-weight: var(--body-r16-font-weight);
   color: var(--grayscale-200);
-  font-size: var(--body-r16-font-size);
+  font-size: 1.125rem; /* 18px */
   text-align: center;
   letter-spacing: var(--body-r16-letter-spacing);
   line-height: var(--body-r16-line-height);
@@ -634,10 +634,10 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: 1rem;
+  font-size: 1.125rem; /* 18px */
   text-align: center;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
 }
 
 .desktop .span {
@@ -646,7 +646,7 @@ body {
   font-style: normal;
   letter-spacing: 0;
   line-height: 140%;
-  font-size: 1rem;
+  font-size: 1.125rem; /* 18px */
 }
 
 .desktop .text-wrapper-14 {
@@ -655,7 +655,7 @@ body {
   font-weight: var(--body-r16-font-weight);
   letter-spacing: var(--body-r16-letter-spacing);
   line-height: var(--body-r16-line-height);
-  font-size: var(--body-r16-font-size);
+  font-size: 1.125rem; /* 18px */
 }
 
 .desktop .content-2 {
@@ -1328,19 +1328,19 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: 1rem;
+  font-size: 1.125rem; /* 18px */
   text-align: center;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
 }
 
 .desktop .text-wrapper-30 {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: 1rem;
+  font-size: 1.125rem; /* 18px */
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
 }
 
 .desktop .text-wrapper-31 {
@@ -1439,10 +1439,10 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 400;
   color: var(--color-grayscale-800);
-  font-size: 1rem;
+  font-size: 1.125rem; /* 18px */
   text-align: center;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
 }
 
 .desktop .text-wrapper-36 {
@@ -1557,8 +1557,8 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
   color: var(--color-grayscale-900);
-  font-size: 16px;
-  line-height: 22.4px;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.575rem; /* 25.2px = 18px × 1.4 */
   position: relative;
   letter-spacing: 0;
   display: -webkit-box;
@@ -1750,9 +1750,9 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
   color: var(--color-grayscale-900);
-  font-size: 16px;
+  font-size: 1.125rem; /* 18px */
   letter-spacing: 0;
-  line-height: 22.4px;
+  line-height: 1.575rem; /* 25.2px = 18px × 1.4 */
 }
 
 .desktop .icon-arrow-2 {
@@ -1778,9 +1778,9 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-weight: 600;
   color: var(--color-grayscale-900);
-  font-size: 16px;
+  font-size: 1.125rem; /* 18px */
   letter-spacing: 0;
-  line-height: 22.4px;
+  line-height: 1.575rem; /* 25.2px = 18px × 1.4 */
   white-space: nowrap;
 }
 
