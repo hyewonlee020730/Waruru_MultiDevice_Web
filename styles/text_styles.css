@@ -20,7 +20,7 @@
      MIN 28px(1.75rem) → MAX 56px(3.5rem) */
   --main-font-family: 'KBLJump', 'Pretendard', sans-serif;
   --main-font-weight: 700;
-  --main-font-size: clamp(1.75rem, 2.6vw + 1.17rem, 3.5rem);
+  --main-font-size: clamp(1.75rem, 2.6vw + 1.17rem, 3rem);
   --main-line-height: 1.3;
   --main-letter-spacing: 0px;
   --main-font-style: normal;

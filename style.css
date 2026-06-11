@@ -207,7 +207,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 100px 0px;
+  padding: 100px 0px 76px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -284,6 +284,13 @@ body {
   object-fit: contain;
 }
 
+.desktop .sec1-arrow {
+  position: absolute;
+  bottom: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .desktop .card-list {
   position: relative;
   flex: 0 0 auto;
@@ -292,6 +299,7 @@ body {
   overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  margin-bottom: 80px;
 }
 
 .desktop .card-list::-webkit-scrollbar {
@@ -317,7 +325,7 @@ body {
   aspect-ratio: 5 / 7;
   /* 다른 요소(텍스트 230px + 아이콘 30px + 패딩 200px + gap 60px = 520px) 제외한 나머지 */
   height: min(
-    calc(100dvh * 0.38),
+    calc(100dvh * 0.37),
     calc(100dvh - 520px)
   );
   background-color: var(--grayscale-900);
