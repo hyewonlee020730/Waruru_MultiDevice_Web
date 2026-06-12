@@ -1518,6 +1518,13 @@ body {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-color: var(--color-grayscale-100);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.desktop .list:hover {
+  background-color: var(--color-grayscale-50);
 }
 
 .desktop .dribbble-shot {

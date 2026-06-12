@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뉴스룸 — 와르르</title>
+  <link rel="stylesheet" href="styles/color_styles.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/gnb.css">
+  <style>
+    html, body {
+      background-color: var(--gray-scale-white);
+      overflow: auto;
+      height: auto;
+    }
+
+    /* ── GNB override: white bg ── */
+    .gnb {
+      background-color: var(--gray-scale-white);
+    }
+    .gnb .gnb-logo img {
+      filter: invert(1);
+    }
+    .gnb .nav-item {
+      color: var(--gray-scale-400);
+    }
+    .gnb .nav-item.active,
+    .gnb .nav-item:hover {
+      color: var(--gray-scale-black);
+    }
+    .gnb .lang-btn {
+      color: var(--gray-scale-400);
+    }
+    .gnb .lang-btn.active {
+      color: var(--gray-scale-black);
+    }
+    .gnb .burger-bar {
+      background-color: var(--gray-scale-black);
+    }
+
+    /* ── Page Layout ── */
+    .page-content {
+      padding-top: 68px; /* GNB height */
+    }
+
+    .article-wrapper {
+      max-width: 1204px;
+      margin: 0 auto;
+      padding: 110px 358px;
+      box-sizing: border-box;
+    }
+
+    .article-inner {
+      max-width: 796px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* ── Header ── */
+    .article-header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .article-title {
+      color: var(--gray-scale-black);
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+
+    .article-date {
+      color: var(--gray-scale-400);
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* ── Divider ── */
+    .article-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--gray-scale-100);
+    }
+
+    /* ── Body ── */
+    .article-body {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .article-text {
+      color: var(--gray-scale-800);
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.8;
+      word-break: keep-all;
+    }
+
+    .article-image {
+      width: 100%;
+      aspect-ratio: 796 / 597;
+      background-color: var(--gray-scale-900);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 767px) {
+      .article-wrapper {
+        padding: 60px 24px;
+      }
+
+      .article-title {
+        font-size: 22px;
+      }
+
+      .article-inner {
+        gap: 40px;
+      }
+
+      .gnb-container {
+        gap: 0;
+        justify-content: space-between;
+        height: 50px;
+      }
+
+      .gnb-inner {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .gnb-backdrop {
+        display: block;
+      }
+
+      .page-content {
+        padding-top: 50px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .article-wrapper {
+        padding: 80px 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- GNB -->
+  <header class="gnb">
+    <div class="container gnb-container">
+      <a href="index.html" class="gnb-logo" id="gnbLogo">
+        <img src="assets/svg/logo_kr.svg" alt="와르르" />
+      </a>
+      <div class="gnb-inner" id="gnbInner">
+        <nav class="gnb-nav" id="gnbNav">
+          <a href="index.html#about" class="nav-item">와르르 소개</a>
+          <a href="index.html#newsroom" class="nav-item active">뉴스룸</a>
+          <a href="index.html#qa" class="nav-item">FAQ</a>
+        </nav>
+        <div class="lang-selector" id="langSelector">
+          <button class="lang-btn active" data-lang="kor">KOR</button>
+          <button class="lang-btn" data-lang="eng">ENG</button>
+        </div>
+      </div>
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="메뉴 열기">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="gnb-backdrop" id="gnbBackdrop"></div>
+  <div class="gnb-mobile-overlay" id="mobileOverlay">
+    <a href="index.html#about" class="mobile-nav-item">와르르 소개</a>
+    <a href="index.html#newsroom" class="mobile-nav-item">뉴스룸</a>
+    <a href="index.html#qa" class="mobile-nav-item">FAQ</a>
+    <div class="mobile-lang-selector">
+      <button class="lang-btn active" data-lang="kor">KOR</button>
+      <button class="lang-btn" data-lang="eng">ENG</button>
+    </div>
+  </div>
+
+  <!-- Article Content -->
+  <main class="page-content">
+    <div class="article-wrapper">
+      <div class="article-inner">
+
+        <div class="article-header">
+          <h1 class="article-title" id="articleTitle">와르르, 정식 출시 — 콘텐츠 감상을 함께 기록하는 첫 서비스</h1>
+          <p class="article-date" id="articleDate">2027. 03. 21.</p>
+        </div>
+
+        <div class="article-divider"></div>
+
+        <div class="article-body">
+          <p class="article-text" id="articleText">
+            콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 정식 출시됐다.<br><br>
+            와르르는 영화, 드라마, 애니메이션, 콘서트 등 다양한 콘텐츠를 감상한 뒤 느낀 생각과 경험을 기록하고 공유할 수 있는 서비스다.<br>
+            기존 후기 플랫폼이 개인의 감상을 남기는 데 초점을 맞췄다면, 와르르는 같은 작품을 본 사람들과 함께 기록을 쌓아가는 경험에 주목했다.<br><br>
+            사용자는 작품별로 기록장을 생성하거나 참여할 수 있으며, 친구를 초대해 각자의 감상을 한 공간에 남길 수 있다. 또한 명대사, OST, 장르별 질문 등으로 구성된 작성 키트를 제공해 보다 쉽게 후기를 작성할 수 있도록 지원한다.<br><br>
+            와르르 관계자는 "콘텐츠를 소비하는 경험이 끝나는 순간이 아니라, 함께 이야기하고 기록하는 과정까지 이어질 수 있도록 서비스를 기획했다"며 "앞으로도 다양한 콘텐츠 카테고리와 기능을 확장해 나갈 예정"이라고 밝혔다.<br><br>
+            한편 와르르는 모바일 앱을 통해 이용할 수 있으며, 콘텐츠를 좋아하는 사람들의 다양한 시선과 감상을 한곳에서 만나볼 수 있다.
+          </p>
+
+          <div class="article-image">
+            <img src="assets/Img/Newsroom_Img_3.png" alt="와르르 정식 출시" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ── Mobile Menu ──
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const gnbBackdrop = document.getElementById('gnbBackdrop');
+
+    function toggleMenu(open) {
+      menuToggle.classList.toggle('open', open);
+      mobileOverlay.classList.toggle('open', open);
+      gnbBackdrop.classList.toggle('open', open);
+    }
+
+    menuToggle.addEventListener('click', () => toggleMenu(!menuToggle.classList.contains('open')));
+    gnbBackdrop.addEventListener('click', () => toggleMenu(false));
+
+    // ── i18n ──
+    const LANG = {
+      ko: {
+        logo: 'assets/svg/logo_kr.svg',
+        navAbout: '와르르 소개',
+        navNewsroom: '뉴스룸',
+        navFaq: 'FAQ',
+        title: '와르르, 정식 출시 — 콘텐츠 감상을 함께 기록하는 첫 서비스',
+        date: '2027. 03. 21.',
+        body: `콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 정식 출시됐다.<br><br>와르르는 영화, 드라마, 애니메이션, 콘서트 등 다양한 콘텐츠를 감상한 뒤 느낀 생각과 경험을 기록하고 공유할 수 있는 서비스다.<br>기존 후기 플랫폼이 개인의 감상을 남기는 데 초점을 맞췄다면, 와르르는 같은 작품을 본 사람들과 함께 기록을 쌓아가는 경험에 주목했다.<br><br>사용자는 작품별로 기록장을 생성하거나 참여할 수 있으며, 친구를 초대해 각자의 감상을 한 공간에 남길 수 있다. 또한 명대사, OST, 장르별 질문 등으로 구성된 작성 키트를 제공해 보다 쉽게 후기를 작성할 수 있도록 지원한다.<br><br>와르르 관계자는 "콘텐츠를 소비하는 경험이 끝나는 순간이 아니라, 함께 이야기하고 기록하는 과정까지 이어질 수 있도록 서비스를 기획했다"며 "앞으로도 다양한 콘텐츠 카테고리와 기능을 확장해 나갈 예정"이라고 밝혔다.<br><br>한편 와르르는 모바일 앱을 통해 이용할 수 있으며, 콘텐츠를 좋아하는 사람들의 다양한 시선과 감상을 한곳에서 만나볼 수 있다.`,
+      },
+      en: {
+        logo: 'assets/svg/logo_En.svg',
+        navAbout: 'About',
+        navNewsroom: 'Newsroom',
+        navFaq: 'FAQ',
+        title: 'Waruru Officially Launches — The First Service for Co-Recording Content Reviews',
+        date: 'Mar 21, 2027',
+        body: `Waruru, a co-recording platform for content reviews, has officially launched.<br><br>Waruru is a service that lets users record and share their thoughts and experiences after watching movies, dramas, animations, concerts, and more.<br>While existing review platforms focus on individual impressions, Waruru centers on the experience of building a shared record with others who watched the same content.<br><br>Users can create or join a journal for each piece of content, and invite friends to leave their own impressions in a shared space. A writing kit — featuring memorable quotes, OSTs, and genre-specific prompts — is also provided to make writing reviews easier.<br><br>A Waruru representative said, "We designed the service so that the experience of consuming content doesn't end when it's over — it continues through conversation and shared records. We plan to keep expanding content categories and features going forward."<br><br>Waruru is available via mobile app, bringing together a wide range of perspectives and impressions from people who love content.`,
+      },
+    };
+
+    let currentLang = 'ko';
+
+    function applyLang(lang) {
+      const t = LANG[lang];
+      document.querySelector('#gnbLogo img').src = t.logo;
+      document.querySelectorAll('#gnbNav .nav-item').forEach(el => {
+        const href = el.getAttribute('href');
+        if (href.includes('#about')) el.textContent = t.navAbout;
+        else if (href.includes('#newsroom')) el.textContent = t.navNewsroom;
+        else if (href.includes('#qa')) el.textContent = t.navFaq;
+      });
+      document.querySelectorAll('#mobileOverlay .mobile-nav-item').forEach(el => {
+        const href = el.getAttribute('href');
+        if (href.includes('#about')) el.textContent = t.navAbout;
+        else if (href.includes('#newsroom')) el.textContent = t.navNewsroom;
+        else if (href.includes('#qa')) el.textContent = t.navFaq;
+      });
+      document.getElementById('articleTitle').textContent = t.title;
+      document.getElementById('articleDate').textContent = t.date;
+      document.getElementById('articleText').innerHTML = t.body;
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang === 'eng' ? 'en' : 'ko';
+        if (lang === currentLang) return;
+        currentLang = lang;
+        document.querySelectorAll('.lang-btn').forEach(b =>
+          b.classList.toggle('active', b.dataset.lang === btn.dataset.lang)
+        );
+        applyLang(lang);
+      });
+    });
+  </script>
+
+</body>
+</html>
