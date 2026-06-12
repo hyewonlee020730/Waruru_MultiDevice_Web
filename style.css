@@ -2123,16 +2123,16 @@ body {
     height: auto;
   }
 
-  /* mockup-1: 좌측, 살짝 뷰포트 왼쪽 클립 */
+  /* mockup-1: 두 목업 가운데 정렬 (씬 x=250 기준, 뷰포트 폭 반응형) */
   .desktop .sec6-mockup-1 {
-    left: 55px;
-    top: 20px;
+    left: calc(138px - 10.3vw);
+    top: 0px;
   }
 
-  /* mockup-2: 우측 + 아래 오프셋 */
+  /* mockup-2: mockup-1 우측 끝 + 15px 간격 (항상 일정 간격 유지) */
   .desktop .sec6-mockup-2 {
-    left: 240px;
-    top: 180px;
+    left: 258px;
+    top: clamp(80px, 12vh, 130px);
   }
 
   /* list-m: 125px(360px) → 160px(767px) */
@@ -2142,18 +2142,18 @@ body {
 
   /* list-m: mockup-1 우측으로 이동 */
   .desktop .sec6-list-m-1 {
-    left: 255px;
-    top: 10px;
+    left: 220px;
+    top: -10px;
   }
 
   .desktop .sec6-list-m-2 {
-    left: 260px;
-    top: 100px;
+    left: 345px;
+    top: clamp(40px, 6vh, 80px);
   }
 
   .desktop .sec6-list-m-3 {
     left: 45px;
-    top: 390px;
+    top: 270px;
   }
 
   /* row: 142px(360px) → 180px(767px) */
@@ -2163,18 +2163,18 @@ body {
 
   /* row: mockup-2 우측 + 하단 배치 */
   .desktop .sec6-row-1 {
-    left: 90px;
-    top: 430px;
+    display: none;
   }
 
   .desktop .sec6-row-2 {
     left: 340px;
-    top: 330px;
+    top: 300px;
   }
 
   .desktop .sec6-row-3 {
-    left: 270px;
-    top: 470px;
+    left: 150px;
+    top: 350px;
+    z-index: 1;
   }
 
   /* 섹션 4 칩: 30px(360px) → 48px(767px) */
