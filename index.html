@@ -538,28 +538,28 @@
       <div class="text-wrapper-13">뉴스룸</div>
       <div class="frame-15">
         <div class="frame-16">
-          <a href="newsroom_detail.html" class="list">
+          <a href="newsroom_detail.html?id=1" class="list">
             <img class="newsroom-thumb" src="assets/Img/Newsroom_Img_1.png" alt="뉴스룸 이미지 1" />
             <div class="frame-17">
               <p class="text-wrapper-37">와르르 1주년, 누적 후기 10만 건 달성</p>
               <div class="text-wrapper-38">2027. 07. 30.</div>
             </div>
           </a>
-          <a href="newsroom_detail.html" class="list">
+          <a href="newsroom_detail.html?id=2" class="list">
             <img class="newsroom-thumb" src="assets/Img/Newsroom_Img_2.png" alt="뉴스룸 이미지 2" />
             <div class="frame-17">
               <p class="text-wrapper-37">와르르 앱, 플레이스토어 '이주의 신규 추천' 선정</p>
               <div class="text-wrapper-38">2027. 07. 19.</div>
             </div>
           </a>
-          <a href="newsroom_detail.html" class="list">
+          <a href="newsroom_detail.html?id=3" class="list">
             <img class="newsroom-thumb" src="assets/Img/Newsroom_Img_3.png" alt="뉴스룸 이미지 3" />
             <div class="frame-17">
               <p class="text-wrapper-37">와르르, 정식 출시 — 콘텐츠 감상을 함께 기록하는 첫 서비스</p>
               <div class="text-wrapper-38">2027. 03. 21.</div>
             </div>
           </a>
-          <a href="newsroom_detail.html" class="list list--mobile-only">
+          <a href="newsroom_detail.html?id=4" class="list list--mobile-only">
             <img class="newsroom-thumb" src="assets/Img/Newsroom_Img_4.png" alt="뉴스룸 이미지 4" />
             <div class="frame-17">
               <p class="text-wrapper-37">와르르 베타테스트 참여자 1,000명 돌파</p>
@@ -908,8 +908,21 @@
       });
 
       // 초기 상태
-      updateGnb(0);
-      updateNav(0);
+      const initHash = window.location.hash.slice(1);
+      if (initHash) {
+        const hashTarget = document.getElementById(initHash);
+        if (hashTarget) {
+          const hashIdx = getSections().findIndex(s => s === hashTarget || s.contains(hashTarget));
+          if (hashIdx !== -1) {
+            currentIndex = hashIdx;
+            desktop.style.transition = 'none';
+            desktop.style.transform = `translateY(${-currentIndex * window.innerHeight}px)`;
+            requestAnimationFrame(() => { desktop.style.transition = ''; });
+          }
+        }
+      }
+      updateGnb(currentIndex);
+      updateNav(currentIndex);
     });
   </script>
 
@@ -1498,12 +1511,22 @@
       }
 
       // ── Lang Button Handler ──────────────────────────────────
-      let currentLang = 'ko';
+      let currentLang = localStorage.getItem('waruru-lang') || 'ko';
+
+      // 저장된 언어가 영어면 버튼 상태 + 콘텐츠 초기 적용
+      if (currentLang === 'en') {
+        document.querySelectorAll('.lang-btn').forEach(b =>
+          b.classList.toggle('active', b.dataset.lang === 'eng')
+        );
+        applyLang('en');
+      }
+
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           const lang = btn.dataset.lang === 'eng' ? 'en' : 'ko';
           if (lang === currentLang) return;
           currentLang = lang;
+          localStorage.setItem('waruru-lang', lang);
           document.querySelectorAll('.lang-btn').forEach(b =>
             b.classList.toggle('active', b.dataset.lang === btn.dataset.lang)
           );

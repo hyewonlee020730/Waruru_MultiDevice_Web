@@ -7,6 +7,7 @@
   <title>뉴스룸 — 와르르</title>
   <link rel="stylesheet" href="styles/color_styles.css">
   <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/media_styles.css">
   <link rel="stylesheet" href="styles/gnb.css">
   <style>
     html, body {
@@ -47,7 +48,7 @@
     .article-wrapper {
       max-width: 1204px;
       margin: 0 auto;
-      padding: 110px 358px;
+      padding: 110px 40px;
       box-sizing: border-box;
     }
 
@@ -123,10 +124,43 @@
       display: block;
     }
 
+    /* ── Footer ── */
+    .site-footer {
+      width: 100%;
+      background-color: var(--gray-scale-50);
+      padding: 33px 0;
+    }
+
+    .site-footer-inner {
+      max-width: 1204px;
+      margin: 0 auto;
+      padding: 0 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links {
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-scale-800);
+      line-height: 1.4;
+    }
+
+    .footer-copy {
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gray-scale-500);
+      line-height: normal;
+    }
+
     /* ── Mobile ── */
     @media (max-width: 767px) {
       .article-wrapper {
-        padding: 60px 24px;
+        padding: 60px 20px;
       }
 
       .article-title {
@@ -160,11 +194,6 @@
       }
     }
 
-    @media (min-width: 768px) and (max-width: 1199px) {
-      .article-wrapper {
-        padding: 80px 48px;
-      }
-    }
   </style>
 </head>
 
@@ -220,23 +249,22 @@
         <div class="article-divider"></div>
 
         <div class="article-body">
-          <p class="article-text" id="articleText">
-            콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 정식 출시됐다.<br><br>
-            와르르는 영화, 드라마, 애니메이션, 콘서트 등 다양한 콘텐츠를 감상한 뒤 느낀 생각과 경험을 기록하고 공유할 수 있는 서비스다.<br>
-            기존 후기 플랫폼이 개인의 감상을 남기는 데 초점을 맞췄다면, 와르르는 같은 작품을 본 사람들과 함께 기록을 쌓아가는 경험에 주목했다.<br><br>
-            사용자는 작품별로 기록장을 생성하거나 참여할 수 있으며, 친구를 초대해 각자의 감상을 한 공간에 남길 수 있다. 또한 명대사, OST, 장르별 질문 등으로 구성된 작성 키트를 제공해 보다 쉽게 후기를 작성할 수 있도록 지원한다.<br><br>
-            와르르 관계자는 "콘텐츠를 소비하는 경험이 끝나는 순간이 아니라, 함께 이야기하고 기록하는 과정까지 이어질 수 있도록 서비스를 기획했다"며 "앞으로도 다양한 콘텐츠 카테고리와 기능을 확장해 나갈 예정"이라고 밝혔다.<br><br>
-            한편 와르르는 모바일 앱을 통해 이용할 수 있으며, 콘텐츠를 좋아하는 사람들의 다양한 시선과 감상을 한곳에서 만나볼 수 있다.
-          </p>
-
+          <p class="article-text" id="articleText"></p>
           <div class="article-image">
-            <img src="assets/Img/Newsroom_Img_3.png" alt="와르르 정식 출시" />
+            <img id="articleImg" src="" alt="" />
           </div>
         </div>
 
       </div>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-links" id="footerLinks">개인정보처리방침&nbsp;&nbsp;&nbsp;&nbsp;이용약관&nbsp;&nbsp;&nbsp;&nbsp;보안</div>
+      <p class="footer-copy">Copyright ⓒ HI5. All Rights Reserved<br>E-mail: waruru@gmail.com</p>
+    </div>
+  </footer>
 
   <script>
     // ── Mobile Menu ──
@@ -249,59 +277,113 @@
       mobileOverlay.classList.toggle('open', open);
       gnbBackdrop.classList.toggle('open', open);
     }
-
     menuToggle.addEventListener('click', () => toggleMenu(!menuToggle.classList.contains('open')));
     gnbBackdrop.addEventListener('click', () => toggleMenu(false));
 
-    // ── i18n ──
-    const LANG = {
-      ko: {
-        logo: 'assets/svg/logo_kr.svg',
-        navAbout: '와르르 소개',
-        navNewsroom: '뉴스룸',
-        navFaq: 'FAQ',
-        title: '와르르, 정식 출시 — 콘텐츠 감상을 함께 기록하는 첫 서비스',
-        date: '2027. 03. 21.',
-        body: `콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 정식 출시됐다.<br><br>와르르는 영화, 드라마, 애니메이션, 콘서트 등 다양한 콘텐츠를 감상한 뒤 느낀 생각과 경험을 기록하고 공유할 수 있는 서비스다.<br>기존 후기 플랫폼이 개인의 감상을 남기는 데 초점을 맞췄다면, 와르르는 같은 작품을 본 사람들과 함께 기록을 쌓아가는 경험에 주목했다.<br><br>사용자는 작품별로 기록장을 생성하거나 참여할 수 있으며, 친구를 초대해 각자의 감상을 한 공간에 남길 수 있다. 또한 명대사, OST, 장르별 질문 등으로 구성된 작성 키트를 제공해 보다 쉽게 후기를 작성할 수 있도록 지원한다.<br><br>와르르 관계자는 "콘텐츠를 소비하는 경험이 끝나는 순간이 아니라, 함께 이야기하고 기록하는 과정까지 이어질 수 있도록 서비스를 기획했다"며 "앞으로도 다양한 콘텐츠 카테고리와 기능을 확장해 나갈 예정"이라고 밝혔다.<br><br>한편 와르르는 모바일 앱을 통해 이용할 수 있으며, 콘텐츠를 좋아하는 사람들의 다양한 시선과 감상을 한곳에서 만나볼 수 있다.`,
+    // ── 기사 데이터 ──
+    const ARTICLES = {
+      1: {
+        img: 'assets/Img/Newsroom_Img_1.png',
+        ko: {
+          title: '와르르 1주년, 누적 후기 10만 건 달성',
+          date: '2027. 07. 30.',
+          body: `콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 정식 출시 1주년을 맞아 누적 후기 10만 건을 달성했다.<br><br>와르르는 지난해 3월 정식 출시 이후 꾸준한 사용자 증가세를 이어오며, 출시 1년 만에 이 같은 성과를 기록했다. 영화, 드라마, 애니메이션, 콘서트 등 다양한 콘텐츠 카테고리에 걸쳐 이용자들이 활발히 후기를 남기고 있는 것으로 나타났다.<br><br>카테고리별로는 드라마·시리즈 후기가 전체의 38%로 가장 많았으며, 이어 영화(27%), 애니메이션(21%), 콘서트(14%) 순이었다. 친구와 함께 기록장을 공유하는 '공동 기록' 기능의 활용률도 꾸준히 증가해, 전체 후기 중 약 40%가 공동 기록 형태로 작성된 것으로 집계됐다.<br><br>와르르 관계자는 "1년이라는 짧은 시간 안에 10만 건이라는 의미 있는 수치를 달성할 수 있었던 것은 함께 기록하는 즐거움을 찾아주신 이용자들 덕분"이라며 "앞으로도 더 풍부한 기록 경험을 제공하기 위해 다양한 기능을 선보일 예정"이라고 전했다.`,
+        },
+        en: {
+          title: 'Waruru Hits 100,000 Reviews on Its First Anniversary',
+          date: 'Jul 30, 2027',
+          body: `Waruru, the co-recording platform for content reviews, has reached 100,000 cumulative reviews on the occasion of its first anniversary since official launch.<br><br>Since its launch in March of last year, Waruru has seen steady user growth, achieving this milestone within just one year. Users have been actively leaving reviews across a wide range of content categories including movies, dramas, animations, and concerts.<br><br>By category, drama and series reviews accounted for the largest share at 38%, followed by movies (27%), animation (21%), and concerts (14%). The co-recording feature — which lets users share a journal with friends — also saw consistent growth, with approximately 40% of all reviews written in co-recording mode.<br><br>A Waruru representative said, "Reaching 100,000 reviews in just one year is thanks to the users who found joy in recording together. We look forward to introducing more features to provide an even richer recording experience."`,
+        },
       },
-      en: {
-        logo: 'assets/svg/logo_En.svg',
-        navAbout: 'About',
-        navNewsroom: 'Newsroom',
-        navFaq: 'FAQ',
-        title: 'Waruru Officially Launches — The First Service for Co-Recording Content Reviews',
-        date: 'Mar 21, 2027',
-        body: `Waruru, a co-recording platform for content reviews, has officially launched.<br><br>Waruru is a service that lets users record and share their thoughts and experiences after watching movies, dramas, animations, concerts, and more.<br>While existing review platforms focus on individual impressions, Waruru centers on the experience of building a shared record with others who watched the same content.<br><br>Users can create or join a journal for each piece of content, and invite friends to leave their own impressions in a shared space. A writing kit — featuring memorable quotes, OSTs, and genre-specific prompts — is also provided to make writing reviews easier.<br><br>A Waruru representative said, "We designed the service so that the experience of consuming content doesn't end when it's over — it continues through conversation and shared records. We plan to keep expanding content categories and features going forward."<br><br>Waruru is available via mobile app, bringing together a wide range of perspectives and impressions from people who love content.`,
+      2: {
+        img: 'assets/Img/Newsroom_Img_2.png',
+        ko: {
+          title: "와르르 앱, 플레이스토어 '이주의 신규 추천' 선정",
+          date: '2027. 07. 19.',
+          body: `콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 구글 플레이스토어의 '이주의 신규 추천' 앱으로 선정됐다.<br><br>플레이스토어 '이주의 신규 추천'은 구글이 매주 새롭게 출시되거나 주목할 만한 업데이트를 선보인 앱 중 품질과 사용자 경험이 뛰어난 앱을 선별해 소개하는 코너다.<br><br>와르르는 콘텐츠 감상을 기록하고 친구와 함께 공유하는 독창적인 서비스 경험, 직관적인 UI 디자인, 그리고 작성 키트를 통한 후기 작성 지원 기능 등이 높은 평가를 받아 이번 추천 앱에 이름을 올렸다.<br><br>와르르 관계자는 "플레이스토어에서 이번 추천을 받게 되어 영광이며, 더 많은 분들이 와르르를 통해 콘텐츠 감상을 함께 기록하는 즐거움을 경험하실 수 있기를 바란다"고 밝혔다.`,
+        },
+        en: {
+          title: "Waruru Named Google Play's 'New App of the Week'",
+          date: 'Jul 19, 2027',
+          body: `Waruru, the co-recording platform for content reviews, has been selected as Google Play's "New App of the Week."<br><br>Google Play's "New App of the Week" is a featured section where Google highlights newly launched or notably updated apps that stand out for their quality and user experience.<br><br>Waruru was recognized for its unique approach to recording and sharing content impressions with friends, its intuitive UI design, and its writing kit feature that helps users craft more thoughtful reviews.<br><br>A Waruru representative said, "We're honored to be featured on Google Play, and we hope even more people will discover the joy of recording content together through Waruru."`,
+        },
+      },
+      3: {
+        img: 'assets/Img/Newsroom_Img_3.png',
+        ko: {
+          title: '와르르, 정식 출시 — 콘텐츠 감상을 함께 기록하는 첫 서비스',
+          date: '2027. 03. 21.',
+          body: `콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'가 정식 출시됐다.<br><br>와르르는 영화, 드라마, 애니메이션, 콘서트 등 다양한 콘텐츠를 감상한 뒤 느낀 생각과 경험을 기록하고 공유할 수 있는 서비스다.<br>기존 후기 플랫폼이 개인의 감상을 남기는 데 초점을 맞췄다면, 와르르는 같은 작품을 본 사람들과 함께 기록을 쌓아가는 경험에 주목했다.<br><br>사용자는 작품별로 기록장을 생성하거나 참여할 수 있으며, 친구를 초대해 각자의 감상을 한 공간에 남길 수 있다. 또한 명대사, OST, 장르별 질문 등으로 구성된 작성 키트를 제공해 보다 쉽게 후기를 작성할 수 있도록 지원한다.<br><br>와르르 관계자는 "콘텐츠를 소비하는 경험이 끝나는 순간이 아니라, 함께 이야기하고 기록하는 과정까지 이어질 수 있도록 서비스를 기획했다"며 "앞으로도 다양한 콘텐츠 카테고리와 기능을 확장해 나갈 예정"이라고 밝혔다.<br><br>한편 와르르는 모바일 앱을 통해 이용할 수 있으며, 콘텐츠를 좋아하는 사람들의 다양한 시선과 감상을 한곳에서 만나볼 수 있다.`,
+        },
+        en: {
+          title: 'Waruru Officially Launches — The First Service for Co-Recording Content Reviews',
+          date: 'Mar 21, 2027',
+          body: `Waruru, a co-recording platform for content reviews, has officially launched.<br><br>Waruru is a service that lets users record and share their thoughts and experiences after watching movies, dramas, animations, concerts, and more.<br>While existing review platforms focus on individual impressions, Waruru centers on the experience of building a shared record with others who watched the same content.<br><br>Users can create or join a journal for each piece of content, and invite friends to leave their own impressions in a shared space. A writing kit — featuring memorable quotes, OSTs, and genre-specific prompts — is also provided to make writing reviews easier.<br><br>A Waruru representative said, "We designed the service so that the experience of consuming content doesn't end when it's over — it continues through conversation and shared records. We plan to keep expanding content categories and features going forward."<br><br>Waruru is available via mobile app, bringing together a wide range of perspectives and impressions from people who love content.`,
+        },
+      },
+      4: {
+        img: 'assets/Img/Newsroom_Img_4.png',
+        ko: {
+          title: '와르르 베타테스트 참여자 1,000명 돌파',
+          date: '2026. 12. 05.',
+          body: `콘텐츠 감상 공동기록 플랫폼 '와르르(Waruru)'의 베타테스트 참여자 수가 1,000명을 돌파했다.<br><br>와르르는 지난 11월부터 사전 신청자를 대상으로 베타테스트를 진행해왔으며, 약 한 달 만에 참여자 1,000명을 넘어섰다. 베타테스트 기간 동안 수집된 피드백은 정식 출시 전 서비스 완성도를 높이는 데 활용될 예정이다.<br><br>베타 참여자들은 서비스의 핵심 기능인 공동 기록, 작성 키트, 콘텐츠 검색 등을 직접 체험하고 개선 의견을 제출했다. 특히 친구와 함께 같은 기록장을 공유하는 기능에 대한 반응이 긍정적이었으며, 다양한 콘텐츠 카테고리 확대에 대한 요청도 많았다.<br><br>와르르 관계자는 "베타테스트에 참여해 주신 모든 분들께 감사드리며, 수집된 소중한 의견들을 반영해 더욱 완성도 높은 서비스로 정식 출시를 준비하겠다"고 말했다.`,
+        },
+        en: {
+          title: 'Waruru Beta Testers Surpass 1,000',
+          date: 'Dec 5, 2026',
+          body: `The number of beta testers for Waruru, a co-recording platform for content reviews, has surpassed 1,000.<br><br>Waruru began beta testing with pre-registered users in November, reaching the 1,000-tester milestone in just about a month. Feedback collected during the beta period will be used to improve the service before its official launch.<br><br>Beta participants tested core features including co-recording, the writing kit, and content search, and submitted suggestions for improvement. The response to the co-journal sharing feature — which lets friends share the same journal — was particularly positive, and many users requested an expanded range of content categories.<br><br>A Waruru representative said, "We're grateful to everyone who participated in the beta test. We'll reflect their valuable feedback to ensure an even more polished service at launch."`,
+        },
       },
     };
 
-    let currentLang = 'ko';
+    // ── 쿼리 파라미터에서 기사 ID 읽기 ──
+    const params = new URLSearchParams(window.location.search);
+    const articleId = parseInt(params.get('id')) || 3;
+    const article = ARTICLES[articleId] || ARTICLES[3];
+
+    // 기사 이미지 초기 세팅
+    document.getElementById('articleImg').src = article.img;
+
+    // ── i18n ──
+    const NAV = {
+      ko: { logo: 'assets/svg/logo_kr.svg', about: '와르르 소개', newsroom: '뉴스룸', faq: 'FAQ', footer: '개인정보처리방침&nbsp;&nbsp;&nbsp;&nbsp;이용약관&nbsp;&nbsp;&nbsp;&nbsp;보안' },
+      en: { logo: 'assets/svg/logo_En.svg', about: 'About', newsroom: 'Newsroom', faq: 'FAQ', footer: 'Privacy Policy&nbsp;&nbsp;&nbsp;&nbsp;Terms of Use&nbsp;&nbsp;&nbsp;&nbsp;Security' },
+    };
+
+    let currentLang = localStorage.getItem('waruru-lang') || 'ko';
 
     function applyLang(lang) {
-      const t = LANG[lang];
-      document.querySelector('#gnbLogo img').src = t.logo;
-      document.querySelectorAll('#gnbNav .nav-item').forEach(el => {
+      const n = NAV[lang];
+      const a = article[lang];
+      document.querySelector('#gnbLogo img').src = n.logo;
+      document.querySelectorAll('#gnbNav .nav-item, #mobileOverlay .mobile-nav-item').forEach(el => {
         const href = el.getAttribute('href');
-        if (href.includes('#about')) el.textContent = t.navAbout;
-        else if (href.includes('#newsroom')) el.textContent = t.navNewsroom;
-        else if (href.includes('#qa')) el.textContent = t.navFaq;
+        if (href.includes('#about')) el.textContent = n.about;
+        else if (href.includes('#newsroom')) el.textContent = n.newsroom;
+        else if (href.includes('#qa')) el.textContent = n.faq;
       });
-      document.querySelectorAll('#mobileOverlay .mobile-nav-item').forEach(el => {
-        const href = el.getAttribute('href');
-        if (href.includes('#about')) el.textContent = t.navAbout;
-        else if (href.includes('#newsroom')) el.textContent = t.navNewsroom;
-        else if (href.includes('#qa')) el.textContent = t.navFaq;
-      });
-      document.getElementById('articleTitle').textContent = t.title;
-      document.getElementById('articleDate').textContent = t.date;
-      document.getElementById('articleText').innerHTML = t.body;
+      document.getElementById('articleTitle').textContent = a.title;
+      document.getElementById('articleDate').textContent = a.date;
+      document.getElementById('articleText').innerHTML = a.body;
+      document.getElementById('articleImg').alt = a.title;
+      document.getElementById('footerLinks').innerHTML = n.footer;
+      document.title = `${a.title} — 와르르`;
     }
+
+    // 초기 언어 적용 (저장된 언어 반영)
+    if (currentLang === 'en') {
+      document.querySelectorAll('.lang-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.lang === 'eng')
+      );
+    }
+    applyLang(currentLang);
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const lang = btn.dataset.lang === 'eng' ? 'en' : 'ko';
         if (lang === currentLang) return;
         currentLang = lang;
+        localStorage.setItem('waruru-lang', lang);
         document.querySelectorAll('.lang-btn').forEach(b =>
           b.classList.toggle('active', b.dataset.lang === btn.dataset.lang)
         );
