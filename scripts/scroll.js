@@ -1,6 +1,6 @@
 // 풀페이지 스크롤 (GNB 테마·네비게이션·섹션 이동 통합)
 document.addEventListener('DOMContentLoaded', () => {
-  const SELECTOR = '.desktop > .container, .desktop > .container-2, .desktop > .frame-2, .desktop > .frame-3, .desktop > .frame-14, .desktop > .frame-19';
+  const SELECTOR = '.desktop > [data-section]';
   const desktop = document.querySelector('.desktop');
   const gnb = document.querySelector('.gnb');
   const navItems = document.querySelectorAll('#gnbNav .nav-item');
