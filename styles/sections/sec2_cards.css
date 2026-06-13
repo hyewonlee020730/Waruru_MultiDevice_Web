@@ -1,0 +1,237 @@
+/* ============================================================
+   Section 2 — Cards
+   ============================================================ */
+
+.desktop .container-2 {
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-color: var(--color-grayscale-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.desktop .image-area {
+  position: absolute;
+  top: clamp(180px, 20vw, 239px);
+  left: 0;
+  width: 100%;
+  height: clamp(450px, 50vw, 550px);
+  overflow: hidden;
+}
+
+/* 공통 cardtextfield 속성 */
+.desktop .cardtextfield,
+.desktop .cardtextfield-2,
+.desktop .cardtextfield-3,
+.desktop .cardtextfield-4,
+.desktop .cardtextfield-5,
+.desktop .cardtextfield-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(4px, 0.6vw, 8px);
+  position: absolute;
+  width: clamp(200px, 30vw, 400px);
+  height: auto;
+  min-height: 80px;
+  padding: clamp(12px, 1.4vw, 18px);
+  background-color: var(--grayscale-900);
+  border: 1.49px solid;
+  border-color: var(--grayscale-700);
+}
+
+/* 우측 말풍선 (border-radius: 상우하좌 → 우하 꼭짓점 없음) */
+.desktop .cardtextfield,
+.desktop .cardtextfield-2,
+.desktop .cardtextfield-3 {
+  border-radius: 11.95px 11.95px 0px 11.95px;
+}
+
+/* 좌측 말풍선 (border-radius: 하좌 꼭짓점 없음) */
+.desktop .cardtextfield-4,
+.desktop .cardtextfield-5,
+.desktop .cardtextfield-6 {
+  border-radius: 11.95px 11.95px 11.95px 0px;
+}
+
+.desktop .cardtextfield   { top: 32%; left: 62%; }
+.desktop .cardtextfield-2 { top: 66%; left: 76%;   opacity: 0.7; }
+.desktop .cardtextfield-3 { top: 82%; left: 44%;   opacity: 0.6; }
+.desktop .cardtextfield-4 { top: 12%; left: 25%; }
+.desktop .cardtextfield-5 { top: 45%; left: 31%; }
+.desktop .cardtextfield-6 { top: 57%; left: -2%;   opacity: 0.7; }
+
+.desktop .text-wrapper-9 {
+  align-self: stretch;
+  margin-top: -1.49px;
+  font-family: var(--body-r20-font-family);
+  font-weight: var(--body-r20-font-weight);
+  font-size: var(--body-r20-font-size);
+  line-height: var(--body-r20-line-height);
+  position: relative;
+  color: var(--grayscalewhite);
+  letter-spacing: var(--body-r20-letter-spacing);
+  font-style: var(--body-r20-font-style);
+}
+
+.desktop .text-area {
+  position: relative;
+  width: min(100%, 1204px);
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.desktop .text-wrapper-10 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  color: var(--grayscalewhite);
+  font-size: clamp(1.375rem, 1.3vw + 1.08rem, 2.25rem);
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 140%;
+  font-style: normal;
+}
+
+.desktop .text-wrapper-11 {
+  position: relative;
+  align-self: stretch;
+  font-family: var(--body-r16-font-family);
+  font-weight: var(--body-r16-font-weight);
+  color: var(--grayscale-200);
+  font-size: clamp(0.9375rem, 0.26vw + 0.81rem, 1.125rem);
+  text-align: center;
+  letter-spacing: var(--body-r16-letter-spacing);
+  line-height: var(--body-r16-line-height);
+  font-style: var(--body-r16-font-style);
+}
+
+/* ============================================================
+   Section 2 — cardtextfield 등장 모션
+   초기: 아래에서 숨겨진 상태 / .ctf-visible 추가 시 등장
+   ============================================================ */
+.desktop .cardtextfield,
+.desktop .cardtextfield-2,
+.desktop .cardtextfield-3,
+.desktop .cardtextfield-4,
+.desktop .cardtextfield-5,
+.desktop .cardtextfield-6 {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desktop .cardtextfield.ctf-visible   { opacity: 1;   transform: translateY(0); }
+.desktop .cardtextfield-2.ctf-visible { opacity: 0.7; transform: translateY(0); }
+.desktop .cardtextfield-3.ctf-visible { opacity: 0.6; transform: translateY(0); }
+.desktop .cardtextfield-4.ctf-visible { opacity: 1;   transform: translateY(0); }
+.desktop .cardtextfield-5.ctf-visible { opacity: 1;   transform: translateY(0); }
+.desktop .cardtextfield-6.ctf-visible { opacity: 0.7; transform: translateY(0); }
+
+/* ============================================================
+   Section 2 — Mobile styles (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 섹션 2 제목: 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-10 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 2 본문: 12px(360px) → 18px(767px) */
+  .sec2-desc-desktop { display: none; }
+  .sec2-desc-mobile {
+    display: block;
+    font-size: clamp(12px, calc(1.47vw + 6.7px), 18px);
+  }
+
+  /* 섹션 2 — 카드 스택 레이아웃 */
+  .desktop .container-2 {
+    height: 100dvh;
+    overflow-y: hidden;
+    padding: 90px 16px 40px;
+  }
+
+  .desktop .text-area {
+    width: 100%;
+    padding: 0;
+    order: 1;
+    margin-bottom: 24px;
+  }
+
+  .desktop .image-area {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    order: 2;
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* 카드 공통: 절대위치 해제, 너비 82%, 높이 비율 분배 */
+  .desktop .cardtextfield,
+  .desktop .cardtextfield-2,
+  .desktop .cardtextfield-3,
+  .desktop .cardtextfield-4,
+  .desktop .cardtextfield-5,
+  .desktop .cardtextfield-6 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 82%;
+    flex: 1;
+    min-height: 0;
+    padding: 12px 16px;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  /* 좌측 정렬 (4, 5, 6) */
+  .desktop .cardtextfield-4,
+  .desktop .cardtextfield-5,
+  .desktop .cardtextfield-6 {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  /* 우측 정렬 (1, 2, 3) */
+  .desktop .cardtextfield,
+  .desktop .cardtextfield-2,
+  .desktop .cardtextfield-3 {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  /* 순서: 4 → 1 → 5 → 2 → 6 → 3 */
+  .desktop .cardtextfield-4 { order: 1; }
+  .desktop .cardtextfield   { order: 2; }
+  .desktop .cardtextfield-5 { order: 3; }
+  .desktop .cardtextfield-2 { order: 4; }
+  .desktop .cardtextfield-6 { order: 5; }
+  .desktop .cardtextfield-3 { order: 6; }
+
+  /* 카드 내부 텍스트: 화면 높이 기준으로 스케일 (iPhone 13 mini 오버플로 방지) */
+  .desktop .text-wrapper-9 {
+    font-size: clamp(10px, 1.5dvh, 14px);
+  }
+
+  /* 섹션 2 본문 (.text-wrapper-11): 0.75rem(360px) → 1.125rem(767px) */
+  .desktop .text-wrapper-11 {
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
+  }
+}

@@ -1,0 +1,266 @@
+/* ============================================================
+   Section 1 — Hero
+   ============================================================ */
+
+.desktop .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0px 76px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  background-color: #0e0e0e;
+}
+
+.desktop .text {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .p {
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: 'KBLJump', sans-serif;
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  position: relative;
+  color: var(--color-grayscale-white);
+  text-align: center;
+  letter-spacing: var(--main-letter-spacing);
+  font-style: var(--main-font-style);
+}
+
+.desktop .text-wrapper-4 {
+  width: fit-content;
+  font-family: var(--body-r16-font-family);
+  font-weight: var(--body-r16-font-weight);
+  color: var(--grayscale-200);
+  font-size: clamp(0.9375rem, 0.26vw + 0.81rem, 1.125rem);
+  text-align: center;
+  line-height: var(--body-r16-line-height);
+  position: relative;
+  letter-spacing: var(--body-r16-letter-spacing);
+  font-style: var(--body-r16-font-style);
+}
+
+.desktop .icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .vector-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.desktop .vector,
+.desktop .vector-2 {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: filter 0.15s ease;
+}
+
+.desktop .vector-wrapper:active .vector,
+.desktop .vector-wrapper:active .vector-2 {
+  filter: brightness(1.5);
+}
+
+.desktop .sec1-arrow {
+  position: absolute;
+  bottom: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.desktop .card-list {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: 80px;
+}
+
+.desktop .card-list::-webkit-scrollbar {
+  display: none;
+}
+
+.desktop .card-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+}
+
+.desktop .card-list {
+  cursor: grab;
+}
+
+.desktop .card-list.dragging {
+  cursor: grabbing;
+}
+
+.desktop .card {
+  flex: 0 0 auto;
+  aspect-ratio: 5 / 7;
+  /* 다른 요소(텍스트 230px + 아이콘 30px + 패딩 200px + gap 60px = 520px) 제외한 나머지 */
+  height: min(
+    calc(100dvh * 0.37),
+    calc(100dvh - 520px)
+  );
+  background-color: var(--grayscale-900);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--grayscale-700);
+  position: relative;
+}
+
+.desktop .card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.desktop .card:hover .card-img {
+  opacity: 1;
+}
+
+.desktop .card:hover .card-overlay,
+.desktop .card:hover .card-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop .card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 14, 14, 0);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.desktop .card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: min(calc(100dvh * 0.0592), calc((100dvh - 520px) * 0.16));
+  z-index: 2;
+  padding-top: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.desktop .card-overlay-icon {
+  width: min(calc(100dvh * 0.1018), calc((100dvh - 520px) * 0.275));
+  height: min(calc(100dvh * 0.1018), calc((100dvh - 520px) * 0.275));
+  object-fit: contain;
+}
+
+.desktop .card-overlay-label {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: min(calc(100dvh * 0.026), calc((100dvh - 520px) * 0.07));
+  color: var(--gray-scale-white);
+  white-space: nowrap;
+}
+
+.desktop .card-label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px */
+  color: var(--color-grayscale-white);
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.desktop .union {
+  position: absolute;
+  top: calc(50.00% - 89px);
+  left: calc(50.00% - 59px);
+  width: 117px;
+  height: 109px;
+}
+
+/* ============================================================
+   Section 1 — Mobile styles (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 섹션 1 제목: 24px(360px) → 32px(767px) */
+  .desktop .p {
+    font-size: clamp(24px, calc(1.96vw + 17px), 32px);
+  }
+
+  /* 본문: 데스크톱용 숨기고 모바일용 표시 */
+  .sec1-desc-desktop { display: none; }
+  .sec1-desc-mobile {
+    display: block;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
+    color: #ffffff;
+    text-align: center;
+    line-height: 150%;
+  }
+
+  /* 섹션 1 화살표: 50px(360px) → 75px(767px) */
+  .desktop .sec1-arrow {
+    bottom: 40px;
+  }
+
+  .desktop .sec1-arrow img {
+    width: clamp(50px, calc(6.3vw + 27px), 75px);
+    height: auto;
+  }
+
+  /* 섹션 1: padding-bottom 줄여 카드리스트를 화살표 쪽으로 내림 */
+  .desktop .container {
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+
+  /* 카드 리스트: 190px(360px뷰포트) → 312px(767px뷰포트) */
+  .desktop .card {
+    height: clamp(190px, calc(30vw + 82px), 312px);
+    border-radius: 6px;
+  }
+
+  .desktop .card-track {
+    gap: clamp(8px, calc(1.5vw + 2.6px), 14px);
+  }
+
+  .desktop .card-overlay-icon {
+    width: clamp(60px, calc(11.8vw + 18px), 108px);
+    height: clamp(60px, calc(11.8vw + 18px), 108px);
+  }
+
+  .desktop .card-overlay-label {
+    font-size: clamp(14px, calc(2.9vw + 4px), 26px);
+  }
+}

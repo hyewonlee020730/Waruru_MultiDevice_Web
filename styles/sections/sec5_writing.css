@@ -1,0 +1,429 @@
+/* ============================================================
+   Section 5 — Writing
+   ============================================================ */
+
+.desktop .text-area-4 {
+  width: min(100%, 1204px);
+  padding: 0 40px;
+  box-sizing: border-box;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+}
+
+/* 섹션 5 전용 */
+.text-area-4 .text-wrapper-13 {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.desktop .group-2 {
+  position: absolute;
+  top: calc(50% + 88.5px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.desktop .tooltip {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  align-items: center;
+  position: absolute;
+  top: calc(50.00% + 229px);
+  left: calc(50.00% - 301px);
+}
+
+.desktop .polygon {
+  position: relative;
+  width: 17.29px;
+  height: 13.05px;
+}
+
+.desktop .chip-3 {
+  display: flex;
+  gap: 14.41px;
+  padding: 5.76px 14.41px;
+  align-self: stretch;
+  width: 100%;
+  background-color: var(--color-brand-red);
+  border-radius: 5.76px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .text-wrapper-22 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -1.44px;
+  margin-left: -4.16px;
+  margin-right: -4.16px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  color: var(--color-grayscale-white);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 25.2px;
+  white-space: nowrap;
+}
+
+.desktop .frame-6 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop .poster-kr {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Card Flip ---- */
+/* 360px(mobile) → 1200px(desktop) 선형 스케일, 1200px+ max 고정
+   width : 316px → 374px  (slope ≈ 6.9vw + 291px)
+   height: 420px → 497px  (slope ≈ 9.2vw + 387px, 3:4 비율 유지) */
+.desktop .card-flip {
+  perspective: 1000px;
+  cursor: pointer;
+  aspect-ratio: 374 / 497;
+  /* vw 기준과 dvh 기준 중 더 작은 값으로 width 결정 → height는 aspect-ratio로 자동 계산 */
+  width: min(
+    clamp(316px, calc(6.9vw + 291px), 374px),
+    calc((100dvh - 310px) * 374 / 497)
+  );
+}
+
+.desktop .card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.desktop .card-flip.flipped .card-flip-inner {
+  transform: rotateY(-180deg);
+}
+
+.desktop .card-flip-front,
+.desktop .card-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.desktop .card-flip-back {
+  transform: rotateY(-180deg);
+}
+
+/* 360px → 1440px: 190px → 221px (변화 최소화) */
+.desktop .tooltip-kr {
+  width: clamp(190px, calc(2.9vw + 180px), 221px);
+  height: auto;
+}
+
+.desktop .poster {
+  position: relative;
+  width: 373.48px;
+  height: 497.58px;
+  background-color: var(--color-grayscale-50);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.18px solid;
+  aspect-ratio: 0.75;
+  border-color: var(--color-grayscale-50);
+}
+
+.desktop .image-4 {
+  position: absolute;
+  top: calc(50.00% - 249px);
+  left: calc(50.00% - 187px);
+  width: 373px;
+  height: 498px;
+  aspect-ratio: 0.75;
+  object-fit: cover;
+}
+
+.desktop .rectangle {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 373px;
+  height: 498px;
+  background-color: #00000066;
+  backdrop-filter: blur(15.36px) brightness(100%);
+  -webkit-backdrop-filter: blur(15.36px) brightness(100%);
+}
+
+.desktop .frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 373px;
+  align-items: flex-start;
+  gap: 11.82px;
+  padding: 33.09px 23.64px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.desktop .frame-7 {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 96.91px;
+  overflow: hidden;
+}
+
+.desktop .text-wrapper-23 {
+  position: absolute;
+  width: calc(100% - 1px);
+  top: 1px;
+  left: 1px;
+  height: 60px;
+  color: var(--color-grayscale-white);
+  font-size: 21.3px;
+  line-height: 29.8px;
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.desktop .caption {
+  display: flex;
+  width: calc(100% - 1px);
+  height: 24px;
+  align-items: center;
+  gap: 4.73px;
+  position: absolute;
+  top: 73px;
+  left: 1px;
+}
+
+.desktop .frame-8 {
+  position: relative;
+  width: 23.64px;
+  height: 23.64px;
+  aspect-ratio: 1;
+}
+
+.desktop .text-wrapper-24 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -0.86px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  color: var(--color-grayscale-100);
+  font-size: 16.5px;
+  letter-spacing: 0;
+  line-height: 23.2px;
+  white-space: nowrap;
+}
+
+.desktop .info-text {
+  display: flex;
+  flex-direction: column;
+  width: 373px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 9.46px;
+  padding: 37.82px 23.64px;
+  position: absolute;
+  top: 207px;
+  left: 1px;
+}
+
+.desktop .text-wrapper-25 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  margin-top: -1.18px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  color: var(--color-grayscale-white);
+  font-size: 18.9px;
+  letter-spacing: 0;
+  line-height: 26.5px;
+}
+
+.desktop .frame-9 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 14.18px;
+  padding: 7.09px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.desktop .content-3 {
+  display: flex;
+  height: 30.73px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.desktop .frame-10 {
+  display: inline-flex;
+  align-items: center;
+  gap: 11.82px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .profile-img {
+  width: 30.73px;
+  height: 30.73px;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.desktop .profile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7.09px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .text-wrapper-26 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -1.18px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 500;
+  color: var(--color-grayscale-50);
+  font-size: 16.5px;
+  letter-spacing: 0;
+  line-height: 23.2px;
+  white-space: nowrap;
+}
+
+.desktop .text-wrapper-27 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  color: var(--color-grayscale-100);
+  font-size: 14.2px;
+  letter-spacing: 0;
+  line-height: 19.9px;
+  white-space: nowrap;
+}
+
+.desktop .frame-11 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.73px;
+  padding: 2.36px 4.73px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--color-brand-red);
+  border-radius: 2.36px;
+}
+
+.desktop .text-wrapper-28 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: -1.18px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 14.2px;
+  line-height: 19.9px;
+  white-space: nowrap;
+  position: relative;
+  color: var(--color-grayscale-white);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.desktop .frame-12 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.73px;
+  padding: 2.36px 4.73px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--color-grayscale-600);
+  border-radius: 2.36px;
+}
+
+.desktop .frame-13 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.73px;
+  padding: 2.36px 4.73px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--color-grayscale-400);
+  border-radius: 2.36px;
+}
+
+/* ============================================================
+   Section 5 — Mobile styles (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 섹션 5 본문: 데스크톱 숨기고 모바일 표시 */
+  .sec5-desc-desktop { display: none; }
+  .sec5-desc-mobile { display: block; }
+
+  /* 섹션 5 툴팁: 모바일 전환 */
+  .tooltip-kr--desktop { display: none; }
+  .tooltip-kr--mobile { display: block; }
+
+  /* 섹션 5 — 767px 이하: 공유하고, 다음 줄바꿈 */
+  .br-sec5-small { display: inline; }
+
+  .desktop .text-area-4,
+  .desktop .text-area-5,
+  .desktop .text-area-7 {
+    top: 90px;
+  }
+
+  /* 섹션 5 카드 — 모바일: vw/dvh 둘 다 고려 (base rule과 동일 방식) */
+  .desktop .card-flip {
+    width: min(
+      clamp(220px, calc(100vw - 120px), 360px),
+      calc((100dvh - 280px) * 374 / 497)
+    );
+  }
+}

@@ -1,0 +1,169 @@
+/* ============================================================
+   Section 7 — Reviews (각자의 후기가 모여)
+   ============================================================ */
+
+/* Phone scale factor — 너비 기준 */
+:root { --sec7-phone-scale: 0.74; }
+@media (max-width: 1279px) { :root { --sec7-phone-scale: 0.63; } }
+@media (max-width: 767px)  { :root { --sec7-phone-scale: 0.50; } }
+@media (max-width: 479px)  { :root { --sec7-phone-scale: 0.42; } }
+
+/* Phone scale factor — 높이 기준
+   scene top(≈22dvh) + 폰높이(832×scale) + 툴팁(~60px) + 여유(20px) ≤ 100dvh
+   → scale ≤ (78dvh - 80px) / 832 */
+
+/* PC (min-width: 1280px) */
+@media (min-width: 1280px) and (max-height: 900px) { :root { --sec7-phone-scale: 0.67; } }
+@media (min-width: 1280px) and (max-height: 820px) { :root { --sec7-phone-scale: 0.60; } }
+@media (min-width: 1280px) and (max-height: 740px) { :root { --sec7-phone-scale: 0.54; } }
+@media (min-width: 1280px) and (max-height: 660px) { :root { --sec7-phone-scale: 0.48; } }
+
+/* 태블릿 (768px–1279px) */
+@media (max-width: 1279px) and (max-height: 820px) { :root { --sec7-phone-scale: 0.58; } }
+@media (max-width: 1279px) and (max-height: 720px) { :root { --sec7-phone-scale: 0.52; } }
+@media (max-width: 1279px) and (max-height: 640px) { :root { --sec7-phone-scale: 0.46; } }
+
+/* 모바일 (max-width: 767px) */
+@media (max-width: 767px) and (max-height: 700px) { :root { --sec7-phone-scale: 0.48; } }
+@media (max-width: 767px) and (max-height: 640px) { :root { --sec7-phone-scale: 0.44; } }
+@media (max-width: 767px) and (max-height: 580px) { :root { --sec7-phone-scale: 0.40; } }
+
+/* 소형 모바일 (max-width: 479px) */
+@media (max-width: 479px) and (max-height: 680px) { :root { --sec7-phone-scale: 0.40; } }
+@media (max-width: 479px) and (max-height: 600px) { :root { --sec7-phone-scale: 0.36; } }
+
+/* ---- Sparkle decorations ---- */
+.sec7-sparkle {
+  position: absolute;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+/* 폰 목업(sec7-scene) 기준 좌우 배치 */
+.sec7-sparkle-1 { width: 110px; height: 110px; right: calc(100% + 20px); top: 15%; }
+.sec7-sparkle-2 { width: 42px;  height: 42px;  right: calc(100% + 10px); top: 35%; }
+.sec7-sparkle-3 { width: 110px; height: 110px; left:  calc(100% + 20px); top: 55%; }
+.sec7-sparkle-4 { width: 42px;  height: 42px;  left:  calc(100% + 10px); top: 72%; }
+
+@media (max-width: 1279px) {
+  .sec7-sparkle-1 { width: 64px; height: 64px; }
+  .sec7-sparkle-2 { width: 32px; height: 32px; }
+  .sec7-sparkle-3 { width: 64px; height: 64px; }
+  .sec7-sparkle-4 { width: 32px; height: 32px; }
+
+  .desktop .text-wrapper-36 {
+    font-size: clamp(24px, calc(1.57vw + 12px), 32px);
+    white-space: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .sec7-sparkle { display: none; }
+
+  /* 섹션 7 제목 (.text-wrapper-36): 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-36 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+    line-height: 1.4;
+    white-space: normal;
+  }
+}
+
+/* ---- Scene (phone + scroll hint) ---- */
+.sec7-scene {
+  position: absolute;
+  top: clamp(200px, 22dvh, 260px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+@media (max-width: 1279px) { .sec7-scene { top: clamp(200px, 21dvh, 235px); } }
+@media (max-width: 767px)  { .sec7-scene { top: clamp(185px, 23dvh, 215px); } }
+@media (max-width: 479px)  { .sec7-scene { top: clamp(170px, 22dvh, 192px); } }
+
+/* ---- Phone container (clips & scales outer frame) ---- */
+.sec7-phone-container {
+  width:  calc(392px * var(--sec7-phone-scale));
+  height: calc(832px * var(--sec7-phone-scale));
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ---- Phone outer frame (Figma 1:1 size, scaled via transform) ---- */
+.sec7-phone-outer {
+  width: 392px;
+  height: 832px;
+  transform: scale(var(--sec7-phone-scale));
+  transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #F5F5F5;
+  border-radius: 48px;
+  box-shadow: inset 0px -4px 16px 2px rgba(183,183,183,0.72),
+              inset 0px -2px 2px rgba(215,215,215,0.72);
+}
+
+/* ---- Side buttons ---- */
+.sec7-side-btn {
+  position: absolute;
+  right: -9px;
+  background: #F5F5F5;
+  border-radius: 3px;
+}
+.sec7-vol { width: 9px; height: 102px; top: 206px; }
+.sec7-pwr { width: 9px; height: 52px;  top: 350px; }
+
+/* ---- Screen ---- */
+.sec7-screen {
+  width: 360px;
+  height: 800px;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background: white;
+  border-radius: 34px;
+  overflow: hidden;
+}
+
+/* ---- Scrollable content area ---- */
+.sec7-scroll-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  background: white;
+}
+.sec7-scroll-area::-webkit-scrollbar { display: none; }
+
+.sec7-mockup-img {
+  width: 360px;
+  height: auto;
+  display: block;
+}
+
+/* ---- Scroll hint ---- */
+.sec7-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.sec7-tooltip {
+  display: block;
+  width: auto;
+  max-width: 280px;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .sec7-tooltip { max-width: 220px; }
+}
+@media (max-height: 680px) {
+  .sec7-tooltip { max-width: 180px; }
+}
+@media (max-height: 580px) {
+  .sec7-tooltip { max-width: 150px; }
+}

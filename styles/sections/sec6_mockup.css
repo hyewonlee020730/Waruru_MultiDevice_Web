@@ -1,0 +1,312 @@
+/* ============================================================
+   Section 6 — Mockup
+   ============================================================ */
+
+.desktop .text-area-5 {
+  width: min(100%, 1204px);
+  padding: 0 40px;
+  box-sizing: border-box;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+}
+
+.desktop .text-wrapper-29 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  color: var(--color-grayscale-black);
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 44.8px;
+}
+
+.desktop .OST {
+  position: relative;
+  align-self: stretch;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  color: var(--color-grayscale-800);
+  font-size: 1.125rem; /* 18px */
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 150%;
+}
+
+.desktop .text-wrapper-30 {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  color: var(--color-grayscale-800);
+  font-size: 1.125rem; /* 18px */
+  letter-spacing: 0;
+  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
+}
+
+.desktop .text-wrapper-31 {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+}
+
+/* Section 6 — SVG 기반 씬 레이아웃 */
+.desktop .sec6-scene {
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: top center;
+  width: 1100px;
+  height: 520px;
+}
+
+.desktop .sec6-mockup {
+  position: absolute;
+  width: 235px;
+  height: auto;
+}
+
+.desktop .sec6-mockup-1 {
+  left: 300px;
+  top: 10px;
+  z-index: 2;
+}
+
+.desktop .sec6-mockup-2 {
+  left: 555px;
+  top: 10px;
+  z-index: 2;
+}
+
+.desktop .sec6-list-m {
+  position: absolute;
+  width: 215px;
+  height: auto;
+  z-index: 3;
+}
+
+.desktop .sec6-list-m-1 {
+  left: -10px;
+  top: 80px;
+}
+
+.desktop .sec6-list-m-2 {
+  left: 170px;
+  top: 215px;
+}
+
+.desktop .sec6-list-m-3 {
+  left: 15px;
+  top: 380px;
+}
+
+.desktop .sec6-row {
+  position: absolute;
+  width: 255px;
+  height: auto;
+  z-index: 3;
+}
+
+.desktop .sec6-row-1 {
+  left: 750px;
+  top: 125px;
+}
+
+.desktop .sec6-row-2 {
+  left: 880px;
+  top: 255px;
+}
+
+.desktop .sec6-row-3 {
+  left: 730px;
+  top: 375px;
+}
+
+.desktop .text-area-7 {
+  width: min(623px, calc(100% - 40px));
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+}
+
+.desktop .text-wrapper-35 {
+  position: relative;
+  align-self: stretch;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  color: var(--color-grayscale-800);
+  font-size: 1.125rem; /* 18px */
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 1.6875rem; /* 27px = 18px × 1.5 */
+}
+
+.desktop .text-wrapper-36 {
+  position: relative;
+  align-self: stretch;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  color: var(--color-grayscale-black);
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 44.8px;
+  white-space: nowrap;
+  font-style: var(--title-b32-font-style);
+}
+
+/* ============================================================
+   Section 6 — sec6-row / sec6-list-m 등장 모션
+   초기: 위에서 숨겨진 상태 / .s6-visible 추가 시 등장
+   ============================================================ */
+.desktop .sec6-row,
+.desktop .sec6-list-m {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desktop .sec6-row.s6-visible,
+.desktop .sec6-list-m.s6-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Section 6 — Responsive scale media queries
+   ============================================================ */
+@media (min-width: 1100px) and (max-width: 1279px) {
+  .desktop .sec6-scene {
+    transform: translateX(-50%) scale(0.93);
+    top: 248px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1099px) {
+  .desktop .sec6-scene {
+    transform: translateX(-50%) scale(0.80);
+    top: 270px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+  .desktop .sec6-scene {
+    transform: translateX(-50%) scale(0.68);
+    top: 298px;
+  }
+}
+
+/* ============================================================
+   Section 6 — Mobile styles (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 섹션 6 본문: 데스크톱 숨기고 모바일 표시 */
+  .sec6-desc-desktop { display: none; }
+  .sec6-desc-mobile { display: block; }
+
+  /* 섹션 6 씬: 모바일 — 전체 요소 absolute 배치 */
+  .desktop .sec6-scene {
+    width: 500px;
+    height: clamp(540px, calc(22.1vw + 460px), 640px);
+    top: 230px;
+    transform: translateX(-50%);
+  }
+
+  .desktop .sec6-list-m,
+  .desktop .sec6-row {
+    display: block;
+  }
+
+  /* 목업: 142px(360px) → 184px(767px) */
+  .desktop .sec6-mockup {
+    width: clamp(142px, calc(10.3vw + 105px), 184px);
+    height: auto;
+  }
+
+  /* mockup-1: 두 목업 가운데 정렬 (씬 x=250 기준, 뷰포트 폭 반응형) */
+  .desktop .sec6-mockup-1 {
+    left: calc(138px - 10.3vw);
+    top: 0px;
+  }
+
+  /* mockup-2: mockup-1 우측 끝 + 15px 간격 (항상 일정 간격 유지) */
+  .desktop .sec6-mockup-2 {
+    left: 258px;
+    top: clamp(80px, 12vh, 130px);
+  }
+
+  /* list-m: 125px(360px) → 160px(767px) */
+  .desktop .sec6-list-m {
+    width: clamp(125px, calc(8.6vw + 94px), 160px);
+  }
+
+  /* list-m: mockup-1 우측으로 이동 */
+  .desktop .sec6-list-m-1 {
+    left: 220px;
+    top: -10px;
+  }
+
+  .desktop .sec6-list-m-2 {
+    left: 345px;
+    top: clamp(40px, 6vh, 80px);
+  }
+
+  .desktop .sec6-list-m-3 {
+    left: clamp(25px, calc(63px - 4.9vw), 45px);
+    top: clamp(270px, calc(235px + 9.8vw), 310px);
+  }
+
+  /* row: 142px(360px) → 180px(767px) */
+  .desktop .sec6-row {
+    width: clamp(142px, calc(9.3vw + 108px), 180px);
+  }
+
+  /* row: mockup-2 우측 + 하단 배치 */
+  .desktop .sec6-row-1 {
+    display: none;
+  }
+
+  .desktop .sec6-row-2 {
+    left: 340px;
+    top: 300px;
+  }
+
+  .desktop .sec6-row-3 {
+    left: clamp(120px, calc(176px - 7.37vw), 150px);
+    top: clamp(350px, calc(315px + 9.8vw), 390px);
+    z-index: 1;
+  }
+
+  .desktop .text-area-4,
+  .desktop .text-area-5,
+  .desktop .text-area-7 {
+    top: 90px;
+  }
+
+  /* 섹션 6 제목 (.text-wrapper-29): 18px(360px) → 28px(767px) */
+  .desktop .text-wrapper-29 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 6 본문 (.OST): 0.75rem(360px) → 1.125rem(767px) */
+  .desktop .OST {
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
+  }
+
+  /* 볼드/인라인 span — 부모 clamp 상속 */
+  .desktop .text-wrapper-30,
+  .desktop .text-wrapper-31 {
+    font-size: inherit;
+  }
+}

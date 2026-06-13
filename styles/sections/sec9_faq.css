@@ -1,0 +1,208 @@
+/* ============================================================
+   Section 9 — FAQ
+   ============================================================ */
+
+.desktop .frame-19 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 100dvh;
+  box-sizing: border-box;
+  background-color: var(--color-grayscale-white);
+}
+
+.desktop .frame-20 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.desktop .frame-19 > .frame-20 {
+  max-width: 1204px;
+  width: 100%;
+  padding: 0 40px 110px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.desktop .frame-21 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 36px 20px 40px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--color-grayscale-white);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--color-grayscale-100);
+}
+
+.desktop .frame-22 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .frame-23 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.desktop .q {
+  position: relative;
+  width: 15.56px;
+  height: 18.68px;
+}
+
+.desktop .text-wrapper-41 {
+  position: relative;
+  flex: 1;
+  margin-top: -1px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  color: var(--color-grayscale-900);
+  font-size: 1.125rem; /* 18px */
+  letter-spacing: 0;
+  line-height: 1.575rem; /* 25.2px = 18px × 1.4 */
+}
+
+.desktop .icon-arrow-2 {
+  width: 24px;
+  height: 24px;
+  margin-left: -1.05e-6px;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.desktop .frame-24 {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .text-wrapper-42 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  color: var(--color-grayscale-900);
+  font-size: 1.125rem; /* 18px */
+  letter-spacing: 0;
+  line-height: 1.575rem; /* 25.2px = 18px × 1.4 */
+  white-space: nowrap;
+}
+
+.desktop .icon-arrow-3 {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.desktop .frame-25 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px 34px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+/* Q&A 아코디언 */
+.desktop .qa-answer {
+  display: none;
+}
+.desktop .qa-item.open .qa-answer {
+  display: flex;
+}
+.desktop .frame-22.qa-trigger {
+  cursor: pointer;
+}
+
+.desktop .text-wrapper-43 {
+  position: relative;
+  flex: 1;
+  margin-top: -1px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  color: var(--color-grayscale-800);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 25.2px;
+}
+
+.desktop .frame-26 {
+  display: flex;
+  flex-direction: column;
+  width: 1018px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 40px 402px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* ============================================================
+   Section 9 — Mobile styles (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 전체 섹션 제목 상단 여백 — GNB(50px) + 40px */
+  .desktop .frame-19 {
+    padding-top: 90px;
+  }
+
+  /* 섹션 4·5·8·9 제목 (.text-wrapper-13): 18px(360px) → 28px(767px) */
+  #qa .text-wrapper-13 {
+    font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
+  }
+
+  /* 섹션 9 Q&A — 모바일 레이아웃 */
+  /* 라인(border) 제거, 콘텐츠가 전체 너비 차지 */
+  .desktop .frame-21 {
+    border-bottom: none;
+    padding: 16px 0;
+  }
+
+  /* 답변 영역 좌측 패딩 제거 */
+  .desktop .frame-25 {
+    padding: 0;
+  }
+
+  /* 데스크톱 답변 숨기고 모바일 답변 표시 */
+  .qa-text-desktop { display: none; }
+  .qa-text-mobile { display: block; }
+
+  /* 섹션 9 Q&A 질문·답변: 0.75rem(360px) → 1.125rem(767px) */
+  .desktop .text-wrapper-41,
+  .desktop .text-wrapper-43 {
+    font-size: clamp(0.75rem, calc(1.47vw + 0.42rem), 1.125rem);
+  }
+}
