@@ -264,24 +264,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  background-color: var(--grayscale-800);
-  border-radius: 6px;
-  overflow: hidden;
   cursor: pointer;
-  transition: background-color 0.15s ease;
-}
-
-.desktop .vector-wrapper:active {
-  background-color: var(--grayscale-700);
 }
 
 .desktop .vector,
 .desktop .vector-2 {
-  width: 20px;
-  height: 20px;
+  height: 30px;
+  width: auto;
   object-fit: contain;
+  border-radius: 6px;
+  transition: filter 0.15s ease;
+}
+
+.desktop .vector-wrapper:active .vector,
+.desktop .vector-wrapper:active .vector-2 {
+  filter: brightness(1.5);
 }
 
 .desktop .sec1-arrow {
