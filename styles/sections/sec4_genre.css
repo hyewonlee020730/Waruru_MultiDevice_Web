@@ -90,6 +90,10 @@
   transform: none;
 }
 
+#genre .content-2 {
+  margin-top: 24px;
+}
+
 .desktop .chips {
   display: inline-flex;
   align-items: flex-start;

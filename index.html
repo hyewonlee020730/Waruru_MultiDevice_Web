@@ -4,6 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // 359px 이하 기기: 뷰포트를 360px로 고정 + 스냅 비활성화 클래스 추가
+    // window.innerWidth는 viewport 고정 후 360으로 보고되므로 screen.width로 판정
+    if (screen.width < 360) {
+      document.documentElement.classList.add('viewport-xs');
+      document.querySelector('meta[name="viewport"]').content = 'width=360, initial-scale=1.0';
+    }
+  </script>
   <title>Waruru - 와르르</title>
   <meta name="description" content="와르르(Waruru) 공식 랜딩 페이지입니다. 와르르 소개, 뉴스룸 및 Q&A를 만나보세요.">
   <meta name="keywords" content="Waruru, 와르르, 랜딩페이지">

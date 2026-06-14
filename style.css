@@ -322,3 +322,32 @@ body {
     font-size: clamp(18px, calc(2.46vw + 9.1px), 28px);
   }
 }
+
+/* ── 초소형 화면 (~359px): 스크롤 스냅 해제, 섹션1만 100dvh ──
+   viewport를 360px로 고정하므로 @media (max-width: 359px)는 발동 안 됨.
+   대신 <html class="viewport-xs">를 JS로 추가해 클래스 기반으로 처리. */
+html.viewport-xs body {
+  overflow: auto;
+  height: auto;
+}
+
+/* 풀페이지 transform 초기화 */
+html.viewport-xs .desktop {
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
+/* 섹션1만 100dvh 유지, 나머지는 자연 높이 */
+html.viewport-xs .desktop > .container-2,
+html.viewport-xs .desktop > .frame-2,
+html.viewport-xs .desktop > .frame-3,
+html.viewport-xs .desktop > .frame-14,
+html.viewport-xs .desktop > .frame-19 {
+  height: auto;
+  overflow-y: visible;
+}
+
+/* ── 초대형 화면 (1921px~):
+   섹션은 원래 width:100%로 뷰포트 전체를 채우고, 내부 콘텐츠가
+   max-width:1204px + align-items:center 로 자체 제한함.
+   .desktop에 max-width를 걸면 배경이 잘리고 스크롤 전환이 어색해져 사용 안 함. ──*/

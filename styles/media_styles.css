@@ -27,9 +27,10 @@
   }
 }
 
-/* Desktop Devices (1280px ~ 1920px and above)
+/* Desktop Devices (1280px ~ 1920px)
    * Content is constrained within the safety area (1440px)
-   * Main design viewport target: 1920px
+   * Main design viewport target: 1440px
+   * 1921px+ : .desktop max-width 1440px + margin auto (style.css)
 */
 @media (min-width: 1280px) {
   :root {

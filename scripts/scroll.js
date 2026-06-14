@@ -1,4 +1,11 @@
 // 풀페이지 스크롤 (GNB 테마·네비게이션·섹션 이동 통합)
+
+// 359px 이하: 스크롤 스냅 비활성화 판정
+// viewport가 360px로 고정되어 window.innerWidth가 360으로 보고되므로 클래스로 판정
+function isSnapDisabled() {
+  return document.documentElement.classList.contains('viewport-xs');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const SELECTOR = '.desktop > [data-section]';
   const desktop = document.querySelector('.desktop');
@@ -55,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Wheel ──
   window.addEventListener('wheel', (e) => {
+    if (isSnapDisabled()) return; // 359px 이하: 자연 스크롤 허용
     // 예외: 폰 목업 내부 스크롤 영역
     if (e.target.closest('#sec7ScrollArea')) return;
     // 예외: 섹션 4 카드 리스트 가로 스크롤
@@ -86,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
+    if (isSnapDisabled()) return; // 359px 이하: 자연 스크롤 허용
     if (e.target.closest('#sec7ScrollArea')) return;
     if (e.target.closest('.card-list-2')) return;
     e.preventDefault();
@@ -100,7 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Resize — 인덱스 유지하며 위치 재계산 ──
   window.addEventListener('resize', () => {
     desktop.style.transition = 'none';
-    desktop.style.transform = `translateY(${-currentIndex * window.innerHeight}px)`;
+    if (isSnapDisabled()) {
+      // 359px 이하: transform 초기화 → 자연 스크롤
+      desktop.style.transform = 'translateY(0)';
+    } else {
+      desktop.style.transform = `translateY(${-currentIndex * window.innerHeight}px)`;
+    }
     requestAnimationFrame(() => { desktop.style.transition = ''; });
   });
 
