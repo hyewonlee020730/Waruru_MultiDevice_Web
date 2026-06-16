@@ -1,4 +1,4 @@
-// Section 7 — 폰 목업 자동 스크롤
+// Section 7 — 폰 목업 내부 스크롤 (일반 스크롤)
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
     const scrollArea = document.getElementById('sec7ScrollArea');
@@ -10,53 +10,5 @@
         e.stopPropagation();
       }
     }, { passive: true });
-
-    let rafId = null;
-    let isAnimating = false;
-
-    function ease(t) {
-      return t < 0.5 ? 4 * t ** 3 : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function animateTo(target, duration, onDone) {
-      const from = scrollArea.scrollTop;
-      const diff = target - from;
-      let t0 = null;
-      function step(ts) {
-        if (!t0) t0 = ts;
-        const p = Math.min((ts - t0) / duration, 1);
-        scrollArea.scrollTop = from + diff * ease(p);
-        if (p < 1) { rafId = requestAnimationFrame(step); }
-        else if (onDone) { onDone(); }
-      }
-      rafId = requestAnimationFrame(step);
-    }
-
-    function runDemo() {
-      if (isAnimating) return;
-      isAnimating = true;
-      scrollArea.scrollTop = 0;
-      const maxScroll = scrollArea.scrollHeight - scrollArea.clientHeight;
-      setTimeout(() => {
-        animateTo(maxScroll, 3500, () => {
-          setTimeout(() => {
-            animateTo(0, 3000, () => { isAnimating = false; });
-          }, 700);
-        });
-      }, 200);
-    }
-
-    // 섹션이 처음 보일 때 자동 실행
-    let autoTriggered = false;
-    const sec7 = scrollArea.closest('[data-section]');
-    if (sec7) {
-      const obs = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !autoTriggered) {
-          autoTriggered = true;
-          setTimeout(runDemo, 700);
-        }
-      }, { threshold: 0.6 });
-      obs.observe(sec7);
-    }
   });
 })();
